@@ -1,0 +1,61 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\GetInTouch;
+use Illuminate\Http\Request;
+
+class GetInTouchController extends Controller
+{
+    // Store form submission
+    public function store(Request $request)
+    {
+        $request->validate([
+            'full_name' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
+            'company_name' => 'nullable|string|max:255',
+            'looking_for' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'location' => 'nullable|string|max:255',
+            'details' => 'nullable|string',
+            'reference_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120' // max 5MB
+        ]);
+
+        $imageName = null;
+        if ($request->hasFile('reference_image')) {
+            $file = $request->file('reference_image');
+            $imageName = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads/get_in_touch'), $imageName);
+        }
+
+        GetInTouch::create([
+            'name' => $request->full_name,
+            'phone_number' => $request->phone,
+            'company_name' => $request->company_name,
+            'looking_for' => $request->looking_for,
+            'email' => $request->email,
+            'location' => $request->location,
+            'specific_detail' => $request->details,
+            'reference_image' => $imageName,
+        ]);
+
+        return back()->with('success', 'Your enquiry has been submitted successfully.');
+    }
+
+    // Admin listing
+    public function index()
+    {
+        $enquiries = GetInTouch::where('status', 'active')->latest()->paginate(10);
+        return view('admin.get_in_touch.index', compact('enquiries'));
+    }
+
+    // Soft delete
+    public function destroy($id)
+    {
+        $enquiry = GetInTouch::findOrFail($id);
+        $enquiry->status = 'deleted';
+        $enquiry->save();
+
+        return redirect()->back()->with('success', 'Enquiry deleted successfully.');
+    }
+}
