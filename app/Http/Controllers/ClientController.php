@@ -34,6 +34,12 @@ class ClientController extends Controller
             $file = $request->file('photo');
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('uploads/clients'), $filename);
+
+            // Optional: Delete old file
+            if ($client->photo && file_exists(public_path('uploads/home/' . $client->photo))) {
+                unlink(public_path('uploads/home/' . $client->photo));
+            }
+
             $client->photo = $filename;
         }
 

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GetInTouchController;
 use App\Http\Controllers\QuoteController;
@@ -46,6 +48,15 @@ Route::middleware(['auth'])->group(function () {
 
 
 
+    //blog
+
+    Route::resource('blogs', BlogController::class);
+
+    //gallery
+
+    // Gallery Routes
+    Route::get('/admin/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+    Route::put('/admin/gallery/{id}', [GalleryController::class, 'updateSection1'])->name('gallery.updateSection1');
 
 
 
@@ -53,7 +64,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-
+    //clients
 
     Route::get('/admin/clients', [ClientController::class, 'index'])->name('clients.index');
     Route::get('/admin/clients/create', [ClientController::class, 'create'])->name('clients.create');
