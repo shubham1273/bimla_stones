@@ -210,52 +210,41 @@ class HomePageController extends Controller
 
     public function offer(Request $request)
     {
-        $section = HomePage::where('page_key', 'section_6')->first();
+        $offers = HomePage::where('page_key', 'section_6')->get();
+        return view('admin.home.homepagesix', compact('offers'));
+    }
 
-        return view('admin.home.homepagesix', compact('section'));
+    public function offerEdit($id)
+    {
+        $section = HomePage::where('page_key', 'section_6')->findOrFail($id);
+        return view('admin.home.homepagesixEdit', compact('section'));
     }
 
     public function updateSection6(Request $request, $id)
     {
-        $request->validate([
+        $section = HomePage::findOrFail($id);
+
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required',
+            'media' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
-        for ($i = 1; $i <= 6; $i++) {
-            $request->validate([
-                'title' . $i => 'required|string|max:255',
-                'media' . $i => 'nullable|image|mimes:jpeg,png|max:2048'
-            ]);
-        }
+        if ($request->hasFile('media')) {
+            $file = $request->file('media');
+            $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/home'), $fileName);
 
-        $section = HomePage::findOrFail($id);
-        $section->title = $request->title;
-        $section->description = $request->description;
-
-        for ($i = 1; $i <= 6; $i++) {
-            $titleField = 'title' . $i;
-            $mediaField = 'media' . $i;
-
-            $section->$titleField = $request->$titleField;
-
-            if ($request->hasFile($mediaField)) {
-                $file = $request->file($mediaField);
-                $filename = time() . '_' . $file->getClientOriginalName();
-                $file->move(public_path('uploads/home'), $filename);
-
-                // Optionally delete old file
-                if ($section->$mediaField && file_exists(public_path('uploads/home/' . $section->$mediaField))) {
-                    unlink(public_path('uploads/home/' . $section->$mediaField));
-                }
-
-                $section->$mediaField = $filename;
+            if ($section->media && file_exists(public_path('uploads/home/' . $section->media))) {
+                unlink(public_path('uploads/home/' . $section->media));
             }
+
+            $section->media = $fileName;
         }
 
+        $section->title = $validated['title'];
         $section->save();
 
-        return redirect()->back()->with('success', 'Section updated successfully.');
+        return redirect()->route('offer')->with('success', 'Offer section updated successfully.');
     }
 
     public function choose(Request $request)

@@ -57,13 +57,13 @@
                     </a>
                     <div class="collapse" id="productSections">
                         <ul class="nav nav-collapse">
-                            <li><a href="{{ route('homepage') }}"><span class="sub-item">1st Section</span></a></li>
-                            <li><a href="components/buttons.html"><span class="sub-item">2nd Section</span></a></li>
-                            <li><a href="components/gridsystem.html"><span class="sub-item">3rd Section</span></a></li>
-                            <li><a href="components/panels.html"><span class="sub-item">4th Section</span></a></li>
-                            <li><a href="components/notifications.html"><span class="sub-item">5th Section</span></a></li>
+                            <li><a href="{{ route('products.index') }}"><span class="sub-item">1st Section</span></a></li>
+                            <li><a href="{{ route('product-categories.index') }}"><span class="sub-item">2nd Section</span></a></li>
+                            <li><a href="{{ route('product-carousel.index') }}"><span class="sub-item">3rd Section</span></a></li>
+                            <li><a href="{{ route('product-categories.index2') }}"><span class="sub-item">4th Section</span></a></li>
+                            <li><a href="{{ route('product-vision.index') }}"><span class="sub-item">5th Section</span></a></li>
+                            <li><a href="{{ route('product-section-6') }}"><span class="sub-item">6th Section</span></a></li>
                             <li><a href="components/sweetalert.html"><span class="sub-item">6th Section</span></a></li>
-                            <li><a href="components/font-awesome-icons.html"><span class="sub-item">7th Section</span></a></li>
                         </ul>
                     </div>
                 </li>

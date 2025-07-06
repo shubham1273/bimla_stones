@@ -1,0 +1,66 @@
+@extends('layouts.admin')
+@section('title', 'Home Page')
+@section('content')
+<div class="page-inner">
+    <div class="page-header">
+        <h4 class="page-title">Home Page</h4>
+        <ul class="breadcrumbs">
+            <li class="nav-home">
+                <a href="#">
+                    <i class="icon-home"></i>
+                </a>
+            </li>
+            <li class="separator">
+                <i class="icon-arrow-right"></i>
+            </li>
+            <li class="nav-item">
+                <a href="#">Pages</a>
+            </li>
+            <li class="separator">
+                <i class="icon-arrow-right"></i>
+            </li>
+            <li class="nav-item">
+                <a href="#">Starter Page</a>
+            </li>
+        </ul>
+    </div>
+    <div class="page-category">
+        {{-- Main area starts --}}
+        <div class="card">
+                <div class="card-header">
+                    <div class="card-title">1st Section</div>
+                </div>
+                <div class="card-body">
+
+                    <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" name="title" class="form-control" value="{{ old('title', $product->title) }}" required>
+                                    @error('title')<small class="text-danger">{{ $message }}</small>@enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="media">Image</label>
+                                    <input type="file" name="media" class="form-control" accept="image/*">
+                                    @if($product->media)
+                                        <img src="{{ asset('uploads/products/' . $product->media) }}" width="150" class="mt-2">
+                                    @endif
+                                    @error('media')<small class="text-danger">{{ $message }}</small>@enderror
+                                </div>
+                                <div class="card-action">
+                                    <button type="submit" class="btn btn-success">Update</button>
+                                    <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{-- Main area ends --}}
+    </div>
+</div>
+@endsection

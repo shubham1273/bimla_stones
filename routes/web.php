@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/home-section-5/{id}', [HomePageController::class, 'updateSection5'])->name('home_section.updateSection5');
 
     Route::get('/admin/offer', [HomePageController::class, 'offer'])->name('offer');
+    Route::get('/admin/offer-edit/{id}', [HomePageController::class, 'offerEdit'])->name('offerEdit');
     Route::put('/admin/home/section6/{id}', [HomePageController::class, 'updateSection6'])->name('home_section.updateSection6');
 
     Route::get('/admin/choose', [HomePageController::class, 'choose'])->name('choose');
@@ -98,6 +99,32 @@ Route::middleware(['auth'])->group(function () {
     // get Quote
     Route::get('/admin/quotes', [QuoteController::class, 'index'])->name('quotes.index');
     Route::delete('/admin/quotes/{id}', [QuoteController::class, 'destroy'])->name('quotes.destroy');
+
+    // products page routes
+    Route::get('/products', [\App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/{id}/edit', [\App\Http\Controllers\ProductController::class, 'edit'])->name('products.edit');
+    Route::put('/products/{id}', [\App\Http\Controllers\ProductController::class, 'update'])->name('products.update');
+
+    Route::get('/product-categories', [App\Http\Controllers\ProductController::class, 'productCategoryIndex'])->name('product-categories.index');
+    Route::get('/product-categories/{id}/edit', [App\Http\Controllers\ProductController::class, 'productCategoryEdit'])->name('product-categories.edit');
+    Route::put('/product-categories/{id}', [App\Http\Controllers\ProductController::class, 'productCategoryUpdate'])->name('product-categories.update');
+
+    Route::get('/product-categories-2', [App\Http\Controllers\ProductController::class, 'productCategoryIndex2'])->name('product-categories.index2');
+    Route::get('/product-categories-2/{id}/edit', [App\Http\Controllers\ProductController::class, 'productCategoryEdit2'])->name('product-categories.edit2');
+    Route::put('/product-categories-2/{id}', [App\Http\Controllers\ProductController::class, 'productCategoryUpdate2'])->name('product-categories.update2');
+
+    Route::get('/product-carousel', [App\Http\Controllers\ProductController::class, 'productCarouselIndex'])->name('product-carousel.index');
+    Route::get('/product-carousel/create', [App\Http\Controllers\ProductController::class, 'productCarouselCreate'])->name('product-carousel.create');
+    Route::post('/product-carousel', [App\Http\Controllers\ProductController::class, 'productCarouselStore'])->name('product-carousel.store');
+    Route::get('/product-carousel/{id}/edit', [App\Http\Controllers\ProductController::class, 'productCarouselEdit'])->name('product-carousel.edit');
+    Route::put('/product-carousel/{id}', [App\Http\Controllers\ProductController::class, 'productCarouselUpdate'])->name('product-carousel.update');
+
+    Route::get('/product-vision', [App\Http\Controllers\ProductController::class, 'productVisionIndex'])->name('product-vision.index');
+    Route::get('/product-vision/{id}/edit', [App\Http\Controllers\ProductController::class, 'productVisionEdit'])->name('product-vision.edit');
+    Route::put('/product-vision/{id}', [App\Http\Controllers\ProductController::class, 'productVisionUpdate'])->name('product-vision.update');
+
+    Route::get('/admin/product/section-6', [App\Http\Controllers\ProductController::class, 'section6'])->name('product-section-6');
+    Route::put('/admin/product/section-6/edit/{id}', [App\Http\Controllers\ProductController::class, 'updateSection6'])->name('product-section-6.update');
 });
 
 
