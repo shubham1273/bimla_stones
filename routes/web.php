@@ -9,6 +9,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GetInTouchController;
 use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\FounderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -50,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
 
     //blog
 
-    Route::resource('blogs', BlogController::class);
+    Route::resource('/admin/blogs', BlogController::class);
 
     //gallery
 
@@ -58,7 +59,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/gallery', [GalleryController::class, 'index'])->name('gallery.index');
     Route::put('/admin/gallery/{id}', [GalleryController::class, 'updateSection1'])->name('gallery.updateSection1');
 
+    Route::get('/admin/gallery2', [GalleryController::class, 'gallery2'])->name('gallery2');
+    Route::put('/admin/gallery2/{id}', [GalleryController::class, 'updateSection2'])->name('gallery2.updateSection2');
 
+    Route::get('/admin/gallery3', [GalleryController::class, 'gallery3'])->name('gallery3');
+    Route::put('/admin/gallery3/{id}', [GalleryController::class, 'updateSection3'])->name('gallery.updateSection3');
+
+    Route::get('/admin/gallery4', [GalleryController::class, 'gallery4'])->name('gallery4');
+    Route::put('/admin/gallery4/{id}', [GalleryController::class, 'updateSection4'])->name('gallery.updateSection4');
+
+    //contact us
+
+    Route::resource('/admin/founders', FounderController::class);
 
 
 

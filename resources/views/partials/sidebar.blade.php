@@ -77,9 +77,25 @@
                     <div class="collapse" id="gallerySections">
                         <ul class="nav nav-collapse">
                             <li><a href="{{ route('gallery.index') }}"><span class="sub-item">1st Section</span></a></li>
-                            <li><a href="{{ route('vidoes') }}"><span class="sub-item">2nd Section</span></a></li>
-                            <li><a href="{{ route('process') }}"><span class="sub-item">3rd Section</span></a></li>
-                            <li><a href="{{ route('whoWeare') }}"><span class="sub-item">4th Section</span></a></li>
+                            <li><a href="{{ route('gallery2') }}"><span class="sub-item">2nd Section</span></a></li>
+                            <li><a href="{{ route('gallery3') }}"><span class="sub-item">3rd Section</span></a></li>
+                            <li><a href="{{ route('gallery4') }}"><span class="sub-item">4th Section</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#gallerySections" aria-expanded="false">
+                        <i class="fas fa-layer-group"></i>
+                        <p>Contact Us</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="gallerySections">
+                        <ul class="nav nav-collapse">
+                            <li><a href="{{ route('gallery.index') }}"><span class="sub-item">1st Section</span></a></li>
+                            <li><a href="{{ route('gallery2') }}"><span class="sub-item">2nd Section</span></a></li>
+                            <li><a href="{{ route('gallery3') }}"><span class="sub-item">3rd Section</span></a></li>
+                            <li><a href="{{ route('founders.index') }}"><span class="sub-item">Founders</span></a></li>
                         </ul>
                     </div>
                 </li>
