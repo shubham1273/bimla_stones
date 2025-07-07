@@ -22,6 +22,8 @@
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
+
+                <!-- Dashboard -->
                 <li class="nav-item active">
                     <a href="{{ route('dashboard') }}">
                         <i class="fas fa-home"></i>
@@ -29,6 +31,7 @@
                     </a>
                 </li>
 
+                <!-- Home Sections -->
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#homeSections" aria-expanded="false">
                         <i class="fas fa-layer-group"></i>
@@ -49,6 +52,7 @@
                     </div>
                 </li>
 
+                <!-- Product Sections -->
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#productSections" aria-expanded="false">
                         <i class="fas fa-layer-group"></i>
@@ -63,11 +67,12 @@
                             <li><a href="{{ route('product-categories.index2') }}"><span class="sub-item">4th Section</span></a></li>
                             <li><a href="{{ route('product-vision.index') }}"><span class="sub-item">5th Section</span></a></li>
                             <li><a href="{{ route('product-section-6') }}"><span class="sub-item">6th Section</span></a></li>
-                            <li><a href="components/sweetalert.html"><span class="sub-item">6th Section</span></a></li>
+                            <li><a href="components/sweetalert.html"><span class="sub-item">Extra Section</span></a></li>
                         </ul>
                     </div>
                 </li>
 
+                <!-- Gallery Sections -->
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#gallerySections" aria-expanded="false">
                         <i class="fas fa-layer-group"></i>
@@ -84,13 +89,14 @@
                     </div>
                 </li>
 
+                <!-- Contact Us -->
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#gallerySections" aria-expanded="false">
-                        <i class="fas fa-layer-group"></i>
+                    <a data-bs-toggle="collapse" href="#contactSections" aria-expanded="false">
+                        <i class="fas fa-address-book"></i>
                         <p>Contact Us</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="gallerySections">
+                    <div class="collapse" id="contactSections">
                         <ul class="nav nav-collapse">
                             <li><a href="{{ route('gallery.index') }}"><span class="sub-item">1st Section</span></a></li>
                             <li><a href="{{ route('gallery2') }}"><span class="sub-item">2nd Section</span></a></li>
@@ -100,11 +106,37 @@
                     </div>
                 </li>
 
+                <!-- Blogs -->
                 <li class="nav-item">
                     <a href="{{ route('blogs.index') }}">
                         <i class="fas fa-newspaper"></i>
                         <p>Blogs</p>
                     </a>
+                </li>
+
+                <!-- General Settings -->
+                <li class="nav-item">
+                    <a href="{{ route('settings.index') }}">
+                        <i class="fas fa-cog"></i>
+                        <p>General Settings</p>
+                    </a>
+                </li>
+
+                <!-- Career Sections -->
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#careerSections" aria-expanded="false">
+                        <i class="fas fa-briefcase"></i>
+                        <p>Career</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="careerSections">
+                        <ul class="nav nav-collapse">
+                            <li><a href="{{ route('career') }}"><span class="sub-item">1st Section</span></a></li>
+                            <li><a href="{{ route('career2') }}"><span class="sub-item">2nd Section</span></a></li>
+                            <li><a href="{{ route('jobs.index') }}"><span class="sub-item">Create Job</span></a></li>
+
+                        </ul>
+                    </div>
                 </li>
 
             </ul>

@@ -3,13 +3,19 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CareerController;
 use App\Http\Controllers\GetInTouchController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\FounderController;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\JobApplicationController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,6 +26,8 @@ Route::get('/', function () {
 Route::post('/submit-enquiry', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/get-in-touch', [GetInTouchController::class, 'store'])->name('get_in_touch.store');
 Route::post('/submit-quote', [QuoteController::class, 'store'])->name('quote.store');
+Route::post('/job-apply', [JobApplicationController::class, 'store'])->name('job.apply');
+
 
 
 // Route::get('/dashboard', function () {
@@ -73,7 +81,16 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/admin/founders', FounderController::class);
 
+    //career
 
+    // Career Page Routes
+    Route::get('/admin/career', [CareerController::class, 'index'])->name('career');
+    Route::put('/admin/career/{id}', [CareerController::class, 'updateSection1'])->name('career.updateSection1');
+
+    Route::get('/admin/career2', [CareerController::class, 'career'])->name('career2');
+    Route::put('/admin/career2/{id}', [CareerController::class, 'updateSection2'])->name('career.updateSection2');
+
+    Route::resource('/admin/jobs', JobController::class);
 
 
 
@@ -125,6 +142,13 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/admin/product/section-6', [App\Http\Controllers\ProductController::class, 'section6'])->name('product-section-6');
     Route::put('/admin/product/section-6/edit/{id}', [App\Http\Controllers\ProductController::class, 'updateSection6'])->name('product-section-6.update');
+
+    // settings route
+    Route::get('/admin/settings', [SettingsController::class, 'index'])->name('settings.index');
+    Route::post('/admin/settings', [SettingsController::class, 'update'])->name('settings.update');
+
+    Route::get('/job-applications', [JobApplicationController::class, 'index'])->name('job.index');
+    Route::delete('/job-applications/{id}', [JobApplicationController::class, 'destroy'])->name('job.delete');
 });
 
 
@@ -139,4 +163,5 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect('/login');
 })->name('logout');
+
 require __DIR__.'/auth.php';

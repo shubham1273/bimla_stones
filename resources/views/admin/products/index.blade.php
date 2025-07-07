@@ -1,9 +1,9 @@
 @extends('layouts.admin')
-@section('title', 'Home Page')
+@section('title', 'Products')
 @section('content')
 <div class="page-inner">
     <div class="page-header">
-        <h4 class="page-title">Home Page</h4>
+        <h4 class="page-title">Products</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="#">

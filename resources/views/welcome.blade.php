@@ -257,5 +257,53 @@
 
         </div>
 
+        <div class="container py-5">
+            <h2 class="text-center mb-4">Job Application Form</h2>
+            <form action="{{ route('job.apply') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="tel" name="phone_number" class="form-control" placeholder="Phone Number" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <input type="email" name="email" class="form-control" placeholder="Email ID" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <select name="position" class="form-select" required>
+                            <option selected disabled>Position Applying For</option>
+                            <option>Frontend Developer</option>
+                            <option>Backend Developer</option>
+                            <option>Designer</option>
+                            <option>Marketing</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <textarea name="cover_letter_message" class="form-control" rows="5" placeholder="Cover Letter / Message"></textarea>
+                </div>
+
+                <div class="mb-3 text-center">
+                    <label for="resumeUpload" class="form-label d-block">Upload Resume</label>
+                    <input class="form-control" type="file" name="resume" id="resumeUpload" required>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-light px-5">Submit</button>
+                </div>
+            </form>
+
+          </div>
+
+
     </body>
 </html>

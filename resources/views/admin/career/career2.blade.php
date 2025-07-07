@@ -1,28 +1,46 @@
 @extends('layouts.admin')
 
-@section('title', 'Products')
+@section('title', 'Career Page')
 
 @section('content')
   <div class="page-inner">
     <div class="page-header">
-      <h4 class="page-title">Products</h4>
-
+      <h4 class="page-title">Career Page</h4>
+      <ul class="breadcrumbs">
+        <li class="nav-home">
+          <a href="#">
+            <i class="icon-home"></i>
+          </a>
+        </li>
+        <li class="separator">
+          <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">Pages</a>
+        </li>
+        <li class="separator">
+          <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">Career Page</a>
+        </li>
+      </ul>
     </div>
     <div class="page-category">
 
-        {{-- home area starts --}}
+        {{-- career area starts --}}
 
         <div class="row">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">6th Section</div>
+                    <div class="card-title">Career Section</div>
                 </div>
                 <div class="card-body">
                     @if(session('success'))
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
 
-                    <form action="{{ route('product-section-6.update', $section->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('career.updateSection2', $section->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -60,7 +78,7 @@
                                     @if($section->media)
                                         <div class="mt-3">
                                             <label>Current Image:</label><br>
-                                            <img src="{{ asset('uploads/products/' . $section->media) }}" alt="Media Image" width="200" />
+                                            <img src="{{ asset('uploads/career/' . $section->media) }}" alt="Media Image" width="200" />
                                         </div>
                                     @endif
                                 </div>
@@ -78,9 +96,7 @@
             </div>
         </div>
 
-        {{-- home area ends --}}
-
-
+        {{-- career area ends --}}
 
     </div>
   </div>

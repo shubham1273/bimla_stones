@@ -6,25 +6,7 @@
   <div class="page-inner">
     <div class="page-header">
       <h4 class="page-title">Home Page</h4>
-      <ul class="breadcrumbs">
-        <li class="nav-home">
-          <a href="#">
-            <i class="icon-home"></i>
-          </a>
-        </li>
-        <li class="separator">
-          <i class="icon-arrow-right"></i>
-        </li>
-        <li class="nav-item">
-          <a href="#">Pages</a>
-        </li>
-        <li class="separator">
-          <i class="icon-arrow-right"></i>
-        </li>
-        <li class="nav-item">
-          <a href="#">Starter Page</a>
-        </li>
-      </ul>
+
     </div>
     <div class="page-category">
 
@@ -57,7 +39,7 @@
                                         <img src="{{ asset('uploads/home/' . $item->media) }}" width="100">
                                     @endif
                                 </td>
-                                <td>    
+                                <td>
                                     <a href="{{ route('offerEdit', $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                 </td>
                             </tr>
