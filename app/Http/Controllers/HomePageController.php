@@ -284,4 +284,32 @@ class HomePageController extends Controller
 
         return redirect()->back()->with('success', 'Section updated successfully.');
     }
+
+
+
+    //conatct section
+
+    public function contactUs(Request $request)
+    {
+        $section = HomePage::where('page_key', 'contact_us')->firstOrFail();
+        return view('admin.home.contactussection1', compact('section'));
+    }
+    public function updatecontactUs(Request $request, $id)
+    {
+
+        $section = HomePage::findOrFail($id);
+
+        // Validate only title and description
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required',
+        ]);
+
+        // Update fields
+        $section->title = $validated['title'];
+        $section->description = $validated['description'];
+        $section->save();
+
+        return redirect()->back()->with('success', 'Contact section updated successfully.');
+    }
 }

@@ -80,6 +80,8 @@ Route::middleware(['auth'])->group(function () {
     //contact us
 
     Route::resource('/admin/founders', FounderController::class);
+    Route::get('/admin/contactUs', [HomePageController::class, 'contactUs'])->name('contactUs');
+    Route::put('/admin/updatecontactUs/{id}', [HomePageController::class, 'updatecontactUs'])->name('updatecontactUs.update');
 
     //career
 
@@ -103,14 +105,15 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/clients/{id}', [ClientController::class, 'update'])->name('clients.update');
     Route::delete('/admin/clients/{id}', [ClientController::class, 'destroy'])->name('clients.destroy');
 
-
+    //faq
+    Route::resource('faqs', FaqController::class);
 
     // Admin Contact
-    Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts.index');
+    Route::get('/admin/contacts', [ContactController::class, 'index'])->name('contacts.index');
     Route::delete('/admin/contacts/{id}', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
 
     // Get in touch
-    Route::get('/admin/get-in-touch', [GetInTouchController::class, 'index'])->name('admin.get_in_touch.index');
+    Route::get('/admin/get-in-touch', [GetInTouchController::class, 'index'])->name('get_in_touch.index');
     Route::delete('/admin/get-in-touch/{id}', [GetInTouchController::class, 'destroy'])->name('admin.get_in_touch.destroy');
 
     // get Quote

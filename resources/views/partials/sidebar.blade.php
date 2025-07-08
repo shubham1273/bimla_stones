@@ -48,6 +48,8 @@
                             <li><a href="{{ route('offer') }}"><span class="sub-item">6th Section</span></a></li>
                             <li><a href="{{ route('choose') }}"><span class="sub-item">7th Section</span></a></li>
                             <li><a href="{{ route('clients.index') }}"><span class="sub-item">Clients</span></a></li>
+                            <li><a href="{{ route('quotes.index') }}"><span class="sub-item">Get a Quote Request</span></a></li>
+                            <li><a href="{{ route('get_in_touch.index') }}"><span class="sub-item">Get in touch Request</span></a></li>
                         </ul>
                     </div>
                 </li>
@@ -98,9 +100,7 @@
                     </a>
                     <div class="collapse" id="contactSections">
                         <ul class="nav nav-collapse">
-                            <li><a href="{{ route('gallery.index') }}"><span class="sub-item">1st Section</span></a></li>
-                            <li><a href="{{ route('gallery2') }}"><span class="sub-item">2nd Section</span></a></li>
-                            <li><a href="{{ route('gallery3') }}"><span class="sub-item">3rd Section</span></a></li>
+                            <li><a href="{{ route('contactUs') }}"><span class="sub-item">1st Section</span></a></li>
                             <li><a href="{{ route('founders.index') }}"><span class="sub-item">Founders</span></a></li>
                         </ul>
                     </div>
@@ -134,9 +134,18 @@
                             <li><a href="{{ route('career') }}"><span class="sub-item">1st Section</span></a></li>
                             <li><a href="{{ route('career2') }}"><span class="sub-item">2nd Section</span></a></li>
                             <li><a href="{{ route('jobs.index') }}"><span class="sub-item">Create Job</span></a></li>
-
+                            <li><a href="{{ route('faqs.index') }}"><span class="sub-item">Faqs</span></a></li>
+                            <li><a href="{{ route('job.index') }}"><span class="sub-item">Job Applications</span></a></li>
                         </ul>
                     </div>
+                </li>
+
+                 <!-- General Settings -->
+                 <li class="nav-item">
+                    <a href="{{ route('contacts.index') }}">
+                        <i class="fas fa-cog"></i>
+                        <p>Contact Request</p>
+                    </a>
                 </li>
 
             </ul>
