@@ -72,6 +72,27 @@
                     </div>
                 </li>
 
+                <!-- About Us -->
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#about_us" aria-expanded="false">
+                        <i class="fas fa-address-book"></i>
+                        <p>About Us</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="about_us">
+                        <ul class="nav nav-collapse">
+                            <li><a href="{{ route('about.section_1') }}"><span class="sub-item">1st Section</span></a></li> 
+                            <li><a href="{{ route('about.section_2') }}"><span class="sub-item">2nd Section</span></a></li>
+                            <li><a href="{{ route('about.section_3') }}"><span class="sub-item">3rd Section</span></a></li>
+                            <li><a href="{{ route('about.section_4') }}"><span class="sub-item">4th Section</span></a></li>
+                            <li><a href="{{ route('about.section_5') }}"><span class="sub-item">5th Section</span></a></li>
+                            <li><a href="{{ route('about.section_6') }}"><span class="sub-item">6th Section</span></a></li>
+                            <li><a href="{{ route('about.section_7') }}"><span class="sub-item">7th Section</span></a></li>
+                            <li><a href="{{ route('about.leadership') }}"><span class="sub-item">Our Leadership</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
                 <!-- Gallery Sections -->
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#gallerySections" aria-expanded="false">
@@ -102,6 +123,23 @@
                             <li><a href="{{ route('gallery2') }}"><span class="sub-item">2nd Section</span></a></li>
                             <li><a href="{{ route('gallery3') }}"><span class="sub-item">3rd Section</span></a></li>
                             <li><a href="{{ route('founders.index') }}"><span class="sub-item">Founders</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Process -->
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#processSections" aria-expanded="false">
+                        <i class="fas fa-address-book"></i>
+                        <p>Process</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="processSections">
+                        <ul class="nav nav-collapse">
+                            <li><a href="{{ route('process.section_1') }}"><span class="sub-item">1st Section</span></a></li> 
+                            <li><a href="{{ route('process.section_2') }}"><span class="sub-item">2nd Section</span></a></li>
+                            <li><a href="{{ route('process.section_3') }}"><span class="sub-item">3rd Section</span></a></li>
+                            <li><a href="{{ route('process.section_4') }}"><span class="sub-item">4th Section</span></a></li>
                         </ul>
                     </div>
                 </li>

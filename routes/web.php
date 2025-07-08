@@ -15,6 +15,8 @@ use App\Http\Controllers\FounderController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\JobApplicationController;
+use App\Http\Controllers\ProcessController;
+use App\Http\Controllers\AboutUsSectionController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -149,6 +151,52 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/job-applications', [JobApplicationController::class, 'index'])->name('job.index');
     Route::delete('/job-applications/{id}', [JobApplicationController::class, 'destroy'])->name('job.delete');
+
+    // process_routes
+    Route::get('/admin/process/section-1', [ProcessController::class, 'section1'])->name('process.section_1');
+    Route::put('/process/section-1/{id}', [ProcessController::class, 'updateSection1'])->name('process.section_1.update');
+
+    Route::get('/admin/process/section-2', [ProcessController::class, 'section2'])->name('process.section_2');
+    Route::get('/process/section-2/create', [ProcessController::class, 'section2Create'])->name('process.section_2.create');
+    Route::post('/process/section-2', [ProcessController::class, 'section2Store'])->name('process.section_2.store');
+    Route::get('/process/section-2/{id}/edit', [ProcessController::class, 'section2Edit'])->name('process.section_2.edit');
+    Route::put('/process/section-2/{id}', [ProcessController::class, 'updateSection2'])->name('process.section_2.update');
+
+    Route::get('/admin/process/section-3', [ProcessController::class, 'section3'])->name('process.section_3');
+    Route::put('/process/section-3/{id}', [ProcessController::class, 'updateSection3'])->name('process.section_3.update');
+
+    Route::get('/admin/process/section-4', [ProcessController::class, 'section4'])->name('process.section_4');
+    Route::put('/process/section-4/{id}', [ProcessController::class, 'updateSection4'])->name('process.section_4.update');
+
+    // About Us section routes
+    Route::get('/admin/about-us/section-1', [AboutUsSectionController::class, 'section1'])->name('about.section_1');
+    Route::put('/admin/about-us/section-1/{id}', [AboutUsSectionController::class, 'updateSection1'])->name('about.section_1.update');
+
+    Route::get('/admin/about-us/section-2', [AboutUsSectionController::class, 'section2'])->name('about.section_2');
+    Route::put('/admin/about-us/section-2/{id}', [AboutUsSectionController::class, 'updateSection2'])->name('about.section_2.update');
+
+    Route::get('/admin/about-us/section-3', [AboutUsSectionController::class, 'section3Index'])->name('about.section_3');
+    Route::get('/admin/about-us/section-3/{id}/edit', [AboutUsSectionController::class, 'section3Edit'])->name('about.section_3.edit');
+    Route::put('/admin/about-us/section-3/{id}', [AboutUsSectionController::class, 'updateSection3'])->name('about.section_3.update');
+
+    Route::get('/admin/about-us/section-4', [AboutUsSectionController::class, 'section4'])->name('about.section_4');
+    Route::put('/admin/about-us/section-4/{id}', [AboutUsSectionController::class, 'updateSection4'])->name('about.section_4.update');
+
+    Route::get('/admin/about-us/section-5', [AboutUsSectionController::class, 'section5'])->name('about.section_5');
+    Route::put('/admin/about-us/section-5/{id}', [AboutUsSectionController::class, 'updateSection5'])->name('about.section_5.update');
+
+    Route::get('/admin/about-us/section-6', [AboutUsSectionController::class, 'section6'])->name('about.section_6');
+    Route::put('/admin/about-us/section-6/{id}', [AboutUsSectionController::class, 'updateSection6'])->name('about.section_6.update');
+
+    Route::get('/admin/about-us/section-7', [AboutUsSectionController::class, 'section7'])->name('about.section_7');
+    Route::put('/admin/about-us/section-7/{id}', [AboutUsSectionController::class, 'updateSection7'])->name('about.section_7.update');
+
+    Route::get('/admin/about-us/our-leadership', [AboutUsSectionController::class, 'leadershipIndex'])->name('about.leadership');
+    Route::get('/admin/about-us/our-leadership/create', [AboutUsSectionController::class, 'leadershipCreate'])->name('about.leadership.create');
+    Route::post('/admin/about-us/our-leadership', [AboutUsSectionController::class, 'leadershipStore'])->name('about.leadership.store');
+    Route::get('/admin/about-us/our-leadership/{id}/edit', [AboutUsSectionController::class, 'leadershipEdit'])->name('about.leadership.edit');
+    Route::put('/admin/about-us/our-leadership/{id}', [AboutUsSectionController::class, 'leadershipUpdate'])->name('about.leadership.update');
+
 });
 
 
