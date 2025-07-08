@@ -1,0 +1,46 @@
+@import "variable";
+// hero-section
+.hero-section {
+  margin-top: 40px;
+  @media (max-width: 991px) {
+    margin-top: 0;
+  }
+  .blog-back {
+    svg {
+      @media (max-width: 575px) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  .blog-card {
+    border-radius: 10px;
+  }
+  .blog-img {
+    max-height: 449px;
+    aspect-ratio: 2.4855;
+    img {
+      aspect-ratio: 2.4855;
+    }
+  }
+  .blogs-page {
+    .blog-img {
+      max-height: 255px;
+      aspect-ratio: 1.596;
+      img {
+        aspect-ratio: 1.596;
+      }
+    }
+    .row-gap-60px {
+      margin-left: -24px;
+      margin-right: -24px;
+      @media (max-width: 575px) {
+        margin-left: -8px;
+        margin-right: -8px;
+      }
+    }
+  }
+  .btn-black {
+    max-width: 100% !important;
+  }
+}

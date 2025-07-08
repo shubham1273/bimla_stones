@@ -159,7 +159,20 @@ class HomePageController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
+            'media' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
+
+        if ($request->hasFile('media')) {
+            $file = $request->file('media');
+            $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/home'), $fileName);
+
+            if ($section->media && file_exists(public_path('uploads/home/' . $section->media))) {
+                unlink(public_path('uploads/home/' . $section->media));
+            }
+
+            $section->media = $fileName;
+        }
 
         $section->title = $validated['title'];
         $section->description = $validated['description'];

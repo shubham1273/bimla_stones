@@ -1,0 +1,77 @@
+@import "variable";
+.hero-section {
+    .gallery-1 {
+        aspect-ratio: 0.9953;
+        border-radius: 12px;
+        max-height: 651px;
+        img {
+            aspect-ratio: 0.9953;
+            border-radius: 12px;
+        }
+    }
+    .gallery-2 {
+        aspect-ratio: 2.05696;
+        border-radius: 12px;
+        max-height: 316px;
+        img {
+            aspect-ratio: 2.05696;
+            border-radius: 12px;
+        }
+        @media (max-width: 991px) {
+            aspect-ratio: 0.7629;
+            max-height: 232px;
+            img {
+                aspect-ratio: 0.7629;
+                max-height: 232px;
+            }
+        }
+    }
+}
+.story-hero-section-main {
+    margin-top: 60px;
+    @media (max-width: 991px) {
+        margin-top: 40px;
+    }
+    @media (max-width: 575px) {
+        margin-top: 20px;
+    }
+    .story-hero-section {
+        background-color: $black-200;
+        padding: 45px 40px;
+        border-radius: 20px;
+        @media (max-width: 991px) {
+            padding: 20px;
+            border-radius: 15px;
+        }
+        @media (max-width: 575px) {
+            padding: 12px 11px;
+            border-radius: 10px;
+        }
+        .story-hero-img {
+            border-radius: 20px;
+            aspect-ratio: 1.4338;
+            max-height: 325px;
+            @media (max-width: 575px) {
+                border-radius: 6px;
+            }
+            img {
+                border-radius: 20px;
+                @media (max-width: 575px) {
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+}
+// polishing-section
+.polishing-section {
+    .Polishing-img {
+        aspect-ratio: 1.0675;
+        max-height: 400px;
+        border-radius: 12px;
+        img {
+            aspect-ratio: 1.0675;
+            border-radius: 12px;
+        }
+    }
+}

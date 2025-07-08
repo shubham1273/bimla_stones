@@ -23,7 +23,7 @@
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
 
-                    <form action="{{ route('home_section.updateSection4', $section->id) }}" method="POST">
+                    <form action="{{ route('home_section.updateSection4', $section->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -48,6 +48,22 @@
                                             @error('description')
                                                 <small class="text-danger">{{ $message }}</small>
                                             @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="media">Input File</label>
+                                            <input type="file" name="media" class="form-control" accept="image/png, image/jpeg">
+                                            @error('media')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+
+                                            @if($section->media)
+                                                <div class="mt-3">
+                                                    <label>Current Image:</label><br>
+                                                    <img src="{{ asset('uploads/home/' . $section->media) }}" alt="Media Image" width="200" />
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
