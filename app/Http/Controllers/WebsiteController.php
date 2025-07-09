@@ -5,6 +5,7 @@ use App\Models\HomePage;
 use App\Models\Blog;
 use App\Models\Product;
 use App\Models\Process;
+use App\Models\career;
 use App\Models\Gallery;
 use App\Models\AboutUsSection;
 use App\Models\GeneralSetting;
@@ -85,7 +86,13 @@ class WebsiteController extends Controller
         return view('website.contact_us', compact('section1', 'section2', 'section3', 'section4', 'section5', 'founders'));
 
     }
-    public function career(){
-        return view('website.career');
+    public function career()
+    {
+        $section1 = career::where('page_key', 'section_1')->first();
+        $section2 = career::where('page_key', 'section_2')->first();
+
+
+        return view('website.career', compact('section1', 'section2'));
+
     }
 }
