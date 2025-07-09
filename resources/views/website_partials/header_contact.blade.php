@@ -41,7 +41,7 @@
     <div class="hero-section-main pt-60 position-relative z-1">
       <div class="px-12px">
         <div class="container">
-          <div class="section-heading w-100">
+          <div class="section-heading w-100 text-white">
             <h1 class="fs-40 text-white fw-bold mb-3">{{$section1->title}}</h1>
             <p class="fs-18 text-gray-600  fw-normal mb-3">{!! $section1->description !!}</p>
           </div>

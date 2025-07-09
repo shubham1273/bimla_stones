@@ -8,6 +8,7 @@ use App\Models\Process;
 use App\Models\Gallery;
 use App\Models\AboutUsSection;
 use App\Models\GeneralSetting;
+use App\Models\Founder;
 
 use Illuminate\Http\Request;
 
@@ -79,8 +80,9 @@ class WebsiteController extends Controller
         $section3 = GeneralSetting::where('key', 'company_full_name')->first();
         $section4 = GeneralSetting::where('key', 'full_address')->first();
         $section5 = GeneralSetting::where('key', 'factory_hours')->first();
+        $founders = Founder::orderBy('created_at', 'DESC')->get();
 
-        return view('website.contact_us', compact('section1', 'section2', 'section3', 'section4', 'section5'));
+        return view('website.contact_us', compact('section1', 'section2', 'section3', 'section4', 'section5', 'founders'));
 
     }
     public function career(){

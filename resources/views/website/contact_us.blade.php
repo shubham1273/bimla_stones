@@ -44,62 +44,24 @@
             collaborations:</p>
         </div>
         <div class="founders-slider">
+
+          @foreach($founders as $founder)
           <div>
             <div class="founders-card">
               <div class="founders-img rounded-circle h-100 w-100 mx-auto mb-3">
-                <img src="{{ asset('assets/images/founders-1.png') }}" alt="images"
+                <img src="{{ asset('uploads/founders/'. $founder->image) }}" alt="images"
                   class="h-100 w-100 object-fit-cover rounded-circle" />
               </div>
-              <h2 class="fs-18 text-black-100 fw-bold mb-3">Dinesh Goyal</h2>
-              <p class="fs-18 fw-normal mb-0 text-black">Founder & Managing Director</p>
+              <h2 class="fs-18 text-black-100 fw-bold mb-3">{{$founder->name}}</h2>
+              <p class="fs-18 fw-normal mb-0 text-black">{{$founder->designation}}</p>
               <a href="tel:+91 9448051397"
                 class="d-flex align-items-center gap-2 fs-18 text-black fw-normal text-decoration-none">
                 <img src="{{ asset('assets/images/phone.svg') }}" alt="phone-svg" />
-                +91 9448051397</a>
+                {{$founder->phone_number}}</a>
             </div>
           </div>
-          <div>
-            <div class="founders-card">
-              <div class="founders-img rounded-circle h-100 w-100 mx-auto mb-3">
-                <img src="{{ asset('assets/images/founders-2.png') }}" alt="images"
-                  class="h-100 w-100 object-fit-cover rounded-circle" />
-              </div>
-              <h2 class="fs-18 text-black-100 fw-bold mb-3">Sanjay Goyal</h2>
-              <p class="fs-18 fw-normal mb-0 text-black">Founder & Technical Director</p>
-              <a href="tel:+91 9448051397"
-                class="d-flex align-items-center gap-2 fs-18 text-black fw-normal text-decoration-none">
-                <img src="{{ asset('assets/images/phone.svg') }}" alt="phone-svg" />
-                +91 9448051397</a>
-            </div>
-          </div>
-          <div>
-            <div class="founders-card">
-              <div class="founders-img rounded-circle h-100 w-100 mx-auto mb-3">
-                <img src="{{ asset('assets/images/founders-3.png') }}" alt="images"
-                  class="h-100 w-100 object-fit-cover rounded-circle" />
-              </div>
-              <p class="fs-18 fw-normal mb-0 text-black"></p>
-              <h2 class="fs-18 text-black-100 fw-bold mb-3">Office</h2>
-              <a href="tel:+91 9448051397"
-                class="d-flex align-items-center gap-2 fs-18 text-black fw-normal text-decoration-none">
-                <img src="{{ asset('assets/images/phone.svg') }}" alt="phone-svg" />
-                +91 9448051397</a>
-            </div>
-          </div>
-          <div>
-            <div class="founders-card">
-              <div class="founders-img rounded-circle h-100 w-100 mx-auto mb-3">
-                <img src="{{ asset('assets/images/founders-1.png') }}" alt="images"
-                  class="h-100 w-100 object-fit-cover rounded-circle" />
-              </div>
-              <h2 class="fs-18 text-black-100 fw-bold mb-3">Dinesh Goyal</h2>
-              <p class="fs-18 fw-normal mb-0 text-black">Founder & Managing Director</p>
-              <a href="tel:+91 9448051397"
-                class="d-flex align-items-center gap-2 fs-18 text-black fw-normal text-decoration-none">
-                <img src="{{ asset('assets/images/phone.svg') }}" alt="phone-svg" />
-                +91 9448051397</a>
-            </div>
-          </div>
+          @endforeach
+
         </div>
       </div>
     </div>
