@@ -34,70 +34,25 @@
       <div class="container">
         <div class="categories-slider-section mb-40">
           <div class="categories-slider">
+            
+          @foreach ($section2 as $item)
+              <div>
+                  <div class="categories-card d-flex gap-2 gap-lg-3">
+                      <div class="categories-count">
+                          <img src="{{ asset('assets/images/count-' . ($loop->iteration <= 6 ? $loop->iteration : 6) . '.svg') }}" alt="count" />
+                      </div>
+                      <div class="categories-content">
+                          <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">{{$item->title}}</h3>
+                          <p class="fs-16 fw-normal text-gray-600 mb-0">{{$item->description}}</p>
+                      </div>
+                      <div class="categories-slider-img h-100 w-100">
+                          <img src="{{ asset('uploads/process/'. $item->media) }}" alt="images"
+                              class="h-100 w-100 object-fit-cover" />
+                      </div>
+                  </div>
+              </div>
+          @endforeach
 
-            <div>
-              <div class="categories-card d-flex gap-2 gap-lg-3">
-                <div class="categories-count">
-                  <img src="{{ asset('assets/images/count-1.svg') }}" alt="images" />
-                </div>
-                <div class="d-flex gap-2 row-gap-3 align-items-start w-100 flex-column flex-lg-row">
-                  <div class="categories-content">
-                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">{{$section2->title}}</h3>
-                    <p class="fs-16 fw-normal text-gray-600 mb-0">{{$section2->description}}
-                    </p>
-                  </div>
-                  <div class="categories-slider-img h-100 w-100">
-                    <img src="{{ asset('assets/images/categories-slider-img-1.jpg') }}" alt="images"
-                      class="h-100 w-100 object-fit-cover" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="categories-card d-flex gap-2 gap-lg-3">
-                <div class="categories-count">
-                  <img src="{{ asset('assets/images/count-5.svg') }}" alt="images" />
-                </div>
-                <div class="d-flex gap-2 row-gap-3 align-items-start w-100 flex-column flex-lg-row">
-                  <div class="categories-content">
-                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Quality Checks at Every Stage</h3>
-                    <p class="fs-16 fw-normal text-gray-600 mb-0">Quality is checked at every step,  from initial block
-                      selection to final slab inspection. Every 5th slab in a block is taken through the complete
-                      process for a thorough quality check. If it meets the required standards, the remaining slabs in
-                      that block are then processed. This method helps identify any internal defects early on and saves
-                      valuable production time. 
-                    </p>
-                  </div>
-                  <div class="categories-slider-img h-100 w-100">
-                    <img src="{{ asset('assets/images/categories-slider-img-2.jpg') }}" alt="images"
-                      class="h-100 w-100 object-fit-cover" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="categories-card d-flex gap-2 gap-lg-3">
-                <div class="categories-count">
-                  <img src="{{ asset('assets/images/count-6.svg') }}" alt="images" />
-                </div>
-                <div class="d-flex gap-2 row-gap-3 align-items-start w-100 flex-column flex-lg-row">
-                  <div class="categories-content">
-                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">Secure Packing & Global Dispatch</h3>
-                    <p class="fs-16 fw-normal text-gray-600 mb-0">Once approved, the slabs are carefully packed using
-                      fumigated wooden crates with premium packing material and reinforced lashing. Our packaging
-                      standards are designed to withstand both domestic handling and international transit. Every order
-                      is customized to suit client preferences — with crystal-clear documentation and transparent
-                      tracking. 
-                    </p>
-                  </div>
-                  <div class="categories-slider-img h-100 w-100">
-                    <img src="{{ asset('assets/images/categories-slider-img-2.jpg') }}" alt="images"
-                      class="h-100 w-100 object-fit-cover" />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="d-flex gap-2 ms-3 ms-sm-5 ms-lg-0">
             <div class="prev arrow-box d-flex justify-content-center align-items-center rounded-circle">
