@@ -5,25 +5,18 @@
     <div class="px-12px">
       <div class="container">
         <div class="w-100 mx-auto mb-60">
-          <h3 class="fs-40 fw-bold text-center text-white mb-0">Why Bimla Stone?</h3>
+          <h3 class="fs-40 fw-bold text-center text-white mb-0">{{$section2->title}}</h3>
         </div>
         <div class="row stands-row overflow-hidden mx-0">
           <div class="col-lg-5 bg-black ps-0 pe-0">
             <div class="choose-img w-100 h-100">
-              <img src="{{ asset('assets/images/stands-img.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
+              <img src="{{ asset('uploads/career/' . $section2->media) }}" alt="images" class="w-100 h-100 object-fit-cover" />
             </div>
           </div>
           <div class="col-lg-7 bg-black">
             <div class="d-flex justify-content-center align-items-center h-100">
               <div class="py-4 pe-3">
-                <ul class="mb-40">
-                  <li class="fs-24 text-white fw-normal mb-2 mb-lg-3">Industry leadership</li>
-                  <li class="fs-24 text-white fw-normal mb-2 mb-lg-3">Modern quarrying & processing technology</li>
-                  <li class="fs-24 text-white fw-normal mb-2 mb-lg-3">Global clientele (e.g., exports to 10+ countries)
-                  </li>
-                  <li class="fs-24 text-white fw-normal mb-2 mb-lg-3">Employee growth and skill development</li>
-                  <li class="fs-24 text-white fw-normal mb-2 mb-lg-3">Team bonding & recognition programs</li>
-                </ul>
+                {!! $section2->description !!}
               </div>
             </div>
           </div>

@@ -42,9 +42,8 @@
       <div class="px-12px">
         <div class="container">
           <div class="section-heading w-100">
-            <h1 class="fs-40 text-white fw-bold mb-3">Join Our Team – Build a Future in Stone</h1>
-            <p class="fs-18 text-gray-600 fw-normal mb-0">Be a part of a growing legacy in the natural stone industry.
-              Whether you're a skilled craftsman, sales expert, or engineer — we have a place for you.</p>
+            <h1 class="fs-40 text-white fw-bold mb-3">{{$section1->title}}</h1>
+            <p class="fs-18 text-gray-600 fw-normal mb-0">{{$section1->description}}</p>
           </div>
         </div>
       </div>
