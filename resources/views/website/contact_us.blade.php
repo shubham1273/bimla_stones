@@ -174,9 +174,8 @@
     <div class="stronger-section">
       <div class="container">
         <div class="section-heading w-100 mx-auto">
-          <h3 class="fs-40 fw-normal text-center text-white mb-4">Let’s Build Something Stronger</h3>
-          <p class="text-center text-gray-600 fw-normal mb-0 fs-18">At Bimla Stone, we believe business is built on
-            <span class="text-white fw-bold">trust, quality, and people</span>. We look forward to working with you!</p>
+          <h3 class="fs-40 fw-normal text-center text-white mb-4">{{$section2->title}}</h3>
+          <p class="text-center text-gray-600 fw-normal mb-0 fs-18">{{$section2->description}}</p>
         </div>
       </div>
     </div>

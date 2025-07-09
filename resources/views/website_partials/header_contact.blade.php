@@ -42,13 +42,8 @@
       <div class="px-12px">
         <div class="container">
           <div class="section-heading w-100">
-            <h1 class="fs-40 text-white fw-bold mb-3">Let’s Start a Conversation</h1>
-            <p class="fs-18 text-gray-600  fw-normal mb-3">Whether you're looking for premium <span
-                class="text-white fw-bold">black granite</span>, custom slabs for your next project, or want to explore
-              a long-term partnership — we’re here, ready to help.</p>
-            <p class="fs-18 text-gray-600  fw-normal mb-0">With <span class="text-white fw-bold">25+ years of
-                expertise</span>, global exports, and a commitment to precision and transparency, we make your journey
-              from <sapn class="text-white fw-bold">query to container</sapn> seamless and reliable.</p>
+            <h1 class="fs-40 text-white fw-bold mb-3">{{$section1->title}}</h1>
+            <p class="fs-18 text-gray-600  fw-normal mb-3">{!! $section1->description !!}</p>
           </div>
         </div>
       </div>

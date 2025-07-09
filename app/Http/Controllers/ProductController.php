@@ -86,7 +86,7 @@ class ProductController extends Controller
 
         return redirect()->route('product-categories.index')->with('success', 'Product category updated successfully.');
     }
-    
+
     public function productCategoryIndex2()
     {
         $products = Product::where('page_key', 'section_2')->get();
