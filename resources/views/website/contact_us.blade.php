@@ -19,14 +19,13 @@
           </div>
           <div class="col-lg-6">
             <div class="ps-0 ps-lg-4">
-              <h3 class="fs-32 fw-normal text-white">BIMLA STONE LLP</h3>
+              <h3 class="fs-32 fw-normal text-white">{{$section3->value}}</h3>
               <div class="mb-40">
                 <p class="text-gray-600 fw-normal fs-18 mb-0"> Address: </p>
-                <p class="text-gray-600 fw-normal fs-18 mb-0"> SY NO 100/1, 101/1, Badanguppe Village,  Kasba Hobli,
-                  chamarajanagar, Mysore Taluk & District,  Karnataka – 571313, India</p>
+                <p class="text-gray-600 fw-normal fs-18 mb-0"> {{$section4->value}}</p>
               </div>
               <p class="fs-24 fw-normal text-white mb-2">Factory Hours</p>
-              <p class="text-gray-600 fw-normal fs-18 mb-2 mt-1">Open throughout the week | 9:00 AM – 6:00 PM</p>
+              <p class="text-gray-600 fw-normal fs-18 mb-2 mt-1">{{$section5->value}}</p>
               <p class="text-gray-600 fw-normal fs-18 mb-0 mt-1">Visitors and founders are always welcome.
               </p>
             </div>
@@ -174,9 +173,8 @@
     <div class="stronger-section">
       <div class="container">
         <div class="section-heading w-100 mx-auto">
-          <h3 class="fs-40 fw-normal text-center text-white mb-4">Let’s Build Something Stronger</h3>
-          <p class="text-center text-gray-600 fw-normal mb-0 fs-18">At Bimla Stone, we believe business is built on
-            <span class="text-white fw-bold">trust, quality, and people</span>. We look forward to working with you!</p>
+          <h3 class="fs-40 fw-normal text-center text-white mb-4">{{$section2->title}}</h3>
+          <p class="text-center text-gray-600 fw-normal mb-0 fs-18">{{$section2->description}}</p>
         </div>
       </div>
     </div>

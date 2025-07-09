@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Process;
 use App\Models\Gallery;
 use App\Models\AboutUsSection;
+use App\Models\GeneralSetting;
 
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class WebsiteController extends Controller
         $section2 = HomePage::where('page_key', 'section_2')->first();
         $section3 = HomePage::where('page_key', 'section_3')->first();
         $section4 = HomePage::where('page_key', 'section_4')->first();
-        $section6 = HomePage::where('page_key', 'section_6')->get();
+        $section6 = HomePage::where('page_key', 'section_6')->get(); //foreach loop
         return view('website.welcome', compact('section1', 'section2', 'section3', 'section4', 'section6'));
     }
 
@@ -28,7 +29,8 @@ class WebsiteController extends Controller
         $section3 = Product::where('page_key', 'section_3')->get();
         $section4 = Product::where('page_key', 'section_4')->get();
         $section5 = Product::where('page_key', 'section_5')->get();
-        return view('website.products', compact('section1','section2', 'section3','section4','section5'));
+        $section6 = Product::where('page_key', 'section_6')->first();
+        return view('website.products', compact('section1','section2', 'section3','section4','section5', 'section6'));
     }
 
     public function manufacture_process(){
@@ -72,7 +74,14 @@ class WebsiteController extends Controller
 
     }
     public function contact_us(){
-        return view('website.contact_us');
+        $section1 = HomePage::where('page_key', 'contact_us')->first();
+        $section2 = HomePage::where('page_key', 'contact_us2')->first();
+        $section3 = GeneralSetting::where('key', 'company_full_name')->first();
+        $section4 = GeneralSetting::where('key', 'full_address')->first();
+        $section5 = GeneralSetting::where('key', 'factory_hours')->first();
+
+        return view('website.contact_us', compact('section1', 'section2', 'section3', 'section4', 'section5'));
+
     }
     public function career(){
         return view('website.career');
