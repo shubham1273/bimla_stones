@@ -163,36 +163,18 @@
         <div class="px-12px">
             <div class="container">
                 <div class="w-100 mx-auto mb-60">
-                    <h3 class="fs-40 fw-bold text-center text-white mb-0">Why Our Granite Stands Out</h3>
+                    <h3 class="fs-40 fw-bold text-center text-white mb-0">{{$section6->title}}</h3>
                 </div>
                 <div class="row stands-row overflow-hidden mx-0">
                     <div class="col-lg-5 bg-black ps-0 pe-0 pe-lg-4">
                         <div class="choose-img w-100 h-100">
-                            <img src="{{ asset('assets/images/stands-img.png') }}" alt="images"
+                            <img src="{{ asset('uploads/products/' . $section6->media) }}" alt="images"
                                 class="w-100 h-100 object-fit-cover" />
                         </div>
                     </div>
                     <div class="col-lg-7 bg-black">
-                        <div class="d-flex justify-content-center align-items-center h-100">
-                            <div class="py-4 pe-3">
-                                <ul class="mb-40">
-                                    <li class="fs-18 text-gray-600 fw-normal fs-18 mb-2"><span
-                                            class="text-white fs-24">Consistent Thickness & Gloss: </span> Every 5th
-                                        slab is checked mid-process for quality</li>
-                                    <li class="fs-18 text-gray-600 fw-normal fs-18 mb-2"><span
-                                            class="text-white fs-24">Massive Capacity: </span> 2.5 lakh+  sq. ft.
-                                        processed monthly</li>
-                                    <li class="fs-18 text-gray-600 fw-normal fs-18 mb-2"><span
-                                            class="text-white fs-24">International Standards: </span>2.5 lakh+  sq. ft.
-                                        processed monthly</li>
-                                    <li class="fs-18 text-gray-600 fw-normal fs-18 mb-2"><span
-                                            class="text-white fs-24">Custom-Friendly: </span>From sample to full
-                                        container, we adapt to your project</li>
-                                    <li class="fs-18 text-gray-600 fw-normal fs-18 mb-2"><span
-                                            class="text-white fs-24">Eco-Responsible: </span>100% solar-powered plant &
-                                        water recycling system</li>
-                                </ul>
-                            </div>
+                        <div class="d-flex justify-content-center align-items-center h-100 text-white">
+                            {!! $section6->description !!}
                         </div>
                     </div>
                 </div>
