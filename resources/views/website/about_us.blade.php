@@ -52,55 +52,20 @@
           </div>
         </div>
         <div class="production-slider">
-          <div>
-            <div class="production-card bg-black h-100 d-flex flex-column overflow-hidden">
-              <div class="production-img w-100 h-100">
-                <img src="{{ asset('assets/images/production-1.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
-              </div>
-              <div class="production-content">
-                <h3 class="fs-23 fw-bold text-white mb-2 mb-lg-3">Vision</h3>
-                <p class="fs-18 fw-normal text-gray-600 mb-0">To become the most dependable name in natural stone; not
-                  by scale, but by honesty, consistency, and the confidence we bring to every project.</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="production-card bg-black h-100 d-flex flex-column overflow-hidden">
-              <div class="production-img w-100 h-100">
-                <img src="{{ asset('assets/images/production-2.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
-              </div>
-              <div class="production-content">
-                <h3 class="fs-23 fw-bold text-white mb-2 mb-lg-3">Mission</h3>
-                <p class="fs-18 fw-normal text-gray-600 mb-0">Deliver what’s promised. Stay true to quality. Treat every
-                  consignment like it’s the only one that matters, with full transparency and zero compromise at any
-                  stage</p>
+          @foreach ($section3 as $item)
+            <div>
+              <div class="production-card bg-black h-100 d-flex flex-column overflow-hidden">
+                <div class="production-img w-100 h-100">
+                  <img src="{{ asset('uploads/about_us/'. $item->media) }}" alt="images" class="h-100 w-100 object-fit-cover" />
+                </div>
+                <div class="production-content">
+                  <h3 class="fs-23 fw-bold text-white mb-2 mb-lg-3">{{$item->title}}</h3>
+                  <p class="fs-18 fw-normal text-gray-600 mb-0">{{$item->description}}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <div class="production-card bg-black h-100 d-flex flex-column overflow-hidden">
-              <div class="production-img w-100 h-100">
-                <img src="{{ asset('assets/images/production-1.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
-              </div>
-              <div class="production-content">
-                <h3 class="fs-23 fw-bold text-white mb-2 mb-lg-3">Values</h3>
-                <p class="fs-18 fw-normal text-gray-600 mb-0">For us, stone is not a product, it's a responsibility.
-                  Our roots are in India, but our standards are world-class</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="production-card bg-black h-100 d-flex flex-column overflow-hidden">
-              <div class="production-img w-100 h-100">
-                <img src="{{ asset('assets/images/production-1.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
-              </div>
-              <div class="production-content">
-                <h3 class="fs-23 fw-bold text-white mb-2 mb-lg-3">Vision</h3>
-                <p class="fs-18 fw-normal text-gray-600 mb-0">To become the most dependable name in natural stone; not
-                  by scale, but by honesty, consistency, and the confidence we bring to every project.</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
+          
         </div>
       </div>
     </div>
@@ -186,61 +151,22 @@
     <div class="container">
       <div class="px-12px">
         <div class="section-heading w-100 mx-auto mb-60">
-          <h3 class="fs-40 fw-bold text-center text-white mb-3">What our clients say</h3>
-          <p class="text-center text-gray-600 fw-normal mb-0 fs-18">Our clients rave about the transformation of their
-            spaces, highlighting our attention to detail and creative flair.</p>
+          <h3 class="fs-40 fw-bold text-center text-white mb-3">OUR LEADERSHIP</h3>
+          <p class="text-center text-gray-600 fw-normal mb-0 fs-18">BIMLA STONE IS PROUDLY LED BY A TEAM THAT COMBINES DEEP INDUSTRY EXPERIENCE WITH A FUTURE-FORWARD VISION.</p>
         </div>
         <div class="leadership-slider">
-          <div>
-            <div class="leadership-card">
-              <div class="leadership-img rounded-circle h-100 w-100 mx-auto mb-3">
-                <img src="{{ asset('assets/images/leadership-img-1.png') }}" alt="images"
-                  class="h-100 w-100 object-fit-cover rounded-circle" />
+          @foreach ($leaders as $leader)
+            <div>
+              <div class="leadership-card">
+                <div class="leadership-img rounded-circle h-100 w-100 mx-auto mb-3">
+                  <img src="{{ asset('uploads/about_us/'. $leader->media) }}" alt="images"
+                    class="h-100 w-100 object-fit-cover rounded-circle" />
+                </div>
+                <h2 class="fs-18 text-black-100 fw-bold mb-3">{{$leader->title}}</h2>
+                <p class="fs-18 fw-normal mb-0 text-black">{{$leader->description}}</p>
               </div>
-              <h2 class="fs-18 text-black-100 fw-bold mb-3">Dinesh Goyal</h2>
-              <p class="fs-18 fw-normal mb-0 text-black">our Founder and Managing Director, brings over two decades of
-                hands-on expertise in sourcing the finest black granite and setting high quality benchmarks. His
-                leadership ensures our commitment to integrity and excellence stays strong, every single day.</p>
             </div>
-          </div>
-          <div>
-            <div class="leadership-card">
-              <div class="leadership-img rounded-circle h-100 w-100 mx-auto mb-3">
-                <img src="{{ asset('assets/images/leadership-img-2.png') }}" alt="images"
-                  class="h-100 w-100 object-fit-cover rounded-circle" />
-              </div>
-              <h2 class="fs-18 text-black-100 fw-bold mb-3">Sanjay Goyal</h2>
-              <p class="fs-18 fw-normal mb-0 text-black"> Co-Founder and Technical Director, is the driving force behind
-                our production innovation. His in-depth knowledge of machinery, manufacturing processes, and finish
-                quality has transformed our operations into one of the most efficient granite facilities in the region.
-              </p>
-            </div>
-          </div>
-          <div>
-            <div class="leadership-card">
-              <div class="leadership-img rounded-circle h-100 w-100 mx-auto mb-3">
-                <img src="{{ asset('assets/images/leadership-img-3.png') }}" alt="images"
-                  class="h-100 w-100 object-fit-cover rounded-circle" />
-              </div>
-              <h2 class="fs-18 text-black-100 fw-bold mb-3">Rohit Goyal</h2>
-              <p class="fs-18 fw-normal mb-0 text-black"> Director – Global Strategy, represents the next generation of
-                leadership at Bimla Stone. With a passion for global expansion and meaningful partnerships, Rohit is
-                leading initiatives that make it easier for international buyers to connect, experience, and trust the
-                brand.</p>
-            </div>
-          </div>
-          <div>
-            <div class="leadership-card">
-              <div class="leadership-img rounded-circle h-100 w-100 mx-auto mb-3">
-                <img src="{{ asset('assets/images/leadership-img-1.png') }}" alt="images"
-                  class="h-100 w-100 object-fit-cover rounded-circle" />
-              </div>
-              <h2 class="fs-18 text-black-100 fw-bold mb-3">Dinesh Goyal</h2>
-              <p class="fs-18 fw-normal mb-0 text-black">our Founder and Managing Director, brings over two decades of
-                hands-on expertise in sourcing the finest black granite and setting high quality benchmarks. His
-                leadership ensures our commitment to integrity and excellence stays strong, every single day.</p>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>

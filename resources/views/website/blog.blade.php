@@ -12,141 +12,21 @@
           material, process, and potential before you decide./p>
         <div class="pt-80 blogs-page">
           <div class="row row-gap-60px">
-            <div class="col-lg-4 col-6 px-2 px-lg-4">
-              <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
-                <div class="blog-img w-100 h-100">
-                  <img src="{{ asset('assets/images/blog-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
-                  <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">Vision</h2>
-                  <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">To become the most dependable name in
-                    natural stone; not by scale, but by honesty, consistency, and the confidence we bring to every
-                    project.</p>
-                  <a href="blog-details.html"
-                    class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-6 px-2 px-lg-4">
-              <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
-                <div class="blog-img w-100 h-100">
-                  <img src="{{ asset('assets/images/blog-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
-                  <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">Vision</h2>
-                  <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">To become the most dependable name in
-                    natural stone; not by scale, but by honesty, consistency, and the confidence we bring to every
-                    project.</p>
-                  <a href="blog-details.html"
-                    class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
+            @foreach($blogs as $blog)
+              <div class="col-lg-4 col-6 px-2 px-lg-4">
+                <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
+                  <div class="blog-img w-100 h-100">
+                    <img src="{{ asset('uploads/blogs/'. $blog->blog_image) }}" alt="images" class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
+                    <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">{{$blog->blog_title}}</h2>
+                    <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">{{$blog->blog_description}}</p>
+                    <a href="{{ route('blog_detail', $blog->id) }}"
+                      class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 col-6 px-2 px-lg-4">
-              <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
-                <div class="blog-img w-100 h-100">
-                  <img src="{{ asset('assets/images/blog-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
-                  <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">Vision</h2>
-                  <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">To become the most dependable name in
-                    natural stone; not by scale, but by honesty, consistency, and the confidence we bring to every
-                    project.</p>
-                  <a href="blog-details.html"
-                    class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-6 px-2 px-lg-4">
-              <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
-                <div class="blog-img w-100 h-100">
-                  <img src="{{ asset('assets/images/blog-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
-                  <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">Vision</h2>
-                  <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">To become the most dependable name in
-                    natural stone; not by scale, but by honesty, consistency, and the confidence we bring to every
-                    project.</p>
-                  <a href="blog-details.html"
-                    class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-6 px-2 px-lg-4">
-              <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
-                <div class="blog-img w-100 h-100">
-                  <img src="{{ asset('assets/images/blog-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
-                  <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">Vision</h2>
-                  <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">To become the most dependable name in
-                    natural stone; not by scale, but by honesty, consistency, and the confidence we bring to every
-                    project.</p>
-                  <a href="blog-details.html"
-                    class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-6 px-2 px-lg-4">
-              <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
-                <div class="blog-img w-100 h-100">
-                  <img src="{{ asset('assets/images/blog-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
-                  <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">Vision</h2>
-                  <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">To become the most dependable name in
-                    natural stone; not by scale, but by honesty, consistency, and the confidence we bring to every
-                    project.</p>
-                  <a href="blog-details.html"
-                    class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-6 px-2 px-lg-4">
-              <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
-                <div class="blog-img w-100 h-100">
-                  <img src="{{ asset('assets/images/blog-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
-                  <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">Vision</h2>
-                  <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">To become the most dependable name in
-                    natural stone; not by scale, but by honesty, consistency, and the confidence we bring to every
-                    project.</p>
-                  <a href="blog-details.html"
-                    class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-6 px-2 px-lg-4">
-              <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
-                <div class="blog-img w-100 h-100">
-                  <img src="{{ asset('assets/images/blog-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
-                  <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">Vision</h2>
-                  <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">To become the most dependable name in
-                    natural stone; not by scale, but by honesty, consistency, and the confidence we bring to every
-                    project.</p>
-                  <a href="blog-details.html"
-                    class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-6 px-2 px-lg-4">
-              <div class="bg-black gap-2 gap-sm-3 gap-lg-4 d-flex flex-column blog-card overflow-hidden">
-                <div class="blog-img w-100 h-100">
-                  <img src="{{ asset('assets/images/blog-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="blog-details px-2 px-sm-3 px-lg-4 pb-2 pb-sm-3 pb-lg-4">
-                  <h2 class="fs-23 text-white fw-bold mb-2 mb-lg-3">Vision</h2>
-                  <p class="fs-18 fw-normal text-gray-600 mb-3 mb-sm-4 mb-lg-5">To become the most dependable name in
-                    natural stone; not by scale, but by honesty, consistency, and the confidence we bring to every
-                    project.</p>
-                  <a href="blog-details.html"
-                    class="btn btn-black border-0 text-white w-100 fs-16 text-decoration-none">Read More</a>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>

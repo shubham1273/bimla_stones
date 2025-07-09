@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\HomePage;
+use App\Models\Blog;
 use App\Models\Product;
 use App\Models\Process;
 use App\Models\career;
@@ -35,7 +36,7 @@ class WebsiteController extends Controller
 
     public function manufacture_process(){
         $section1 = Process::where('page_key', 'section_1')->first();
-        $section2 = Process::where('page_key', 'section_2')->first();
+        $section2 = Process::where('page_key', 'section_2')->get();
         $section3 = Process::where('page_key', 'section_3')->first();
         $section4 = Process::where('page_key', 'section_4')->first();
 
@@ -46,19 +47,22 @@ class WebsiteController extends Controller
 
         $section1 = AboutUsSection::where('page_key', 'section_1')->first();
         $section2 = AboutUsSection::where('page_key', 'section_2')->first();
-        $section3 = AboutUsSection::where('page_key', 'section_3')->first();
+        $section3 = AboutUsSection::where('page_key', 'section_3')->get();
         $section4 = AboutUsSection::where('page_key', 'section_4')->first();
         $section5 = AboutUsSection::where('page_key', 'section_5')->first();
         $section6 = AboutUsSection::where('page_key', 'section_6')->first();
         $section7 = AboutUsSection::where('page_key', 'section_7')->first();
+        $leaders = AboutUsSection::where('page_key', 'our_leadership')->get();
 
-        return view('website.about_us', compact('section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7'));
+        return view('website.about_us', compact('section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7', 'leaders'));
     }
     public function blog(){
-        return view('website.blog');
+        $blogs = Blog::orderBy('created_at', 'desc')->get();
+        return view('website.blog', compact('blogs'));
     }
     public function blog_detail($id){
-        return view('website.blog_detail');
+        $blog = Blog::where('id', $id)->first();
+        return view('website.blog_detail', compact('blog'));
     }
     public function gallery(){
 
