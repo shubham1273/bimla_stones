@@ -10,7 +10,7 @@
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon w-100 h-100">
-                  <img src="../assets/images/toggle.png" alt="menu" class="h-100 w-100 object-fit-cover">
+                  <img src="{{ asset('assets/images/toggle.png') }}" alt="menu" class="h-100 w-100 object-fit-cover">
                 </span>
               </button>
               <div class="collapse navbar-collapse justify-content-end w-100 d-none d-lg-flex" id="navbarText">
@@ -29,7 +29,7 @@
         <a class="navbar-brand text-white p-0 m-0" href="home.html">Bimla Stones</a>
         <button class="navbar-toggler p-0 border-0" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
           <span class="navbar-toggler-icon w-100 h-100">
-            <img src="../assets/images/toggle.png" alt="menu" class="h-100 w-100 object-fit-cover">
+            <img src="{{ asset('assets/images/toggle.png') }}" alt="menu" class="h-100 w-100 object-fit-cover">
           </span>
         </button>
       </div>

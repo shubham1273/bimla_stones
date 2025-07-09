@@ -1,40 +1,7 @@
 @extends('layouts.website')
 @section('title', 'Bimla Stones - Products')
 @section('content')
-<div class="offcanvas offcanvas-mobile offcanvas-end d-block d-lg-none" tabindex="-1" id="offcanvasDarkNavbar"
-        aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="d-flex justify-content-between align-items-center gap-2 mb-4">
-            <a class="navbar-brand text-white p-0 m-0" href="home.html">Bimla Stones</a>
-            <button class="navbar-toggler p-0 border-0" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
-                <span class="navbar-toggler-icon w-100 h-100">
-                    <img src="{{ asset('assets/images/toggle.png') }}" alt="menu" class="h-100 w-100 object-fit-cover">
-                </span>
-            </button>
-        </div>
-        <ul class="navbar-nav h-100">
-            <li class="nav-item">
-                <a class="nav-link px-0 fw-normal" aria-current="page" href="home.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-0 fw-normal" href="product.html">Products</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-0 fw-normal" href="process.html">MAnufacture process</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-0 fw-normal" href="about-us.html">About us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-0 fw-normal" href="blogs.html">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-0 fw-normal" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-0 fw-normal" href="contact-us.html">Contact us</a>
-            </li>
-        </ul>
-    </div>
+
     <section class="pt-60 types-offer-section">
         <div class="container">
             <div class="px-12px">
@@ -44,66 +11,20 @@
                         granite, including highly sought-after variants like:</p>
                 </div>
                 <div class="offer-product-slider pt-80">
-                    <div>
-                        <div class="offer-card h-100 overflow-hidden bg-black d-flex flex-column">
-                            <div class="offer-img h-100 w-100">
-                                <img src="{{ asset('assets/images/offer-1.png') }}" alt="images"
-                                    class="h-100 w-100 object-fit-cover" />
-                            </div>
-                            <div class="offer-content">
-                                <p class="fs-24 text-white fw-normal mb-0">Ultimate
-                                    Black Granite</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="offer-card h-100 overflow-hidden bg-black d-flex flex-column">
-                            <div class="offer-img h-100 w-100">
-                                <img src="{{ asset('assets/images/offer-2.png') }}" alt="images"
-                                    class="h-100 w-100 object-fit-cover" />
-                            </div>
-                            <div class="offer-content">
-                                <p class="fs-24 text-white fw-normal mb-0">Premium
-                                    Black Granite</p>
+
+                    @foreach ($section1 as $item)
+                        <div>
+                            <div class="offer-card h-100 overflow-hidden bg-black d-flex flex-column">
+                                <div class="offer-img h-100 w-100">
+                                    <img src="{{ asset('uploads/products/'. $item->media) }}" alt="images"
+                                        class="h-100 w-100 object-fit-cover" />
+                                </div>
+                                <div class="offer-content">
+                                    <p class="fs-24 text-white fw-normal mb-0">{{$item->title}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="offer-card h-100 overflow-hidden bg-black d-flex flex-column">
-                            <div class="offer-img h-100 w-100">
-                                <img src="{{ asset('assets/images/offer-3.png') }}" alt="images"
-                                    class="h-100 w-100 object-fit-cover" />
-                            </div>
-                            <div class="offer-content">
-                                <p class="fs-24 text-white fw-normal mb-0">Absolute
-                                    Black Granite</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="offer-card h-100 overflow-hidden bg-black d-flex flex-column">
-                            <div class="offer-img h-100 w-100">
-                                <img src="{{ asset('assets/images/offer-4.png') }}" alt="images"
-                                    class="h-100 w-100 object-fit-cover" />
-                            </div>
-                            <div class="offer-content">
-                                <p class="fs-24 text-white fw-normal mb-0">Nova
-                                    Black Granite</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="offer-card h-100 overflow-hidden bg-black d-flex flex-column">
-                            <div class="offer-img h-100 w-100">
-                                <img src="{{ asset('assets/images/offer-1.png') }}" alt="images"
-                                    class="h-100 w-100 object-fit-cover" />
-                            </div>
-                            <div class="offer-content">
-                                <p class="fs-24 text-white fw-normal mb-0">Ultimate
-                                    Black Granite</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -119,110 +40,46 @@
                 <div class="row row-gap-3 mb-40">
                     <div class="col-md-6">
                         <div class="categorie-img">
-                            <img src="{{ asset('assets/images/categories-img-1.png') }}" alt="image"
+                            <img src="{{ asset('uploads/products/'. $section2[0]->media) }}" alt="image"
                                 class="h-100 w-100 object-fit-cover" />
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Blocks</h3>
-                        <p class="fs-16 fw-normal text-gray-600 mb-0">Our black granite blocks are sourced from
-                            certified quarries and dressed for optimal shape and finish. Ideal for monuments, grave
-                            markers, and custom carving projects.</p>
+                        <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">{{$section2[0]->title}}</h3>
+                        <p class="fs-16 fw-normal text-gray-600 mb-0">{{$section2[0]->description}}</p>
                     </div>
                 </div>
                 <div class="row row-gap-3 mb-40 flex-column-reverse flex-md-row">
                     <div class="col-md-6">
-                        <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3 text-end"> Granite Slabs</h3>
-                        <p class="fs-16 fw-normal text-gray-600 mb-0 text-end">Available in standard and custom
-                            thicknesses (2 cm- 30 cm), our slabs are cut with multi-wire saw machines for precise finish
-                            and uniformity. Perfect for black granite kitchen platforms, flooring, bathroom counters,
-                            and dining tables.</p>
+                        <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3 text-end">{{$section2[1]->title}}</h3>
+                        <p class="fs-16 fw-normal text-gray-600 mb-0 text-end">{{$section2[1]->description}}</p>
                     </div>
                     <div class="col-md-6">
                         <div class="categorie-img ms-auto">
-                            <img src="{{ asset('assets/images/categories-img-2.png') }}" alt="image"
+                            <img src="{{ asset('uploads/products/'. $section2[1]->media) }}" alt="image"
                                 class="h-100 w-100 object-fit-cover" />
                         </div>
                     </div>
                 </div>
                 <div class="categories-slider-section mb-40">
                     <div class="categories-slider">
-                        <div>
-                            <div class="categories-card d-flex gap-2 gap-lg-3">
-                                <div class="categories-count">
-                                    <img src="{{ asset('assets/images/count-1.svg') }}" alt="images" />
-                                </div>
-                                <div class="categories-content">
-                                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Cut-to-Size Projects</h3>
-                                    <p class="fs-16 fw-normal text-gray-600 mb-0">Tailored solutions for architects and
-                                        contractors. Ideal for window sills, fireplace surrounds, cabinet tops, and
-                                        staircase designs. We specialize in black granite steps and black granite stairs
-                                        design projects.
-                                    </p>
-                                </div>
-                                <div class="categories-slider-img h-100 w-100">
-                                    <img src="{{ asset('assets/images/categories-slider-img-1.jpg') }}" alt="images"
-                                        class="h-100 w-100 object-fit-cover" />
+                        @foreach ($section3 as $item)
+                            <div>
+                                <div class="categories-card d-flex gap-2 gap-lg-3">
+                                    <div class="categories-count">
+                                        <img src="{{ asset('assets/images/count-' . ($loop->iteration <= 6 ? $loop->iteration : 6) . '.svg') }}" alt="count" />
+                                    </div>
+                                    <div class="categories-content">
+                                        <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">{{$item->title}}</h3>
+                                        <p class="fs-16 fw-normal text-gray-600 mb-0">{{$item->description}}</p>
+                                    </div>
+                                    <div class="categories-slider-img h-100 w-100">
+                                        <img src="{{ asset('uploads/products/'. $item->media) }}" alt="images"
+                                            class="h-100 w-100 object-fit-cover" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="categories-card d-flex gap-2 gap-lg-3">
-                                <div class="categories-count">
-                                    <img src="{{ asset('assets/images/count-2.svg') }}" alt="images" />
-                                </div>
-                                <div class="categories-content">
-                                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Cut-to-Size Projects</h3>
-                                    <p class="fs-16 fw-normal text-gray-600 mb-0">Tailored solutions for architects and
-                                        contractors. Ideal for window sills, fireplace surrounds, cabinet tops, and
-                                        staircase designs. We specialize in black granite steps and black granite stairs
-                                        design projects.
-                                    </p>
-                                </div>
-                                <div class="categories-slider-img h-100 w-100">
-                                    <img src="{{ asset('assets/images/categories-slider-img-2.jpg') }}" alt="images"
-                                        class="h-100 w-100 object-fit-cover" />
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="categories-card d-flex gap-2 gap-lg-3">
-                                <div class="categories-count">
-                                    <img src="{{ asset('assets/images/count-3.svg') }}" alt="images" />
-                                </div>
-                                <div class="categories-content">
-                                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Cut-to-Size Projects</h3>
-                                    <p class="fs-16 fw-normal text-gray-600 mb-0">Tailored solutions for architects and
-                                        contractors. Ideal for window sills, fireplace surrounds, cabinet tops, and
-                                        staircase designs. We specialize in black granite steps and black granite stairs
-                                        design projects.
-                                    </p>
-                                </div>
-                                <div class="categories-slider-img h-100 w-100">
-                                    <img src="{{ asset('assets/images/categories-slider-img-1.jpg') }}" alt="images"
-                                        class="h-100 w-100 object-fit-cover" />
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="categories-card d-flex gap-2 gap-lg-3">
-                                <div class="categories-count">
-                                    <img src="{{ asset('assets/images/count-4.svg') }}" alt="images" />
-                                </div>
-                                <div class="categories-content">
-                                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Cut-to-Size Projects</h3>
-                                    <p class="fs-16 fw-normal text-gray-600 mb-0">Tailored solutions for architects and
-                                        contractors. Ideal for window sills, fireplace surrounds, cabinet tops, and
-                                        staircase designs. We specialize in black granite steps and black granite stairs
-                                        design projects.
-                                    </p>
-                                </div>
-                                <div class="categories-slider-img h-100 w-100">
-                                    <img src="{{ asset('assets/images/categories-slider-img-2.jpg') }}" alt="images"
-                                        class="h-100 w-100 object-fit-cover" />
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="d-flex gap-2">
                         <div class="prev arrow-box d-flex justify-content-center align-items-center rounded-circle">
@@ -245,14 +102,12 @@
                 </div>
                 <div class="row row-gap-3 mb-40 flex-column-reverse flex-md-row align-items-center">
                     <div class="col-md-6">
-                        <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3 text-end"> Cobblestones</h3>
-                        <p class="fs-16 fw-normal text-gray-600 mb-0 text-end">Durable and versatile, our black granite
-                            cobblestones are great for exterior walkways, garden paths, and timeless landscaping
-                            elements.</p>
+                        <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3 text-end">{{$section4[0]->title}}</h3>
+                        <p class="fs-16 fw-normal text-gray-600 mb-0 text-end">{{$section4[0]->description}}</p>
                     </div>
                     <div class="col-md-6">
                         <div class="categorie-img ms-auto">
-                            <img src="{{ asset('assets/images/categories-img-3.png') }}" alt="image"
+                            <img src="{{ asset('uploads/products/'. $section4[0]->media) }}" alt="image"
                                 class="h-100 w-100 object-fit-cover" />
                         </div>
                     </div>
@@ -260,16 +115,13 @@
                 <div class="row row-gap-3">
                     <div class="col-md-6">
                         <div class="categorie-img">
-                            <img src="{{ asset('assets/images/categories-img-4.png') }}" alt="image"
+                            <img src="{{ asset('uploads/products/'. $section4[1]->media) }}" alt="image"
                                 class="h-100 w-100 object-fit-cover" />
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Monuments & Headstones</h3>
-                        <p class="fs-16 fw-normal text-gray-600 mb-0">We manufacture black granite headstones, grave
-                            markers, and memorial units with precise edge-finishing and a choice of polished or
-                            leathered textures. You can request black granite headstone designs suited to personal or
-                            cultural preferences.</p>
+                        <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">{{$section4[1]->title}}</h3>
+                        <p class="fs-16 fw-normal text-gray-600 mb-0">{{$section4[1]->description}}</p>
                     </div>
                 </div>
             </div>
@@ -285,79 +137,20 @@
                 </div>
                 <div class="mb-60">
                     <div class="row row-gap-60px mb-60">
-                        <div class="col-lg-4 col-6 px-1 px-sm-2 px-lg-3">
-                            <div class="vision-card bg-black h-100 d-flex flex-column overflow-hidden">
-                                <div class="vision-img w-100 h-100">
-                                    <img src="{{ asset('assets/images/vision-1.png') }}" alt="images"
-                                        class="w-100 h-100 object-fit-cover" />
-                                </div>
-                                <div class="vision-content">
-                                    <p class="fs-23 fw-bold text-white mb-1 mb-sm-2 mb-lg-3">Polish</p>
-                                    <p class="fs-18 text-gray-600 fw-normal mb-0">High-gloss, elegan</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 px-1 px-sm-2 px-lg-3">
-                            <div class="vision-card bg-black h-100 d-flex flex-column overflow-hidden">
-                                <div class="vision-img w-100 h-100">
-                                    <img src="{{ asset('assets/images/vision-2.png') }}" alt="images"
-                                        class="w-100 h-100 object-fit-cover" />
-                                </div>
-                                <div class="vision-content">
-                                    <p class="fs-23 fw-bold text-white mb-1 mb-sm-2 mb-lg-3">Leather</p>
-                                    <p class="fs-18 text-gray-600 fw-normal mb-0">Textured, non-slip</p>
+                        @foreach ($section5 as $item)
+                            <div class="col-lg-4 col-6 px-1 px-sm-2 px-lg-3">
+                                <div class="vision-card bg-black h-100 d-flex flex-column overflow-hidden">
+                                    <div class="vision-img w-100 h-100">
+                                        <img src="{{ asset('uploads/products/'. $item->media) }}" alt="images"
+                                            class="w-100 h-100 object-fit-cover" />
+                                    </div>
+                                    <div class="vision-content">
+                                        <p class="fs-23 fw-bold text-white mb-1 mb-sm-2 mb-lg-3">{{$item->title}}</p>
+                                        <p class="fs-18 text-gray-600 fw-normal mb-0">{{$item->description}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-6 px-1 px-sm-2 px-lg-3">
-                            <div class="vision-card bg-black h-100 d-flex flex-column overflow-hidden">
-                                <div class="vision-img w-100 h-100">
-                                    <img src="{{ asset('assets/images/vision-3.png') }}" alt="images"
-                                        class="w-100 h-100 object-fit-cover" />
-                                </div>
-                                <div class="vision-content">
-                                    <p class="fs-23 fw-bold text-white mb-1 mb-sm-2 mb-lg-3">Honed</p>
-                                    <p class="fs-18 text-gray-600 fw-normal mb-0">Smooth and matte</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 px-1 px-sm-2 px-lg-3">
-                            <div class="vision-card bg-black h-100 d-flex flex-column overflow-hidden">
-                                <div class="vision-img w-100 h-100">
-                                    <img src="{{ asset('assets/images/vision-4.png') }}" alt="images"
-                                        class="w-100 h-100 object-fit-cover" />
-                                </div>
-                                <div class="vision-content">
-                                    <p class="fs-23 fw-bold text-white mb-1 mb-sm-2 mb-lg-3">Flamed</p>
-                                    <p class="fs-18 text-gray-600 fw-normal mb-0">Rough surface for exterior use</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 px-1 px-sm-2 px-lg-3">
-                            <div class="vision-card bg-black h-100 d-flex flex-column overflow-hidden">
-                                <div class="vision-img w-100 h-100">
-                                    <img src="{{ asset('assets/images/vision-5.png') }}" alt="images"
-                                        class="w-100 h-100 object-fit-cover" />
-                                </div>
-                                <div class="vision-content">
-                                    <p class="fs-23 fw-bold text-white mb-1 mb-sm-2 mb-lg-3">Flamed & Brushed</p>
-                                    <p class="fs-18 text-gray-600 fw-normal mb-0">Subtle texture with grip</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 px-1 px-sm-2 px-lg-3">
-                            <div class="vision-card bg-black h-100 d-flex flex-column overflow-hidden">
-                                <div class="vision-img w-100 h-100">
-                                    <img src="{{ asset('assets/images/vision-6.png') }}" alt="images"
-                                        class="w-100 h-100 object-fit-cover" />
-                                </div>
-                                <div class="vision-content">
-                                    <p class="fs-23 fw-bold text-white mb-1 mb-sm-2 mb-lg-3">Dual Finish</p>
-                                    <p class="fs-18 text-gray-600 fw-normal mb-0"> Custom finish on either side of the
-                                        slab</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <p class="fs-18 text-gray-600 font-normal mb-0 vision-text w-100 mx-auto text-center">Whether you’re
