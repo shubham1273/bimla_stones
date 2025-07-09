@@ -6,7 +6,7 @@
           <div class="d-flex gap-3 gap-sm-5 flex-row flex-lg-column footer-col-1">
             <div class="footer-logo">
               <a href="home.html"
-                class="fs-40 fw-bold text-white text-decoration-none mb-3 mb-lg-4 d-block d-block">Bimla Stones</a>
+                class="fs-40 fw-bold text-white text-decoration-none mb-3 mb-lg-4 d-block d-block">{{ getSetting('website_name', 'Bimla Stones') }}</a>
               <p class="fs-20 text-gray fw-normal mb-3 mb-lg-4">Trusted suppliers of premium black granite and custom
                 stone solutions.</p>
               <a href="https://maps.app.goo.gl/x1VJZQvFC5erm1TX9" class="btn btn-primary-bg border-0 text-white w-100 fs-16 get-location">Get Location</a>
@@ -267,35 +267,35 @@
     });
     
     // blog slider
-    document.querySelectorAll('.video-container').forEach(container => {
-      const video = container.querySelector('.my-video');
-      const videoImg = container.querySelector('.video-thumbnail');
-      const playBtn = container.querySelector('.play-button');
-      const playIcon = playBtn.querySelector('i');
-      let started = false;
+    // document.querySelectorAll('.video-container').forEach(container => {
+    //   const video = container.querySelector('.my-video');
+    //   const videoImg = container.querySelector('.video-thumbnail');
+    //   const playBtn = container.querySelector('.play-button');
+    //   const playIcon = playBtn.querySelector('i');
+    //   let started = false;
 
-      playBtn.addEventListener('click', () => {
-        if (!started) {
-          videoImg.style.display = 'none';
-          video.style.display = 'block';
-          video.play();
-          container.classList.add('video-started');
-          started = true;
-          playIcon.classList.remove('fa-play');
-          playIcon.classList.add('fa-pause');
-        } else {
-          if (video.paused) {
-            video.play();
-            playIcon.classList.remove('fa-play');
-            playIcon.classList.add('fa-pause');
-          } else {
-            video.pause();
-            playIcon.classList.remove('fa-pause');
-            playIcon.classList.add('fa-play');
-          }
-        }
-      });
-    });
+    //   playBtn.addEventListener('click', () => {
+    //     if (!started) {
+    //       videoImg.style.display = 'none';
+    //       video.style.display = 'block';
+    //       video.play();
+    //       container.classList.add('video-started');
+    //       started = true;
+    //       playIcon.classList.remove('fa-play');
+    //       playIcon.classList.add('fa-pause');
+    //     } else {
+    //       if (video.paused) {
+    //         video.play();
+    //         playIcon.classList.remove('fa-play');
+    //         playIcon.classList.add('fa-pause');
+    //       } else {
+    //         video.pause();
+    //         playIcon.classList.remove('fa-pause');
+    //         playIcon.classList.add('fa-play');
+    //       }
+    //     }
+    //   });
+    // });
 
     // career slider
     $(".job-slider").slick({

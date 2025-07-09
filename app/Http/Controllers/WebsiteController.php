@@ -10,6 +10,8 @@ use App\Models\Gallery;
 use App\Models\AboutUsSection;
 use App\Models\GeneralSetting;
 use App\Models\Founder;
+use App\Models\JobsOpening;
+use App\Models\Faq;
 
 use Illuminate\Http\Request;
 
@@ -90,9 +92,10 @@ class WebsiteController extends Controller
     {
         $section1 = career::where('page_key', 'section_1')->first();
         $section2 = career::where('page_key', 'section_2')->first();
+        $jobs = JobsOpening::orderBy('created_at', 'desc')->get();
+        $faqs = Faq::orderBy('created_at', 'desc')->get();
 
-
-        return view('website.career', compact('section1', 'section2'));
+        return view('website.career', compact('section1', 'section2', 'jobs', 'faqs'));
 
     }
 }

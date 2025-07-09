@@ -134,9 +134,9 @@
   <section class="pt-80">
     <div class="stronger-section">
       <div class="container">
-        <div class="section-heading w-100 mx-auto">
+        <div class="section-heading w-100 mx-auto text-white">
           <h3 class="fs-40 fw-normal text-center text-white mb-4">{{$section2->title}}</h3>
-          <p class="text-center text-gray-600 fw-normal mb-0 fs-18">{{$section2->description}}</p>
+          <p class="text-center text-gray-600 fw-normal mb-0 fs-18">{!! $section2->description !!}</p>
         </div>
       </div>
     </div>

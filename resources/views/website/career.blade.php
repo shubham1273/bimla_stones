@@ -15,7 +15,7 @@
           </div>
           <div class="col-lg-7 bg-black">
             <div class="d-flex justify-content-center align-items-center h-100">
-              <div class="py-4 pe-3">
+              <div class="py-4 pe-3 text-white">
                 {!! $section2->description !!}
               </div>
             </div>
@@ -29,74 +29,21 @@
       <div class="container">
         <h3 class="text-center mb-60 text-white fs-40">Open Positions / Job Listings</h3>
         <div class="job-slider">
-          <div>
-            <div class="jobs-card">
-              <div class="text-center">
-                <div class="mb-3 mb-lg-4">
-                  <h3 class="fs-24 fw-bold text-white mb-2">Export Manager</h3>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">International Sales</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">Hosur, Tamil Nadu</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">Full-time</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-0">3+ years Experience</p>
+          @foreach($jobs as $job)
+            <div>
+              <div class="jobs-card">
+                <div class="text-center">
+                  <div class="mb-3 mb-lg-4 text-white">
+                    <h3 class="fs-24 fw-bold text-white mb-2">{{$job->title}}</h3>
+                    {!! $job->description !!}
+                  </div>
+                  <a href="#"
+                    class="btn btn-primary-bg border-0 text-white w-100 fs-16 d-block text-decoration-none">Apply Now</a>
                 </div>
-                <p class="fs-18 text-gray-600 fw-normal mb-40">Manage overseas clients, handle export documentation,
-                  coordinate logistics</p>
-                <a href="#"
-                  class="btn btn-primary-bg border-0 text-white w-100 fs-16 d-block text-decoration-none">Apply Now</a>
               </div>
             </div>
-          </div>
-          <div>
-            <div class="jobs-card">
-              <div class="text-center">
-                <div class="mb-3 mb-lg-4">
-                  <h3 class="fs-24 fw-bold text-white mb-2">Export Manager</h3>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">International Sales</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">Hosur, Tamil Nadu</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">Full-time</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-0">3+ years Experience</p>
-                </div>
-                <p class="fs-18 text-gray-600 fw-normal mb-40">Manage overseas clients, handle export documentation,
-                  coordinate logistics</p>
-                <a href="#"
-                  class="btn btn-primary-bg border-0 text-white w-100 fs-16 d-block text-decoration-none">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="jobs-card">
-              <div class="text-center">
-                <div class="mb-3 mb-lg-4">
-                  <h3 class="fs-24 fw-bold text-white mb-2">Export Manager</h3>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">International Sales</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">Hosur, Tamil Nadu</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">Full-time</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-0">3+ years Experience</p>
-                </div>
-                <p class="fs-18 text-gray-600 fw-normal mb-40">Manage overseas clients, handle export documentation,
-                  coordinate logistics</p>
-                <a href="#"
-                  class="btn btn-primary-bg border-0 text-white w-100 fs-16 d-block text-decoration-none">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="jobs-card">
-              <div class="text-center">
-                <div class="mb-3 mb-lg-4">
-                  <h3 class="fs-24 fw-bold text-white mb-2">Export Manager</h3>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">International Sales</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">Hosur, Tamil Nadu</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-2">Full-time</p>
-                  <p class="fs-18 text-gray-600 fw-normal mt-1 mb-0">3+ years Experience</p>
-                </div>
-                <p class="fs-18 text-gray-600 fw-normal mb-40">Manage overseas clients, handle export documentation,
-                  coordinate logistics</p>
-                <a href="#"
-                  class="btn btn-primary-bg border-0 text-white w-100 fs-16 d-block text-decoration-none">Apply Now</a>
-              </div>
-            </div>
-          </div>
+          @endforeach
+          
         </div>
       </div>
     </div>
@@ -197,74 +144,25 @@
         <h3 class="text-center text-white fw-bold fs-40 mb-60">FAQs</h3>
         <div class="p-3 p-sm-4 bg-black-200 faq-main-section">
           <div class="accordion" id="accordionExample">
-            <div class="accordion-item border-0 bg-transparent">
-              <h2 class="accordion-header">
-                <button class="accordion-button fs-16" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  How do I apply?
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <p class="fs-16 text-gray-600 fw-normal mb-0">You can apply for any open position by filling out the
-                    application form available on this page. Simply select the job you're interested in, click "Apply
-                    Now", and submit your details along with your resume. If you don’t find a suitable role listed, you
-                    can still send us your resume at careers@bimlastone.com. We’ll keep it on file and reach out if a
-                    matching opportunity comes up.</p>
+            @foreach($faqs as $faq)
+              <div class="accordion-item border-0 bg-transparent">
+                <h2 class="accordion-header" id="heading{{ $loop->index }}">
+                  <button class="accordion-button fs-16 {{ $loop->first ? '' : 'collapsed' }}" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{ $loop->index }}"
+                    aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                    aria-controls="collapse{{ $loop->index }}">
+                    {{ $faq->title }}
+                  </button>
+                </h2>
+                <div id="collapse{{ $loop->index }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                  aria-labelledby="heading{{ $loop->index }}" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p class="fs-16 text-gray-600 fw-normal mb-0">{{ $faq->description }}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="accordion-item border-0 bg-transparent">
-              <h2 class="accordion-header">
-                <button class="accordion-button fs-16 collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  What is the recruitment process?
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <p class="fs-16 text-gray-600 fw-normal mb-0">You can apply for any open position by filling out the
-                    application form available on this page. Simply select the job you're interested in, click "Apply
-                    Now", and submit your details along with your resume. If you don’t find a suitable role listed, you
-                    can still send us your resume at careers@bimlastone.com. We’ll keep it on file and reach out if a
-                    matching opportunity comes up.</p>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item border-0 bg-transparent">
-              <h2 class="accordion-header">
-                <button class="accordion-button fs-16 collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Are internships or apprenticeships available?
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <p class="fs-16 text-gray-600 fw-normal mb-0">You can apply for any open position by filling out the
-                    application form available on this page. Simply select the job you're interested in, click "Apply
-                    Now", and submit your details along with your resume. If you don’t find a suitable role listed, you
-                    can still send us your resume at careers@bimlastone.com. We’ll keep it on file and reach out if a
-                    matching opportunity comes up.</p>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item border-0 bg-transparent">
-              <h2 class="accordion-header">
-                <button class="accordion-button fs-16 collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                  What are the working hours?
-                </button>
-              </h2>
-              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <p class="fs-16 text-gray-600 fw-normal mb-0">You can apply for any open position by filling out the
-                    application form available on this page. Simply select the job you're interested in, click "Apply
-                    Now", and submit your details along with your resume. If you don’t find a suitable role listed, you
-                    can still send us your resume at careers@bimlastone.com. We’ll keep it on file and reach out if a
-                    matching opportunity comes up.</p>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>
