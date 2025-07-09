@@ -39,9 +39,8 @@
     <div class="container">
       <div class="px-12px">
         <div class="section-heading w-100 mx-auto mb-60">
-          <h3 class="fs-40 fw-bold text-center text-white mb-3">Our Process</h3>
-          <p class="text-start text-sm-center text-gray-600 fw-normal mb-0 fs-18">From <span
-              class="fw-bold">Quarry</span> to <span class="fw-bold">Quality</span> – Here’s How We Work.</p>
+          <h3 class="fs-40 fw-bold text-center text-white mb-3">{{$section1->title}}</h3>
+          <p class="text-start text-sm-center text-gray-600 fw-normal mb-0 fs-18">{{$section1->description}}</p>
         </div>
         <div class="process-video">
           <div
@@ -53,7 +52,7 @@
               <img src="{{ asset('assets/images/process-video-bg.jpg') }}" alt="Video Thumbnail" class="video-thumbnail">
               <video class="my-video">
                 <source
-                  src="https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4"
+                  src="{{ asset('uploads/process/' . $section1->media) }}"
                   type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -68,6 +67,7 @@
       <div class="container">
         <div class="categories-slider-section mb-40">
           <div class="categories-slider">
+
             <div>
               <div class="categories-card d-flex gap-2 gap-lg-3">
                 <div class="categories-count">
@@ -75,12 +75,8 @@
                 </div>
                 <div class="d-flex gap-2 row-gap-3 align-items-start w-100 flex-column flex-lg-row">
                   <div class="categories-content">
-                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">Sourcing the Finest Raw Stones</h3>
-                    <p class="fs-16 fw-normal text-gray-600 mb-0">Our journey begins at the quarry. Expert block markers
-                      hand-select granite blocks from approved quarry sites, ensuring every piece is free from cracks,
-                      patches, fissures, or color inconsistencies. Each block is marked, numbered, and classified into
-                      categories such as Gang-Saw, Mini Gang-Saw, Cutter Blocks, based on precise dimensions and
-                      use-case suitability.
+                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">{{$section2->title}}</h3>
+                    <p class="fs-16 fw-normal text-gray-600 mb-0">{{$section2->description}}
                     </p>
                   </div>
                   <div class="categories-slider-img h-100 w-100">
@@ -90,71 +86,7 @@
                 </div>
               </div>
             </div>
-            <div>
-              <div class="categories-card d-flex gap-2 gap-lg-3">
-                <div class="categories-count">
-                  <img src="{{ asset('assets/images/count-2.svg') }}" alt="images" />
-                </div>
-                <div class="d-flex gap-2 row-gap-3 align-items-start w-100 flex-column flex-lg-row">
-                  <div class="categories-content">
-                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Block Dressing & Pre-Cutting</h3>
-                    <p class="fs-16 fw-normal text-gray-600 mb-0">Once the blocks reach our factory yard, they go
-                      through a critical dressing phase using a mono wire-saw machine. This brings the block into a
-                      perfect cube, allowing all surfaces to be properly assessed. Only blocks that pass this inspection
-                      move forward. Depending on client requirements, we categorize the order as “Process on Order,”
-                      “Regular Order,” or “Cut-to-Size,” each with its own pathway of customization.
-                    </p>
-                  </div>
-                  <div class="categories-slider-img h-100 w-100">
-                    <img src="{{ asset('assets/images/categories-slider-img-2.jpg') }}" alt="images"
-                      class="h-100 w-100 object-fit-cover" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="categories-card d-flex gap-2 gap-lg-3">
-                <div class="categories-count">
-                  <img src="{{ asset('assets/images/count-3.svg') }}" alt="images" />
-                </div>
-                <div class="d-flex gap-2 row-gap-3 align-items-start w-100 flex-column flex-lg-row">
-                  <div class="categories-content">
-                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Cutting into Precision Slabs</h3>
-                    <p class="fs-16 fw-normal text-gray-600 mb-0">The dressed blocks are then sent to our multi wire-saw
-                      machine, where they’re cut into slabs with high accuracy. We can deliver slabs in various
-                      thicknesses like  2 cm-30 cm depending on client needs. Our exceptional cutting line can process
-                      up to 4550 square feet of granite in just 8 hours, ensuring both speed and scale.
-                    </p>
-                  </div>
-                  <div class="categories-slider-img h-100 w-100">
-                    <img src="{{ asset('assets/images/categories-slider-img-1.jpg') }}" alt="images"
-                      class="h-100 w-100 object-fit-cover" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="categories-card d-flex gap-2 gap-lg-3">
-                <div class="categories-count">
-                  <img src="{{ asset('assets/images/count-4.svg') }}" alt="images" />
-                </div>
-                <div class="d-flex gap-2 row-gap-3 align-items-start w-100 flex-column flex-lg-row">
-                  <div class="categories-content">
-                    <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3"> Surface Finishing & Textures</h3>
-                    <p class="fs-16 fw-normal text-gray-600 mb-0">The freshly cut slabs undergo surface finishing
-                      through our line polishing machine, which comes equipped with edge cutting and flaming
-                      capabilities. We offer multiple finishes like Polished, Leathered, Honed, Flamed, Flamed &
-                      Brushed, and Dual Finish (different finishes on either side), tailored to your requirements. This
-                      step gives the granite its final texture, gloss, and utility. 
-                    </p>
-                  </div>
-                  <div class="categories-slider-img h-100 w-100">
-                    <img src="{{ asset('assets/images/categories-slider-img-2.jpg') }}" alt="images"
-                      class="h-100 w-100 object-fit-cover" />
-                  </div>
-                </div>
-              </div>
-            </div>
+
             <div>
               <div class="categories-card d-flex gap-2 gap-lg-3">
                 <div class="categories-count">
@@ -224,15 +156,11 @@
     <div class="px-12px">
       <div class="container">
         <div class="mb-60">
-          <h3 class="text-white fs-40 fw-bold mb-3">Safety is Non-Negotiable at Bimla Stone</h3>
-          <p class="text-gray-600 fs-18 fw-normal mb-0">From block handling to final finishing, every stage of our
-            production process is carried out with strict safety protocols in place. Our team is trained to use the
-            right gear, follow disciplined workflows, and handle heavy machinery with precision and care. Regular safety
-            drills, equipment checks, and monitoring ensure zero compromise, for both our people and the stone.
-            Everything is processed in a well-structured, hazard-free environment that puts human well-being first.</p>
+          <h3 class="text-white fs-40 fw-bold mb-3">{{$section3->title}}</h3>
+          <p class="text-gray-600 fs-18 fw-normal mb-0">{{$section3->description}}</p>
         </div>
         <div class="bimla-img w-100 h-100 overflow-hidden">
-          <img src="{{ asset('assets/images/bimla-stone.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
+          <img src="{{ asset('uploads/process/' . $section3->media) }}" alt="images" class="w-100 h-100 object-fit-cover" />
         </div>
       </div>
     </div>
@@ -244,8 +172,7 @@
         <div class="story-hero-section">
           <div class="row row-gap-3 align-items-center">
             <div class="col-lg-6 col-7">
-              <h2 class="fs-24 fw-bold text-white mb-2 mb-lg-3  text-start">Get the perfect granite for your project,
-                the way you imagined it.</h2>
+              <h2 class="fs-24 fw-bold text-white mb-2 mb-lg-3  text-start">{{$section4->title}}</h2>
               <a href="#" class="btn btn-primary-bg border-0 text-white w-100 fs-16">Speak to an Expert</a>
             </div>
             <div class="col-lg-6 col-5">

@@ -39,29 +39,20 @@
     <div class="container">
       <div class="px-12px">
         <div class="mb-60">
-          <h3 class="fs-40 text-white fw-bold mb-3">Crafted by Nature, Perfected by Us</h3>
-          <p class="fs-18 text-gray-600 mb-0 fw-normal">Welcome to our gallery: a visual journey through the heart of
-            our craftsmanship. From the first cut of raw <span class="fw-bold text-white">black granite blocks</span> to
-            the final finish of <span class="text-white fw-bold">polished slabs</span>, each image here reflects the
-            precision, power, and passion behind our process.</p>
+          <h3 class="fs-40 text-white fw-bold mb-3">{{$section1->title}}</h3>
+          <p class="fs-18 text-gray-600 mb-0 fw-normal">{{$section1->description}}</p>
         </div>
+
+        @foreach($section1 as $gallery)
         <div class="row row-gap-3">
           <div class="col-lg-6">
             <div class="gallery-1 h-100 w-100">
-              <img src="{{ asset('assets/images/gallery-1.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
+              <img src="{{ asset('uploads/gallery/' . $section1->media) }}" alt="images" class="h-100 w-100 object-fit-cover" />
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="d-flex flex-row flex-lg-column h-100 gap-3">
-              <div class="gallery-2 h-100 w-100">
-                <img src="{{ asset('assets/images/gallery-2.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
-              </div>
-              <div class="gallery-2 h-100 w-100">
-                <img src="{{ asset('assets/images/gallery-3.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
-              </div>
-            </div>
-          </div>
+
         </div>
+        @endforeach
       </div>
     </div>
   </div>

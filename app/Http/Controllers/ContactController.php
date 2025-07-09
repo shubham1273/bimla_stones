@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Contact;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ContactExport;
 
 
 use Illuminate\Http\Request;
@@ -43,5 +45,10 @@ class ContactController extends Controller
         $contact->save();
 
         return redirect()->back()->with('success', 'Contact deleted successfully.');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ContactExport, 'contact_enquiries.xlsx');
     }
 }

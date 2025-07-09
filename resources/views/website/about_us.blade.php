@@ -41,18 +41,14 @@
       <div class="hero-section">
         <div class="row row-gap-3">
           <div class="col-lg-6 mt-0 mt-lg-4">
-            <h2 class="fs-40 fw-bold text-white mb-2 mb-lg-3  text-center text-lg-start">A Legacy Built on Black Granite
+            <h2 class="fs-40 fw-bold text-white mb-2 mb-lg-3  text-center text-lg-start">{{$section1->title}}
             </h2>
-            <p class="fs-18 text-gray-600 mb-0 fw-normal">For over 25 years, Bimla Stone has stood as a trusted name in
-              the world of black granite. Headquartered in Chamrajnagar, Karnataka, the heart of India’s granite
-              quarrying region, we have grown into one of the country’s most respected manufacturers and exporters of
-              premium-quality granite. With deep industry knowledge and a commitment to quality, we cater to clients
-              across India and international markets who seek reliability, precision, and a long-term supply partner. 
+            <p class="fs-18 text-gray-600 mb-0 fw-normal">{{$section1->description}} 
             </p>
           </div>
           <div class="col-lg-6">
             <div class="about-hero-img h-100 w-100">
-              <img src="{{ asset('assets/images/about-us-hero-img.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
+              <img src="{{ asset('uploads/about_us/' . $section1->media) }}" alt="images" class="h-100 w-100 object-fit-cover" />
             </div>
           </div>
         </div>
@@ -76,23 +72,16 @@
               <img src="{{ asset('assets/images/video-full-img.png') }}" alt="Video Thumbnail" class="video-thumbnail">
               <video class="my-video">
                 <source
-                  src="https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4"
+                  src="{{ asset('uploads/about_us/' . $section2->media) }}"
                   type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
           </div>
           <div class="px-4">
-            <h2 class="fs-40 text-white fw-bold mb-3 mb-lg-4">Every Stone Tells a Story</h2>
+            <h2 class="fs-40 text-white fw-bold mb-3 mb-lg-4">{{$section2->title}}</h2>
             <p class="fs-18 fw-normal text-gray-600 mb-3 mb-lg-4">
-              Explore our curated selection of photographs and videos featuring our factory in motion, advanced
-              machinery, custom-cut projects, packaging and loading, and the timeless beauty of <span
-                class="text-white fs-18 fw-bold">black granite</span> in real spaces, kitchens, countertops, monuments,
-              and more.
-            </p>
-            <p class="fs-18 fw-normal text-gray-600 mb-3 mb-lg-4">
-              This is where <span class="text-white fs-18 fw-bold">quality meets clarity</span>, and where you can see
-              why businesses around the world choose us to bring their vision to life.
+                {{$section2->description}}
             </p>
           </div>
         </div>
@@ -154,34 +143,24 @@
     <div class="container">
       <div class="px-12px">
         <div class="w-100 mx-auto mb-120px">
-          <h3 class="fs-40 fw-bold text-center text-white mb-3">Transparency, Service, and Trust</h3>
-          <p class="text-start text-gray-600 fw-normal mb-0 fs-18">Beyond technical strength, what sets us apart is our
-            commitment to transparency and service. Every client, whether a first-time buyer or a long-standing partner,
-            receives timely updates, honest communication, and dependable delivery. Our order management system is
-            structured to handle both regular and custom requests with care, ensuring seamless coordination from inquiry
-            to dispatch. We also ensure that packaging and lashing meet global safety norms so that every crate reaches
-            its destination securely.</p>
+          <h3 class="fs-40 fw-bold text-center text-white mb-3">{{$section4->title}}</h3>
+          <p class="text-start text-gray-600 fw-normal mb-0 fs-18">{{$section4->description}}</p>
         </div>
       </div>
     </div>
     <div class="trust-img h-100 w-100 mb-120px">
-      <img src="{{ asset('assets/images/trust-img.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
+      <img src="{{ asset('uploads/about_us/' . $section4->media) }}" alt="images" class="h-100 w-100 object-fit-cover" />
     </div>
     <div class="container">
       <div class="px-12px">
         <div class="row row-gap-4">
           <div class="col-lg-6">
-            <h3 class="fs-40 text-white fw-bold mb-3">Experience Before You Decide</h3>
-            <p class="fs-18 text-gray-600 fw-normal mb-0">We understand that granite is a long-term investment, and we
-              want our clients to be confident in their choices. That’s why we offer something unique, the ability to
-              request and review samples before making a purchase. Whether you're selecting a texture, a finish, or
-              verifying color consistency, our sampling system allows you to assess the material in real conditions.
-              This transparency and flexibility have helped us earn trust in markets where quality, feel, and finish are
-              non-negotiable.</p>
+            <h3 class="fs-40 text-white fw-bold mb-3">{{$section5->title}}</h3>
+            <p class="fs-18 text-gray-600 fw-normal mb-0">{{$section5->description}}</p>
           </div>
           <div class="col-lg-6">
             <div class="decide-img h-100 w-100">
-              <img src="{{ asset('assets/images/decide-img.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
+              <img src="{{ asset('uploads/about_us/' . $section5->media) }}" alt="images" class="h-100 w-100 object-fit-cover" />
             </div>
           </div>
         </div>
@@ -192,23 +171,18 @@
     <div class="px-12px">
       <div class="container">
         <div class="w-100 mx-auto mb-60">
-          <h3 class="fs-40 fw-bold text-center text-white mb-0">Why Partner With Us</h3>
+          <h3 class="fs-40 fw-bold text-center text-white mb-0">{{$section6->title}}</h3>
         </div>
         <div class="row stands-row overflow-hidden mx-0">
           <div class="col-lg-5 bg-black ps-0 pe-0 pe-lg-4">
             <div class="choose-img w-100 h-100">
-              <img src="{{ asset('assets/images/partner-img.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
+              <img src="{{ asset('uploads/about_us/' . $section6->media) }}" alt="images" class="w-100 h-100 object-fit-cover" />
             </div>
           </div>
           <div class="col-lg-7 bg-black">
             <div class="d-flex justify-content-center align-items-center h-100 px-12px px-3">
               <div class="py-4 pe-0 pe-lg-3">
-                <p class="fs-18 text-gray-600 fw-normal mb-3 mb-lg-4">Bimla Stone is more than a supplier, we’re a
-                  growth partner. We support retailers, developers, and distributors with reliable logistics, consistent
-                  quality, and responsive support. <span class="text-white fw-bold">Our long-term vision is to build
-                    strong</span>, lasting partnerships, and that’s reflected in everything we do, from offering <span
-                    class="text-white fw-bold">custom packaging</span> and flexible MOQs to helping clients select from
-                  <span class="text-white fw-bold">different types of black granite</span> based on their project needs.
+                <p class="fs-18 text-gray-600 fw-normal mb-3 mb-lg-4">
                 </p>
                 <p class="fs-18 text-gray-600 fw-normal mb-3 mb-lg-4">We proudly partner with dealers nationwide,
                   offering them consistent stone quality and flexible fulfillment options.</p>
@@ -229,8 +203,7 @@
         <div class="px-12px">
           <div class="row row-gap-3 my-2 py-1 my-sm-0 py-sm-0">
             <div class="col-lg-6 mt-0 mt-lg-4">
-              <h2 class="fs-40 fw-bold text-white mb-2 mb-lg-3  text-center text-lg-start">Ongoing Support for Every
-                Project</h2>
+              <h2 class="fs-40 fw-bold text-white mb-2 mb-lg-3  text-center text-lg-start">{{$section7->title}}</h2>
               <p class="fs-18 text-gray-600 mb-3 fw-normal">Our commitment doesn't end with dispatch. Once your order is
                 delivered, we follow up to ensure everything has arrived safely and meets your expectations. Your
                 feedback isn’t just appreciated, it’s essential. It helps us improve and tailor future consignments even
@@ -245,7 +218,7 @@
             </div>
             <div class="col-lg-6">
               <div class="about-hero-img h-100 w-100">
-                <img src="{{ asset('assets/images/support-project-img.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
+                <img src="{{ asset('uploads/about_us/' . $section7->media) }}" alt="images" class="h-100 w-100 object-fit-cover" />
               </div>
             </div>
           </div>

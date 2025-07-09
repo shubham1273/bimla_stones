@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Quote;
+use App\Exports\QuoteExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 use Illuminate\Http\Request;
 
@@ -39,5 +41,10 @@ class QuoteController extends Controller
         $quote->save();
 
         return redirect()->back()->with('success', 'Quote deleted successfully!');
+    }
+
+    public function export()
+    {
+        return Excel::download(new QuoteExport, 'quotes.xlsx');
     }
 }

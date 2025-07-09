@@ -325,4 +325,124 @@ class HomePageController extends Controller
 
         return redirect()->back()->with('success', 'Contact section updated successfully.');
     }
+
+    public function contactUs2(Request $request)
+    {
+        $section = HomePage::where('page_key', 'contact_us2')->firstOrFail();
+        return view('admin.home.contactussection2', compact('section'));
+    }
+
+    public function updatecontactUs2(Request $request, $id)
+    {
+
+        $section = HomePage::findOrFail($id);
+
+        // Validate title, description and media file
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required',
+            'media' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        // Handle image upload if exists
+        if ($request->hasFile('media')) {
+            $file = $request->file('media');
+            $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/contact'), $fileName);
+
+            // Delete old image if exists
+            if ($section->media && file_exists(public_path('uploads/contact/' . $section->media))) {
+                unlink(public_path('uploads/contact/' . $section->media));
+            }
+
+            $section->media = $fileName;
+        }
+
+        // Update title and description
+        $section->title = $validated['title'];
+        $section->description = $validated['description'];
+        $section->save();
+
+        return redirect()->back()->with('success', 'Contact section updated successfully.');
+    }
+
+
+    public function work(Request $request)
+    {
+        $offers = HomePage::where('page_key', 'section_8')->get();
+        return view('admin.home.homepageeight', compact('offers'));
+    }
+
+    public function workEdit($id)
+    {
+        $section = HomePage::where('page_key', 'section_8')->findOrFail($id);
+        return view('admin.home.homepageeightEdit', compact('section'));
+    }
+
+    public function updateSection8(Request $request, $id)
+    {
+        $section = HomePage::findOrFail($id);
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'media' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        if ($request->hasFile('media')) {
+            $file = $request->file('media');
+            $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/home'), $fileName);
+
+            if ($section->media && file_exists(public_path('uploads/home/' . $section->media))) {
+                unlink(public_path('uploads/home/' . $section->media));
+            }
+
+            $section->media = $fileName;
+        }
+
+        $section->title = $validated['title'];
+        $section->description = $validated['description'];
+        $section->save();
+
+        return redirect()->route('work')->with('success', 'work section updated successfully.');
+    }
+
+    public function section9(Request $request)
+    {
+        $section = HomePage::where('page_key', 'section_9')->firstOrFail();
+        return view('admin.home.homepagenine', compact('section'));
+    }
+    public function updateSection9(Request $request, $id)
+    {
+        $section = HomePage::findOrFail($id);
+
+        // Validation
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required',
+            'media' => 'nullable|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        // File Upload
+        if ($request->hasFile('media')) {
+            $file = $request->file('media');
+            $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/home'), $fileName);
+
+            // Delete old image if exists
+            if ($section->media && file_exists(public_path('uploads/home/' . $section->media))) {
+                unlink(public_path('uploads/home/' . $section->media));
+            }
+
+            $section->media = $fileName;
+        }
+
+        // Update other fields
+        $section->title = $validated['title'];
+        $section->description = $validated['description'];
+        $section->save();
+
+        return redirect()->back()->with('success', 'Home Section 9 updated successfully.');
+    }
 }

@@ -47,6 +47,8 @@
                             <li><a href="{{ route('specialization') }}"><span class="sub-item">5th Section</span></a></li>
                             <li><a href="{{ route('offer') }}"><span class="sub-item">6th Section</span></a></li>
                             <li><a href="{{ route('choose') }}"><span class="sub-item">7th Section</span></a></li>
+                            <li><a href="{{ route('work') }}"><span class="sub-item">8th Section</span></a></li>
+                            <li><a href="{{ route('homepage9') }}"><span class="sub-item">9th Section</span></a></li>
                             <li><a href="{{ route('clients.index') }}"><span class="sub-item">Clients</span></a></li>
                             <li><a href="{{ route('quotes.index') }}"><span class="sub-item">Get a Quote Request</span></a></li>
                             <li><a href="{{ route('get_in_touch.index') }}"><span class="sub-item">Get in touch Request</span></a></li>
@@ -83,7 +85,7 @@
                     </a>
                     <div class="collapse" id="about_us">
                         <ul class="nav nav-collapse">
-                            <li><a href="{{ route('about.section_1') }}"><span class="sub-item">1st Section</span></a></li> 
+                            <li><a href="{{ route('about.section_1') }}"><span class="sub-item">1st Section</span></a></li>
                             <li><a href="{{ route('about.section_2') }}"><span class="sub-item">2nd Section</span></a></li>
                             <li><a href="{{ route('about.section_3') }}"><span class="sub-item">3rd Section</span></a></li>
                             <li><a href="{{ route('about.section_4') }}"><span class="sub-item">4th Section</span></a></li>
@@ -122,6 +124,7 @@
                     <div class="collapse" id="contactSections">
                         <ul class="nav nav-collapse">
                             <li><a href="{{ route('contactUs') }}"><span class="sub-item">1st Section</span></a></li>
+                            <li><a href="{{ route('contactUs2') }}"><span class="sub-item">Last Section</span></a></li>
                             <li><a href="{{ route('founders.index') }}"><span class="sub-item">Founders</span></a></li>
                         </ul>
                     </div>
@@ -136,7 +139,7 @@
                     </a>
                     <div class="collapse" id="processSections">
                         <ul class="nav nav-collapse">
-                            <li><a href="{{ route('process.section_1') }}"><span class="sub-item">1st Section</span></a></li> 
+                            <li><a href="{{ route('process.section_1') }}"><span class="sub-item">1st Section</span></a></li>
                             <li><a href="{{ route('process.section_2') }}"><span class="sub-item">2nd Section</span></a></li>
                             <li><a href="{{ route('process.section_3') }}"><span class="sub-item">3rd Section</span></a></li>
                             <li><a href="{{ route('process.section_4') }}"><span class="sub-item">4th Section</span></a></li>

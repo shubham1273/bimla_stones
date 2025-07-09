@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\GetInTouchExport;
+
 use App\Models\GetInTouch;
 use Illuminate\Http\Request;
 
@@ -57,5 +60,10 @@ class GetInTouchController extends Controller
         $enquiry->save();
 
         return redirect()->back()->with('success', 'Enquiry deleted successfully.');
+    }
+
+    public function export()
+    {
+        return Excel::download(new GetInTouchExport, 'get_in_touch_enquiries.xlsx');
     }
 }

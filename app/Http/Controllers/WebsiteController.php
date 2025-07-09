@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\HomePage;
+use App\Models\Process;
+use App\Models\Gallery;
+use App\Models\AboutUsSection;
 
 use Illuminate\Http\Request;
 
@@ -20,10 +23,25 @@ class WebsiteController extends Controller
         return view('website.products');
     }
     public function manufacture_process(){
-        return view('website.manufacture_process');
+        $section1 = Process::where('page_key', 'section_1')->first();
+        $section2 = Process::where('page_key', 'section_2')->first();
+        $section3 = Process::where('page_key', 'section_3')->first();
+        $section4 = Process::where('page_key', 'section_4')->first();
+
+        return view('website.manufacture_process', compact('section1', 'section2', 'section3', 'section4'));
+
     }
     public function about_us(){
-        return view('website.about_us');
+
+        $section1 = AboutUsSection::where('page_key', 'section_1')->first();
+        $section2 = AboutUsSection::where('page_key', 'section_2')->first();
+        $section3 = AboutUsSection::where('page_key', 'section_3')->first();
+        $section4 = AboutUsSection::where('page_key', 'section_4')->first();
+        $section5 = AboutUsSection::where('page_key', 'section_5')->first();
+        $section6 = AboutUsSection::where('page_key', 'section_6')->first();
+        $section7 = AboutUsSection::where('page_key', 'section_7')->first();
+
+        return view('website.about_us', compact('section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7'));
     }
     public function blog(){
         return view('website.blog');
@@ -32,7 +50,14 @@ class WebsiteController extends Controller
         return view('website.blog_detail');
     }
     public function gallery(){
-        return view('website.gallery');
+
+        $section1 = Gallery::where('page_key', 'section_1')->first();
+        $section2 = Gallery::where('page_key', 'section_2')->first();
+        $section3 = Gallery::where('page_key', 'section_3')->first();
+        $section4 = Gallery::where('page_key', 'section_4')->first();
+
+        return view('website.gallery', compact('section1', 'section2', 'section3', 'section4'));
+
     }
     public function contact_us(){
         return view('website.contact_us');

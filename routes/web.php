@@ -42,6 +42,9 @@ Route::post('/get-in-touch', [GetInTouchController::class, 'store'])->name('get_
 Route::post('/submit-quote', [QuoteController::class, 'store'])->name('quote.store');
 Route::post('/job-apply', [JobApplicationController::class, 'store'])->name('job.apply');
 
+Route::get('/admin/get-in-touch/export', [GetInTouchController::class, 'export'])->name('admin.get_in_touch.export');
+
+
 
 
 // Route::get('/dashboard', function () {
@@ -70,6 +73,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/choose', [HomePageController::class, 'choose'])->name('choose');
     Route::put('/home-section-7/{id}', [HomePageController::class, 'updateSection7'])->name('home_section.updateSection7');
 
+    Route::get('/admin/work', [HomePageController::class, 'work'])->name('work');
+    Route::get('/admin/work-edit/{id}', [HomePageController::class, 'workEdit'])->name('workEdit');
+    Route::put('/admin/home/section8/{id}', [HomePageController::class, 'updateSection8'])->name('home_section.updateSection8');
+
+    Route::get('/admin/homepage9', [HomePageController::class, 'section9'])->name('homepage9');
+    Route::put('/home-section-9/{id}', [HomePageController::class, 'updateSection9'])->name('home_section.update9');
+
+
+
 
 
     //blog
@@ -91,11 +103,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/gallery4', [GalleryController::class, 'gallery4'])->name('gallery4');
     Route::put('/admin/gallery4/{id}', [GalleryController::class, 'updateSection4'])->name('gallery.updateSection4');
 
-    //contact us
+    //contact us by homepagecontroller
 
     Route::resource('/admin/founders', FounderController::class);
     Route::get('/admin/contactUs', [HomePageController::class, 'contactUs'])->name('contactUs');
     Route::put('/admin/updatecontactUs/{id}', [HomePageController::class, 'updatecontactUs'])->name('updatecontactUs.update');
+
+
+    Route::get('/admin/contactUs2', [HomePageController::class, 'contactUs2'])->name('contactUs2');
+    Route::put('/admin/updatecontactUs2/{id}', [HomePageController::class, 'updatecontactUs2'])->name('updatecontactUs2.update');
+
 
     //career
 
@@ -125,6 +142,8 @@ Route::middleware(['auth'])->group(function () {
     // Admin Contact
     Route::get('/admin/contacts', [ContactController::class, 'index'])->name('contacts.index');
     Route::delete('/admin/contacts/{id}', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
+    Route::get('admin/contacts/export', [ContactController::class, 'export'])->name('admin.contacts.export');
+
 
     // Get in touch
     Route::get('/admin/get-in-touch', [GetInTouchController::class, 'index'])->name('get_in_touch.index');
@@ -134,8 +153,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/quotes', [QuoteController::class, 'index'])->name('quotes.index');
     Route::delete('/admin/quotes/{id}', [QuoteController::class, 'destroy'])->name('quotes.destroy');
 
-    // products page routes
-    Route::get('/admin/products', [\App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+      Route::get('/admin/quotes/export', [QuoteController::class, 'export'])->name('quotes.export');
+
+
+// products page routes
+Route::get('/admin/products', [\App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
     Route::get('/admin/products/{id}/edit', [\App\Http\Controllers\ProductController::class, 'edit'])->name('products.edit');
     Route::put('/admin/products/{id}', [\App\Http\Controllers\ProductController::class, 'update'])->name('products.update');
 
