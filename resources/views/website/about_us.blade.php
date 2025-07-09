@@ -1,40 +1,6 @@
 @extends('layouts.website')
 @section('title', 'Bimla Stones - About Us')
 @section('content')
-<div class="offcanvas offcanvas-mobile offcanvas-end d-block d-lg-none" tabindex="-1" id="offcanvasDarkNavbar"
-    aria-labelledby="offcanvasDarkNavbarLabel">
-    <div class="d-flex justify-content-between align-items-center gap-2 mb-4">
-      <a class="navbar-brand text-white p-0 m-0" href="home.html">Bimla Stones</a>
-      <button class="navbar-toggler p-0 border-0" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
-        <span class="navbar-toggler-icon w-100 h-100">
-          <img src="{{ asset('assets/images/toggle.png') }}" alt="menu" class="h-100 w-100 object-fit-cover">
-        </span>
-      </button>
-    </div>
-    <ul class="navbar-nav h-100">
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" aria-current="page" href="home.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="product.html">Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="process.html">MAnufacture process</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="about-us.html">About us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="blogs.html">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="gallery.html">Gallery</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="contact-us.html">Contact us</a>
-      </li>
-    </ul>
-  </div>
   <!-- about-hero-section -->
   <section class="about-hero-section px-12px">
     <div class="container">
@@ -204,17 +170,7 @@
           <div class="row row-gap-3 my-2 py-1 my-sm-0 py-sm-0">
             <div class="col-lg-6 mt-0 mt-lg-4">
               <h2 class="fs-40 fw-bold text-white mb-2 mb-lg-3  text-center text-lg-start">{{$section7->title}}</h2>
-              <p class="fs-18 text-gray-600 mb-3 fw-normal">Our commitment doesn't end with dispatch. Once your order is
-                delivered, we follow up to ensure everything has arrived safely and meets your expectations. Your
-                feedback isn’t just appreciated, it’s essential. It helps us improve and tailor future consignments even
-                more closely to your needs. 
-              </p>
-              <p class="fs-18 text-gray-600 mb-0 fw-normal">We also bring unmatched value to our partners:</p>
-              <ul>
-                <li class="fs-18 text-gray-600 mb-0 fw-normal">In-house quality control at every stage</li>
-                <li class="fs-18 text-gray-600 mb-0 fw-normal">Sample-before-you-buy convenience</li>
-                <li class="fs-18 text-gray-600 mb-0 fw-normal">Competitive lead times for global shipping</li>
-              </ul>
+              {!! $section7->description !!}
             </div>
             <div class="col-lg-6">
               <div class="about-hero-img h-100 w-100">

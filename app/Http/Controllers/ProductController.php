@@ -89,7 +89,7 @@ class ProductController extends Controller
 
     public function productCategoryIndex2()
     {
-        $products = Product::where('page_key', 'section_2')->get();
+        $products = Product::where('page_key', 'section_4')->get();
         return view('admin.products.category-index-2', compact('products'));
     }
 

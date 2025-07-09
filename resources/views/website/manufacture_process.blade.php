@@ -1,40 +1,7 @@
 @extends('layouts.website')
 @section('title', 'Bimla Stones - Manufacture Process')
 @section('content')
-<div class="offcanvas offcanvas-mobile offcanvas-end d-block d-lg-none" tabindex="-1" id="offcanvasDarkNavbar"
-    aria-labelledby="offcanvasDarkNavbarLabel">
-    <div class="d-flex justify-content-between align-items-center gap-2 mb-4">
-      <a class="navbar-brand text-white p-0 m-0" href="home.html">Bimla Stones</a>
-      <button class="navbar-toggler p-0 border-0" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
-        <span class="navbar-toggler-icon w-100 h-100">
-          <img src="{{ asset('assets/images/toggle.png') }}" alt="menu" class="h-100 w-100 object-fit-cover">
-        </span>
-      </button>
-    </div>
-    <ul class="navbar-nav h-100">
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" aria-current="page" href="home.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="product.html">Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="process.html">MAnufacture process</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="about-us.html">About us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="blogs.html">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="gallery.html">Gallery</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-0 fw-normal" href="contact-us.html">Contact us</a>
-      </li>
-    </ul>
-  </div>
+
   <section class="pt-60  process-section">
     <div class="container">
       <div class="px-12px">
