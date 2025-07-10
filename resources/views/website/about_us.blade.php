@@ -9,7 +9,7 @@
           <div class="col-lg-6 mt-0 mt-lg-4">
             <h2 class="fs-40 fw-bold text-white mb-2 mb-lg-3  text-center text-lg-start">{{$section1->title}}
             </h2>
-            <p class="fs-18 text-gray-600 mb-0 fw-normal">{{$section1->description}} 
+            <p class="fs-18 text-gray-600 mb-0 fw-normal">{{$section1->description}}
             </p>
           </div>
           <div class="col-lg-6">
@@ -283,7 +283,7 @@
                       <input type="file" id="myFile1" name="filename" hidden>
                     </div>
                     <div class="text-center">
-                      <button class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-1" type="submit"> Submit
+                      <button class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-1" type="submit">Submit
                         Enquiry</button>
                     </div>
                   </form>
