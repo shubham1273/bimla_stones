@@ -135,7 +135,7 @@
                     <input type="file" id="myFile" name="filename" hidden>
                   </div>
                   <div class="text-center">
-                    <button class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-1" type="submit"> Submit
+                    <button class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-1" type="submit">Submit
                       Enquiry</button>
                   </div>
                 </form>
@@ -373,7 +373,7 @@
               </div>
               <div class="work-content w-100 m-auto">
                 <h3 class="fs-26 fw-bold text-white mb-3 mb-lg-4">Retailers & Distributors</h3>
-                <p class="fs-16 text-gray-600 fw-normal mb-3 mb-lg-5"> Reliable bulk granite supply with consistent
+                <p class="fs-16 text-gray-600 fw-normal mb-3 mb-lg-5">Reliable bulk granite supply with consistent
                   quality.</p>
                 <a href="contact-us.html" class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-4 d-none d-lg-block">Partner
                   With Us</a>
@@ -659,8 +659,7 @@
                       <input type="file" id="myFile1" name="filename" hidden>
                     </div>
                     <div class="text-center">
-                      <button class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-1" type="submit"> Submit
-                        Enquiry</button>
+                      <button class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-1" type="submit">Submit Enquiry</button>
                     </div>
                   </form>
                 </div>

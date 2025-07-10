@@ -3,33 +3,46 @@
 namespace App\Http\Controllers;
 use App\Models\JobApplication;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\JobApplicationMail;
 
 class JobApplicationController extends Controller
 {
     public function store(Request $request)
     {
-
         $validated = $request->validate([
-            'name' => 'required|string',
-            'phone_number' => 'required|string',
-            'email' => 'required|email',
-            'position' => 'nullable|string',
+            'name' => 'required|string|max:255',
+            'phone_number' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'position' => 'required|array',
+            'position.*' => 'string|max:255',
             'cover_letter_message' => 'nullable|string',
-            'resume' => 'nullable|mimes:pdf,doc,docx|max:2048',
+            'resume' => 'required|mimes:pdf,doc,docx|max:2048',
         ]);
 
-        $job = new JobApplication($validated);
+        $job = new JobApplication();
+        $job->name = $validated['name'];
+        $job->phone_number = $validated['phone_number'];
+        $job->email = $validated['email'];
+        $job->position = implode(', ', $validated['position']);
+        $job->cover_letter_message = $validated['cover_letter_message'] ?? null;
 
         if ($request->hasFile('resume')) {
             $file = $request->file('resume');
-            $fileName = time().'_'.uniqid().'.'.$file->getClientOriginalExtension();
+            $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('uploads/resumes'), $fileName);
             $job->resume = $fileName;
         }
 
         $job->save();
 
-        return redirect()->back()->with('success', 'Application submitted successfully!');
+        // Send email to admin
+        Mail::to('shubham.feb.1995@gmail.com')->send(new JobApplicationMail($job));
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Application submitted successfully!',
+        ]);
     }
 
     public function index()
