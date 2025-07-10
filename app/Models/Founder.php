@@ -8,5 +8,5 @@ class Founder extends Model
 {
 
 
-    protected $fillable = ['name', 'description', 'image'];
+    protected $fillable = ['name', 'phone_number','description', 'image'];
 }

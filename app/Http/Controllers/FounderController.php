@@ -22,12 +22,14 @@ class FounderController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'phone_number' => 'required|string|max:20', // ✅ Add phone validation
             'description' => 'required',
             'image' => 'nullable|mimes:jpg,jpeg,png|max:2048',
         ]);
 
         $founder = new Founder();
         $founder->name = $request->name;
+        $founder->phone_number = $request->phone_number; // ✅ Save phone number
         $founder->description = $request->description;
 
         if ($request->hasFile('image')) {
@@ -42,6 +44,7 @@ class FounderController extends Controller
         return redirect()->route('founders.index')->with('success', 'Founder added successfully.');
     }
 
+
     public function edit($id)
     {
         $founder = Founder::findOrFail($id);
@@ -54,11 +57,13 @@ class FounderController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
+            'phone_number' => 'required|string|max:20', // ✅ Validate phone number
             'description' => 'required',
             'image' => 'nullable|mimes:jpg,jpeg,png|max:2048',
         ]);
 
         $founder->name = $request->name;
+        $founder->phone_number = $request->phone_number; // ✅ Save phone number
         $founder->description = $request->description;
 
         if ($request->hasFile('image')) {
@@ -77,6 +82,7 @@ class FounderController extends Controller
 
         return redirect()->route('founders.index')->with('success', 'Founder updated successfully.');
     }
+
 
     public function destroy($id)
     {

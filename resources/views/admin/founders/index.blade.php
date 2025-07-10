@@ -17,7 +17,8 @@
             <tr>
                 <th>Image</th>
                 <th>Name</th>
-                <th>Description</th>
+                <th>Phone Number</th>
+                <th>Designation</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                     @endif
                 </td>
                 <td>{{ $founder->name }}</td>
+                <td>{{ $founder->phone_number }}</td>
                 <td>{{ $founder->description }}</td>
                 <td>
                     <a href="{{ route('founders.edit', $founder->id) }}" class="btn btn-info btn-sm">Edit</a>

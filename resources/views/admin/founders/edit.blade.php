@@ -17,7 +17,13 @@
         </div>
 
         <div class="form-group mb-3">
-            <label>Description</label>
+            <label>Phone Number</label>
+            <input type="text" name="phone_number" class="form-control" value="{{ $founder->phone_number }}" required>
+            @error('phone_number') <small class="text-danger">{{ $message }}</small> @enderror
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Designation</label>
             <textarea name="description" class="form-control" rows="5" required>{{ $founder->description }}</textarea>
             @error('description') <small class="text-danger">{{ $message }}</small> @enderror
         </div>

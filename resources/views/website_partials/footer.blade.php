@@ -1,4 +1,7 @@
 <!-- footer -->
+@php
+    use App\Helper;
+@endphp
   <div class="pt-80">
     <footer class="px-12px">
       <div class="container">
@@ -6,7 +9,7 @@
           <div class="d-flex gap-3 gap-sm-5 flex-row flex-lg-column footer-col-1">
             <div class="footer-logo">
               <a href="home.html"
-                class="fs-40 fw-bold text-white text-decoration-none mb-3 mb-lg-4 d-block d-block">{{ getSetting('website_name', 'Bimla Stones') }}</a>
+                class="fs-40 fw-bold text-white text-decoration-none mb-3 mb-lg-4 d-block d-block">{{ Helper::getSetting('website_name' , "Bimla Stones") }}</a>
               <p class="fs-20 text-gray fw-normal mb-3 mb-lg-4">Trusted suppliers of premium black granite and custom
                 stone solutions.</p>
               <a href="https://maps.app.goo.gl/x1VJZQvFC5erm1TX9" class="btn btn-primary-bg border-0 text-white w-100 fs-16 get-location">Get Location</a>
@@ -265,7 +268,7 @@
         },
       },],
     });
-    
+
     // blog slider
     // document.querySelectorAll('.video-container').forEach(container => {
     //   const video = container.querySelector('.my-video');

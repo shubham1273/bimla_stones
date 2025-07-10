@@ -53,7 +53,7 @@
                   class="h-100 w-100 object-fit-cover rounded-circle" />
               </div>
               <h2 class="fs-18 text-black-100 fw-bold mb-3">{{$founder->name}}</h2>
-              <p class="fs-18 fw-normal mb-0 text-black">{{$founder->designation}}</p>
+              <p class="fs-18 fw-normal mb-0 text-black">{{$founder->description}}</p>
               <a href="tel:+91 9448051397"
                 class="d-flex align-items-center gap-2 fs-18 text-black fw-normal text-decoration-none">
                 <img src="{{ asset('assets/images/phone.svg') }}" alt="phone-svg" />

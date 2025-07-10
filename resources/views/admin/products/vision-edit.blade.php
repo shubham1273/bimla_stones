@@ -4,25 +4,7 @@
 <div class="page-inner">
     <div class="page-header">
         <h4 class="page-title">Edit Product Category</h4>
-        <ul class="breadcrumbs">
-            <li class="nav-home">
-                <a href="#">
-                    <i class="icon-home"></i>
-                </a>
-            </li>
-            <li class="separator">
-                <i class="icon-arrow-right"></i>
-            </li>
-            <li class="nav-item">
-                <a href="#">Pages</a>
-            </li>
-            <li class="separator">
-                <i class="icon-arrow-right"></i>
-            </li>
-            <li class="nav-item">
-                <a href="#">Edit Product Category</a>
-            </li>
-        </ul>
+
     </div>
     <div class="page-category">
         {{-- Main area starts --}}
