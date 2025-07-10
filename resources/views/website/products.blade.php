@@ -46,13 +46,13 @@
                     </div>
                     <div class="col-md-6">
                         <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">{{$section2[0]->title}}</h3>
-                        <p class="fs-16 fw-normal text-gray-600 mb-0">{{$section2[0]->description}}</p>
+                        <p class="fs-16 fw-normal text-gray-600 mb-0">{!! $section2[0]->description !!}</p>
                     </div>
                 </div>
                 <div class="row row-gap-3 mb-40 flex-column-reverse flex-md-row">
                     <div class="col-md-6">
                         <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3 text-end">{{$section2[1]->title}}</h3>
-                        <p class="fs-16 fw-normal text-gray-600 mb-0 text-end">{{$section2[1]->description}}</p>
+                        <p class="fs-16 fw-normal text-gray-600 mb-0 text-end">{!! $section2[1]->description !!}</p>
                     </div>
                     <div class="col-md-6">
                         <div class="categorie-img ms-auto">
@@ -103,7 +103,7 @@
                 <div class="row row-gap-3 mb-40 flex-column-reverse flex-md-row align-items-center">
                     <div class="col-md-6">
                         <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3 text-end">{{$section4[0]->title}}</h3>
-                        <p class="fs-16 fw-normal text-gray-600 mb-0 text-end">{{$section4[0]->description}}</p>
+                        <p class="fs-16 fw-normal text-gray-600 mb-0 text-end">{!! $section4[0]->description !!}</p>
                     </div>
                     <div class="col-md-6">
                         <div class="categorie-img ms-auto">
@@ -121,7 +121,7 @@
                     </div>
                     <div class="col-md-6">
                         <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">{{$section4[1]->title}}</h3>
-                        <p class="fs-16 fw-normal text-gray-600 mb-0">{{$section4[1]->description}}</p>
+                        <p class="fs-16 fw-normal text-gray-600 mb-0">{!! $section4[1]->description !!}</p>
                     </div>
                 </div>
             </div>
