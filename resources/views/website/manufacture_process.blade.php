@@ -7,24 +7,18 @@
       <div class="px-12px">
         <div class="section-heading w-100 mx-auto mb-60">
           <h3 class="fs-40 fw-bold text-center text-white mb-3">{{$section1->title}}</h3>
-          <p class="text-start text-sm-center text-gray-600 fw-normal mb-0 fs-18">{{$section1->description}}</p>
+          <p class="text-start text-sm-center text-gray-600 fw-normal mb-0 fs-18">From <span
+              class="fw-bold">{{$section1->description}}</p>
         </div>
-        <div class="process-video">
-          <div
-            class="video-container d-flex justify-content-center align-items-center position-relative overflow-hidden">
-            <button class="play-button position-absolute m-auto top-0 bottom-0 start-0 end-0 border-0 rounded-circle">
-              <i class="fa-solid fa-play"></i>
-            </button>
-            <div class="video-img position-relative">
-              <img src="{{ asset('assets/images/process-video-bg.jpg') }}" alt="Video Thumbnail" class="video-thumbnail">
-              <video class="my-video">
-                <source
-                  src="{{ asset('uploads/process/' . $section1->media) }}"
-                  type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+        <div class="process-video-slider">
+             @foreach ($section5 as $item)
+          <div>
+            <div class="proces-img">
+              <img src="{{ asset('uploads/process/'. $item->media) }}" alt="Video Thumbnail" class="w-100 h-100 object-fit-cover">
             </div>
           </div>
+          @endforeach
+
         </div>
       </div>
     </div>
@@ -34,7 +28,7 @@
       <div class="container">
         <div class="categories-slider-section mb-40">
           <div class="categories-slider">
-            
+
           @foreach ($section2 as $item)
               <div>
                   <div class="categories-card d-flex gap-2 gap-lg-3">

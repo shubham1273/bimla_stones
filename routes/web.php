@@ -205,6 +205,8 @@ Route::get('/admin/products', [\App\Http\Controllers\ProductController::class, '
     Route::get('/admin/process/section-4', [ProcessController::class, 'section4'])->name('process.section_4');
     Route::put('/process/section-4/{id}', [ProcessController::class, 'updateSection4'])->name('process.section_4.update');
 
+    Route::resource('/admin/process-images', ProcessController::class);
+
     // About Us section routes
     Route::get('/admin/about-us/section-1', [AboutUsSectionController::class, 'section1'])->name('about.section_1');
     Route::put('/admin/about-us/section-1/{id}', [AboutUsSectionController::class, 'updateSection1'])->name('about.section_1.update');

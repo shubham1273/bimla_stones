@@ -1,6 +1,20 @@
 @extends('layouts.website')
 @section('title', 'Bimla Stones - Products')
 @section('content')
+
+ <div class="hero-section-home">
+    <!-- hero-section-main -->
+    <div class="hero-section-main pt-60 position-relative z-1">
+      <div class="px-12px">
+        <div class="container">
+          <div class="section-heading w-100">
+            <h1 class="fs-40 text-white fw-bold mb-3">{{$section1->title}}</h1>
+            <p class="fs-18 text-gray-600  fw-normal mb-3">{!! $section1->description !!}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <!-- visit-section -->
   <section class="visit-section pt-80">
     <div class="px-12px">
@@ -95,10 +109,29 @@
             <p class="fs-40 fw-bold text-white mb-20">We’d love to hear from you.</p>
             <p class="fs-18 fw-normal text-gray-600 mb-20">Just fill in the form below and our team will reach out
               shortly.</p>
-            
+            <form id="quickContactForm">
+              <div class="mb-40">
+                <input type="text" name="name" class="form-control w-100 mb-2 mb-sm-3 mb-lg-4 text-white fw-normal fs-16" placeholder="Name" required />
+                <input type="email" name="email" class="form-control w-100 mb-2 mb-sm-3 mb-lg-4 text-white fw-normal fs-16" placeholder="Email" required />
+                <input type="text" name="phone" class="form-control w-100 mb-2 mb-sm-3 mb-lg-4 text-white fw-normal fs-16" placeholder="Phone Number" />
+                <input type="text" name="company" class="form-control w-100 mb-2 mb-sm-3 mb-lg-4 text-white fw-normal fs-16" placeholder="Company Name" />
+                <input type="text" name="location" class="form-control w-100 text-white fw-normal fs-16" placeholder="Your Country / Location" />
+              </div>
 
-              @include('website_partials.contact_us')
+              <h3 class="fs-16 fw-semibold text-white mb-3">Consent & Submit*</h3>
+              <div class="mb-40 form-check">
+                <input type="checkbox" name="consent" class="form-check-input" id="exampleCheck1" required>
+                <label class="form-check-label fs-16 text-gray-600 fw-normal" for="exampleCheck1">
+                  I consent to Bimla Stone using my information to respond to my query
+                </label>
+              </div>
 
+              <div id="quickContactAlert" class="alert d-none"></div>
+
+              <button type="submit" class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-0 mt-lg-4">
+                Submit Your Enquiry
+              </button>
+            </form>
 
 
           </div>
@@ -125,4 +158,45 @@
       </div>
     </div>
   </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById('quickContactForm');
+  const alertBox = document.getElementById('quickContactAlert');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("{{ route('contact.store') }}", {
+      method: "POST",
+      headers: {
+        "X-CSRF-TOKEN": "{{ csrf_token() }}",
+      },
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) throw response;
+      return response.json();
+    })
+    .then(data => {
+      alertBox.classList.remove('d-none', 'alert-danger');
+      alertBox.classList.add('alert', 'alert-success');
+      alertBox.innerText = data.message;
+      form.reset();
+    })
+    .catch(async (error) => {
+      let message = 'An error occurred.';
+      if (error.json) {
+        const err = await error.json();
+        if (err.message) message = err.message;
+      }
+      alertBox.classList.remove('d-none', 'alert-success');
+      alertBox.classList.add('alert', 'alert-danger');
+      alertBox.innerText = message;
+    });
+  });
+});
+</script>
 @endsection

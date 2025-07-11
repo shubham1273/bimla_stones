@@ -40,15 +40,15 @@
                     </a>
                     <div class="collapse" id="homeSections">
                         <ul class="nav nav-collapse">
-                            <li><a href="{{ route('homepage') }}"><span class="sub-item">1st Section</span></a></li>
-                            <li><a href="{{ route('vidoes') }}"><span class="sub-item">2nd Section</span></a></li>
-                            <li><a href="{{ route('process') }}"><span class="sub-item">3rd Section</span></a></li>
-                            <li><a href="{{ route('whoWeare') }}"><span class="sub-item">4th Section</span></a></li>
-                            <li><a href="{{ route('specialization') }}"><span class="sub-item">5th Section</span></a></li>
-                            <li><a href="{{ route('offer') }}"><span class="sub-item">6th Section</span></a></li>
-                            <li><a href="{{ route('choose') }}"><span class="sub-item">7th Section</span></a></li>
-                            <li><a href="{{ route('work') }}"><span class="sub-item">8th Section</span></a></li>
-                            <li><a href="{{ route('homepage9') }}"><span class="sub-item">9th Section</span></a></li>
+                            <li><a href="{{ route('homepage') }}"><span class="sub-item">INDIA FINEST</span></a></li>
+                            <li><a href="{{ route('vidoes') }}"><span class="sub-item">SINGLE VIDEO</span></a></li>
+                            <li><a href="{{ route('process') }}"><span class="sub-item">OUR PRPCESS</span></a></li>
+                            <li><a href="{{ route('whoWeare') }}"><span class="sub-item">WHO WE ARE</span></a></li>
+                            <li><a href="{{ route('specialization') }}"><span class="sub-item">SPECIALIZATION</span></a></li>
+                            <li><a href="{{ route('offer') }}"><span class="sub-item">WHO WE ARE</span></a></li>
+                            <li><a href="{{ route('choose') }}"><span class="sub-item">WHY CHOSE</span></a></li>
+                            <li><a href="{{ route('work') }}"><span class="sub-item">CLIENT WE WORK</span></a></li>
+                            <li><a href="{{ route('homepage9') }}"><span class="sub-item">LOGISCTICS</span></a></li>
                             <li><a href="{{ route('clients.index') }}"><span class="sub-item">Clients</span></a></li>
                             <li><a href="{{ route('quotes.index') }}"><span class="sub-item">Get a Quote Request</span></a></li>
                             <li><a href="{{ route('get_in_touch.index') }}"><span class="sub-item">Get in touch Request</span></a></li>
@@ -140,6 +140,7 @@
                     <div class="collapse" id="processSections">
                         <ul class="nav nav-collapse">
                             <li><a href="{{ route('process.section_1') }}"><span class="sub-item">1st Section</span></a></li>
+                            <li><a href="{{ route('process-images.index') }}"><span class="sub-item">Process Images</span></a></li>
                             <li><a href="{{ route('process.section_2') }}"><span class="sub-item">2nd Section</span></a></li>
                             <li><a href="{{ route('process.section_3') }}"><span class="sub-item">3rd Section</span></a></li>
                             <li><a href="{{ route('process.section_4') }}"><span class="sub-item">4th Section</span></a></li>

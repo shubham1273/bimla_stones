@@ -193,4 +193,83 @@ class ProcessController extends Controller
 
         return redirect()->back()->with('success', 'Section 4 updated successfully.');
     }
+
+
+    public function index()
+    {
+
+        $items = Process::where('page_key', 'process_image')->get();
+        return view('admin.processimage.index', compact('items'));
+    }
+
+    public function create()
+    {
+        return view('admin.processimage.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'media' => 'required|image|mimes:jpg,jpeg,png,webp|max:5120',
+        ]);
+
+        $data = [
+            'page_key' => 'process_image', // 🔐 Hardcoded page_key
+        ];
+
+        if ($request->hasFile('media')) {
+            $file = $request->file('media');
+            $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/process'), $fileName);
+            $data['media'] = $fileName;
+        }
+
+        Process::create($data);
+
+        return redirect()->route('process-images.index')->with('success', 'Image created successfully.');
+    }
+
+
+    public function edit(Process $process_image)
+    {
+        return view('admin.processimage.edit', ['item' => $process_image]);
+    }
+
+    public function update(Request $request, Process $process_image)
+    {
+        $request->validate([
+            'media' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
+        ]);
+
+        $data = [
+            'page_key' => 'process_image', // ✅ Hardcoded here
+        ];
+
+        if ($request->hasFile('media')) {
+            if ($process_image->media && file_exists(public_path('uploads/process/' . $process_image->media))) {
+                unlink(public_path('uploads/process/' . $process_image->media));
+            }
+
+            $file = $request->file('media');
+            $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/process'), $fileName);
+            $data['media'] = $fileName;
+        }
+
+        $process_image->update($data);
+
+        return redirect()->route('process-images.index')->with('success', 'Image updated.');
+    }
+
+
+    public function destroy(Process $process_image)
+    {
+        if ($process_image->media && file_exists(public_path('uploads/process/' . $process_image->media))) {
+            unlink(public_path('uploads/process/' . $process_image->media));
+        }
+
+        $process_image->delete();
+
+        return redirect()->route('process-images.index')->with('success', 'Process image deleted.');
+    }
 }

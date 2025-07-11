@@ -47,8 +47,9 @@ class WebsiteController extends Controller
         $section2 = Process::where('page_key', 'section_2')->get();
         $section3 = Process::where('page_key', 'section_3')->first();
         $section4 = Process::where('page_key', 'section_4')->first();
+        $section5 = Process::where('page_key', 'process_image')->get();
 
-        return view('website.manufacture_process', compact('section1', 'section2', 'section3', 'section4'));
+        return view('website.manufacture_process', compact('section1', 'section2', 'section3', 'section4', 'section5'));
 
     }
     public function about_us(){
