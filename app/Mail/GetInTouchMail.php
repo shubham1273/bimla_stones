@@ -20,15 +20,10 @@ class GetInTouchMail extends Mailable
     public function build()
     {
         $mail = $this->subject('New Get In Touch Enquiry')
-                     ->view('emails.get_in_touch');
+                    ->view('emails.get_in_touch');
 
-        // Attach image if it exists
-        $imagePath = public_path('uploads/get_in_touch/' . $this->data->reference_image);
-        if (!empty($this->data->reference_image) && file_exists($imagePath)) {
-            $mail->attach($imagePath, [
-                'as' => $this->data->reference_image,
-                'mime' => mime_content_type($imagePath)
-            ]);
+        if ($this->data->reference_image && file_exists(public_path('uploads/get_in_touch/' . $this->data->reference_image))) {
+            $mail->attach(public_path('uploads/get_in_touch/' . $this->data->reference_image));
         }
 
         return $mail;

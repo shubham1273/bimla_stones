@@ -12,107 +12,79 @@
                 <h1 class="text-white fw-bold hero-text mb-4">India’s Finest Black Granite Processor</h1>
                 <div class="d-flex gap-3 align-items-start justify-content-between home-mobile-hero-section">
                   <div>
-                    <p class="text-gray-600 fs-24 fw-normal mb-4 text-uppercase hero-text-content"> 25+ years of expertise | Global exports | Fully-automated plant</p>
-                    <div class="d-flex gap-3 align-items-center flex-wrap flex-sm-nowrap">
-                      <button class="btn btn-primary-bg border-0 text-white w-100 fs-16" data-bs-toggle="modal"
-                      data-bs-target="#quoteModal">Get a Quote</button>
-
-                    <div class="modal fade quote-modal" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content mx-0 mx-sm-3 mx-lg-0">
-                          <div class="d-flex justify-content-between align-items-center gap-3 pb-2 mb-4">
-                            <h2 class="fs-24 text-white fw-bold">Get a Quote</h2>
-                            <button type="button" class="text-white bg-transparent border-0 p-0" data-bs-dismiss="modal"
-                              aria-label="Close">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
-                                fill="none">
-                                <path
-                                  d="M13 1C12.8125 0.81253 12.5582 0.707214 12.293 0.707214C12.0278 0.707214 11.7735 0.81253 11.586 1L7 5.586L2.414 1C2.22647 0.81253 1.97217 0.707214 1.707 0.707214C1.44184 0.707214 1.18753 0.81253 1 1C0.81253 1.18753 0.707214 1.44184 0.707214 1.707C0.707214 1.97217 0.81253 2.22647 1 2.414L5.586 7L1 11.586C0.81253 11.7735 0.707214 12.0278 0.707214 12.293C0.707214 12.5582 0.81253 12.8125 1 13C1.18753 13.1875 1.44184 13.2928 1.707 13.2928C1.97217 13.2928 2.22647 13.1875 2.414 13L7 8.414L11.586 13C11.7735 13.1875 12.0278 13.2928 12.293 13.2928C12.5582 13.2928 12.8125 13.1875 13 13C13.1875 12.8125 13.2928 12.5582 13.2928 12.293C13.2928 12.0278 13.1875 11.7735 13 11.586L8.414 7L13 2.414C13.1875 2.22647 13.2928 1.97217 13.2928 1.707C13.2928 1.44184 13.1875 1.18753 13 1Z"
-                                  fill="white" />
-                              </svg>
-                            </button>
-                          </div>
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <form>
-                                <input type="text" class="form-control mb-3 fs-16" placeholder="Name" required />
-                                <input type="text" class="form-control mb-3 fs-16" placeholder="Email" required />
-                                <input type="text" class="form-control mb-3 fs-16" placeholder="Number" required />
-                                <div class="dropdown mb-3">
-                                  <button
-                                    class="form-control dropdown-toggle d-flex justify-content-between align-items-center"
-                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Product Type
-                                  </button>
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="getQuote_1" />
-                                      <label class="form-check-label fs-16 fw-normal text-gray-600" for="getQuote_1">
-                                        Blocks
-                                      </label>
-                                    </div>
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="getQuote_2" />
-                                      <label class="form-check-label fs-16 fw-normal text-gray-600" for="getQuote_2">
-                                        Slabs (2cm–30cm)
-                                      </label>
-                                    </div>
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="getQuote_3" />
-                                      <label class="form-check-label fs-16 fw-normal text-gray-600" for="getQuote_3">
-                                        Cut-to-Size Orders / Project Supply
-                                      </label>
-                                    </div>
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="getQuote_4" />
-                                      <label class="form-check-label fs-16 fw-normal text-gray-600" for="getQuote_4">
-                                        Tiles
-                                      </label>
-                                    </div>
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="getQuote_5" />
-                                      <label class="form-check-label fs-16 fw-normal text-gray-600" for="getQuote_5">
-                                        Cobble Stones
-                                      </label>
-                                    </div>
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="getQuote_6" />
-                                      <label class="form-check-label fs-16 fw-normal text-gray-600" for="getQuote_6">
-                                        Monuments
-                                      </label>
-                                    </div>
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="getQuote_7" />
-                                      <label class="form-check-label fs-16 fw-normal text-gray-600" for="getQuote_7">
-                                        Export Inquiry
-                                      </label>
-                                    </div>
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="getQuote_8" />
-                                      <label class="form-check-label fs-16 fw-normal text-gray-600" for="getQuote_8">
-                                        Other
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                                <button class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-1"
-                                  type="submit">Submit</button>
-                              </form>
-                            </div>
-                            <div class="col-sm-6 d-none d-sm-block">
-                              <div class="modal-img w-100 h-100">
-                                <img src="{{ ('assets/images/modal-bg.png') }}" alt="images"
-                                  class="w-100 h-100 object-fit-cover" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{ session('success') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
+                    @endif
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+                    <!-- Trigger Button -->
+                    <button class="btn btn-primary-bg border-0 text-white w-100 fs-16" data-bs-toggle="modal" data-bs-target="#quoteModal">Get a Quote</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade quote-modal" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content mx-0 mx-sm-3 mx-lg-0">
+                                <div class="d-flex justify-content-between align-items-center gap-3 pb-2 mb-4">
+                                    <h2 class="fs-24 text-white fw-bold">Get a Quote</h2>
+                                    <button type="button" class="text-white bg-transparent border-0 p-0" data-bs-dismiss="modal" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M13 1..." fill="white" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <form action="{{ route('quote.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <input type="text" name="name" class="form-control mb-3 fs-16" placeholder="Name" value="{{ old('name') }}" required />
+                                            <input type="email" name="email" class="form-control mb-3 fs-16" placeholder="Email" value="{{ old('email') }}" required />
+                                            <input type="text" name="phone_number" class="form-control mb-3 fs-16" placeholder="Number" value="{{ old('phone_number') }}" required />
+
+                                            <div class="dropdown mb-3">
+                                                <button class="form-control dropdown-toggle d-flex justify-content-between align-items-center" type="button" data-bs-toggle="dropdown">
+                                                    Product Type
+                                                </button>
+                                                <div class="dropdown-menu p-2" style="max-height:200px; overflow-y:auto">
+                                                    @foreach(['Blocks','Slabs (2cm–30cm)','Cut-to-Size Orders / Project Supply','Tiles','Cobble Stones','Monuments','Export Inquiry','Other'] as $type)
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="product_type[]" value="{{ $type }}" id="type_{{ $loop->index }}" {{ is_array(old('product_type')) && in_array($type, old('product_type')) ? 'checked' : '' }}>
+                                                        <label class="form-check-label fs-16 fw-normal text-gray-600" for="type_{{ $loop->index }}">{{ $type }}</label>
+                                                    </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+
+                                            <h3 class="fs-18 fw-normal text-gray-600 mb-3">Upload a reference image (if any)</h3>
+                                            <div class="file-upload-box" onclick="document.getElementById('quoteImage').click();">
+                                                <p class="fs-16 text-gray-600 fw-normal mb-0">Upload Image</p>
+                                                <input type="file" id="quoteImage" name="reference_image" hidden>
+                                            </div>
+
+                                            <button class="btn btn-primary-bg border-0 text-white w-100 fs-16 mt-1" type="submit">Submit</button>
+                                        </div>
+                                        <div class="col-sm-6 d-none d-sm-block">
+                                            <div class="modal-img w-100 h-100">
+                                                <img src="{{ asset('assets/images/modal-bg.png') }}" alt="images" class="w-100 h-100 object-fit-cover" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                   </div>
+
                   <div class="hero-images position-relative d-block d-md-none ms-auto">
                     <div class="hero-img-1 ms-auto position-relative z-1">
                       <img src="{{ ('assets/images/hero-1.png') }}" alt="hero-img" class="w-100 h-100 object-fit-cover">
@@ -590,52 +562,66 @@
                       </svg>
                     </button>
                   </div>
-                  <form id="getInTouchForm" enctype="multipart/form-data">
+                  <form method="POST" action="{{ route('get_in_touch.store') }}" enctype="multipart/form-data">
                       @csrf
                       <div class="row">
-                        <div class="col-lg-6">
-                          <input type="text" name="full_name" class="form-control mb-3 fs-16" placeholder="Full Name *" required />
-                        </div>
-                        <div class="col-lg-6">
-                          <input type="text" name="phone" class="form-control mb-3 fs-16" placeholder="Phone Number (with country code)" required />
-                        </div>
-                        <div class="col-lg-6">
-                          <input type="text" name="company_name" class="form-control mb-3 fs-16" placeholder="Company Name (Optional)" />
-                        </div>
-                        <div class="col-lg-6">
-                          <input type="email" name="email" class="form-control mb-3 fs-16" placeholder="Email ID *" required />
-                        </div>
-                        <div class="col-lg-6">
-                          <input type="text" name="location" class="form-control mb-3 fs-16" placeholder="Your Location" />
-                        </div>
-
-                        <div class="col-lg-12 mb-3">
-                          <label class="fs-16 fw-semibold">Select Product Types *</label>
-                          <div class="row">
-                            @foreach(['Blocks','Slabs (2cm–30cm)','Cut-to-Size Orders / Project Supply','Tiles','Cobble Stones','Monuments','Export Inquiry','Other'] as $type)
-                              <div class="col-md-4">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" name="looking_for[]" value="{{ $type }}" id="looking_{{ $loop->index }}">
-                                  <label class="form-check-label text-gray-600 fs-16" for="looking_{{ $loop->index }}">{{ $type }}</label>
-                                </div>
-                              </div>
-                            @endforeach
+                          <div class="col-lg-6">
+                              <input type="text" name="full_name" class="form-control mb-3 fs-16" placeholder="Full Name *" value="{{ old('full_name') }}" required />
+                              @error('full_name')<div class="text-danger small">{{ $message }}</div>@enderror
                           </div>
-                        </div>
+                          <div class="col-lg-6">
+                              <input type="text" name="phone" class="form-control mb-3 fs-16" placeholder="Phone Number (with country code)" value="{{ old('phone') }}" required />
+                              @error('phone')<div class="text-danger small">{{ $message }}</div>@enderror
+                          </div>
+                          <div class="col-lg-6">
+                              <input type="text" name="company_name" class="form-control mb-3 fs-16" placeholder="Company Name (Optional)" value="{{ old('company_name') }}" />
+                              @error('company_name')<div class="text-danger small">{{ $message }}</div>@enderror
+                          </div>
+                          <div class="col-lg-6">
+                              <input type="email" name="email" class="form-control mb-3 fs-16" placeholder="Email ID *" value="{{ old('email') }}" required />
+                              @error('email')<div class="text-danger small">{{ $message }}</div>@enderror
+                          </div>
+                          <div class="col-lg-6">
+                              <input type="text" name="location" class="form-control mb-3 fs-16" placeholder="Your Location" value="{{ old('location') }}" />
+                              @error('location')<div class="text-danger small">{{ $message }}</div>@enderror
+                          </div>
 
-                        <div class="col-lg-12">
-                          <textarea name="details" class="form-control mb-3 fs-16" placeholder="Any specific details, sizes, or queries?" rows="4"></textarea>
-                        </div>
+                          <div class="col-lg-12 mb-3">
+                              <label class="fs-16 fw-semibold">Select Product Types *</label>
+                              <div class="row">
+                                  @foreach(['Blocks','Slabs (2cm–30cm)','Cut-to-Size Orders / Project Supply','Tiles','Cobble Stones','Monuments','Export Inquiry','Other'] as $type)
+                                      <div class="col-md-4">
+                                          <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" name="looking_for[]" value="{{ $type }}" id="looking_{{ $loop->index }}" {{ is_array(old('looking_for')) && in_array($type, old('looking_for')) ? 'checked' : '' }}>
+                                              <label class="form-check-label text-gray-600 fs-16" for="looking_{{ $loop->index }}">{{ $type }}</label>
+                                          </div>
+                                      </div>
+                                  @endforeach
+                              </div>
+                              @error('looking_for')<div class="text-danger small">{{ $message }}</div>@enderror
+                          </div>
 
-                        <div class="col-lg-12 mb-3">
-                          <label class="fs-16 fw-normal">Upload Reference Image (Optional)</label>
-                          <input type="file" name="reference_image" class="form-control">
-                        </div>
+                          <div class="col-lg-12">
+                              <textarea name="details" class="form-control mb-3 fs-16" placeholder="Any specific details, sizes, or queries?" rows="4">{{ old('details') }}</textarea>
+                              @error('details')<div class="text-danger small">{{ $message }}</div>@enderror
+                          </div>
+
+                          <div class="col-lg-12 mb-3">
+                              <label class="fs-16 fw-normal">Upload Reference Image (Optional)</label>
+                              <input type="file" name="reference_image" class="form-control">
+                              @error('reference_image')<div class="text-danger small">{{ $message }}</div>@enderror
+                          </div>
                       </div>
 
-                      <div id="getInTouchAlert" class="alert d-none mt-2"></div>
-                      <button type="submit" class="btn btn-primary-bg border-0 text-white w-100 fs-16">Submit Enquiry</button>
-                    </form>
+                      @if(session('success'))
+                          <div class="alert alert-success">{{ session('success') }}</div>
+                      @endif
+
+                      <div class="text-center">
+                          <button type="submit" class="btn btn-primary-bg border-0 text-white w-100 fs-16">Submit Enquiry</button>
+                      </div>
+                  </form>
+
 
 
                 </div>
@@ -649,38 +635,4 @@
   </section>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function () {
-  $('#getInTouchForm').on('submit', function(e) {
-
-    alert('adafa')
-    e.preventDefault();
-
-    let formData = new FormData(this);
-    let alertBox = $('#getInTouchAlert');
-
-    $.ajax({
-      url: "{{ route('get_in_touch.store') }}",
-      type: 'POST',
-      data: formData,
-      processData: false,
-      contentType: false,
-      headers: {
-        'X-CSRF-TOKEN': $('input[name="_token"]').val()
-      },
-      success: function (data) {
-        alertBox.removeClass('d-none alert-danger').addClass('alert alert-success').text(data.message);
-        $('#getInTouchForm')[0].reset();
-      },
-      error: function (xhr) {
-        alertBox.removeClass('d-none alert-success').addClass('alert alert-danger');
-        let errors = xhr.responseJSON.errors;
-        let errorMessage = errors ? Object.values(errors).flat().join(' ') : 'Submission failed.';
-        alertBox.text(errorMessage);
-      }
-    });
-  });
-});
-</script>
 @endsection
