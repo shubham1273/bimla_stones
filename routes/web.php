@@ -34,7 +34,7 @@ Route::get('/blog', [WebsiteController::class, 'blog'])->name('blog');
 Route::get('/blog-detail/{id}', [WebsiteController::class, 'blog_detail'])->name('blog_detail');
 Route::get('/gallery', [WebsiteController::class, 'gallery'])->name('gallery');
 Route::get('/contact-us', [WebsiteController::class, 'contact_us'])->name('contact_us');
-Route::get('/career', [WebsiteController::class, 'career'])->name('career');
+Route::get('/career_page', [WebsiteController::class, 'career'])->name('career_page');
 
 // User Form Submission Route
 Route::post('/submit-enquiry', [ContactController::class, 'store'])->name('contact.store');
