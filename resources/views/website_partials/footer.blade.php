@@ -361,3 +361,44 @@
       slidesToScroll: 1,
     });
   </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById('quickContactForm');
+  const alertBox = document.getElementById('quickContactAlert');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("{{ route('contact.store') }}", {
+      method: "POST",
+      headers: {
+        "X-CSRF-TOKEN": "{{ csrf_token() }}",
+      },
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) throw response;
+      return response.json();
+    })
+    .then(data => {
+      alertBox.classList.remove('d-none', 'alert-danger');
+      alertBox.classList.add('alert', 'alert-success');
+      alertBox.innerText = data.message;
+      form.reset();
+    })
+    .catch(async (error) => {
+      let message = 'An error occurred.';
+      if (error.json) {
+        const err = await error.json();
+        if (err.message) message = err.message;
+      }
+      alertBox.classList.remove('d-none', 'alert-success');
+      alertBox.classList.add('alert', 'alert-danger');
+      alertBox.innerText = message;
+    });
+  });
+});
+</script>

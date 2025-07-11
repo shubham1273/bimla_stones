@@ -3,7 +3,7 @@
   max-width: 613px;
 }
 .hero-section-home {
-  aspect-ratio: 4.021673;
+  aspect-ratio: 5.7485;
   background-image: url("../images/contact-bg-hero.png");
   background-size: cover;
   background-position: center;
@@ -125,10 +125,15 @@
 }
 // contact-section
 .contact-section {
+  .contact-us-main{
+    @media (max-width:400px) {
+      flex-wrap: wrap;
+    }
+  }
   .form-control {
     background-color: #46454a !important;
     border-radius: 6px !important;
-    padding: 16px 24px !important;
+    padding: 10px 16px !important;
     max-width: 416px !important;
     border: none !important;
     font-family: "DMSans";
@@ -161,11 +166,17 @@
     @media (max-width: 991px) {
       width: 60% !important;
     }
+    @media (max-width:400px) {
+      width: 100% !important;
+    }
   }
   .contact-images {
     max-width: 641px;
     @media (max-width: 991px) {
       width: 40% !important;
+    }
+    @media (max-width:400px) {
+      width: 100% !important;
     }
     .contact-bg-2 {
       max-width: calc(100% - 55%);

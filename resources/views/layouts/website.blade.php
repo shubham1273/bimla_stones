@@ -26,10 +26,10 @@
   <link rel="stylesheet" href="{{ asset('assets/scss/home.css') }}" />
   <link rel="stylesheet" href="{{ asset('assets/scss/process.css') }}" />
   <link rel="stylesheet" href="{{ asset('assets/scss/product.css') }}" />
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
-  @if(Route::currentRouteName() === 'home')
+  {{-- @if(Route::currentRouteName() === 'home')
       @include('website_partials.header_home')
   @elseif(Route::currentRouteName() === 'contact_us')
       @include('website_partials.header_contact')
@@ -37,7 +37,9 @@
       @include('website_partials.header_career')
   @else
       @include('website_partials.header_common')
-  @endif
+  @endif --}}
+  
+  @include('website_partials.header_common')
   
   @yield('content')
   

@@ -1,16 +1,20 @@
 @import "variable";
 .hero-section-home {
-  aspect-ratio: 2.3386;
+  aspect-ratio: 2.8360;
   background-image: url("../images/hero-bg-img.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   // hero-section-main
   .hero-section-main {
-    margin-top: 128px;
+    padding-top: 128px;
     padding-bottom: 80px;
     @media (max-width: 767px) {
-      margin-top: 50px;
+      padding-top: 50px;
+    }
+    @media (max-width:575px) {
+      padding-top: 0px;
+      padding-top: 50px;
     }
     .hero-images {
       max-width: 604px;
@@ -87,6 +91,11 @@
         }
       }
     }
+    .hero-text-content{
+      @media (min-width: 1400px) {
+        max-width: 540px;
+      }
+    }
     .hero-text {
       font-size: 54px;
       letter-spacing: 2.2px;
@@ -111,15 +120,6 @@
   }
 }
 .full-video-container {
-  margin-top: 40px;
-  @media (max-width: 991px) {
-    margin-top: 20px;
-  }
-  .pt-80 {
-    @media (max-width: 575px) {
-      padding-top: 16px !important;
-    }
-  }
   .video-container {
     .play-button {
       width: 84px;
@@ -225,7 +225,7 @@
   background-position: center;
   background-repeat: no-repeat;
   .section-heading {
-    max-width: 614px;
+    max-width: 1130px;
   }
   @media (max-width: 575px) {
     padding: 19px 12px 19px 12px;
@@ -297,6 +297,38 @@
       }
     }
   }
+  .process-line{
+    padding: 0 12px;
+    display: inline-block;
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      background-color: $gray-600;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      background-color: $gray-600;
+    }
+  }
   .video-slider {
     margin-left: -8px;
     margin-right: -8px;
@@ -315,7 +347,7 @@
 // we-are-section
 .we-are-section {
   .section-heading {
-    max-width: 650px;
+    max-width: 1153px;
   }
   .we-are-bg {
     max-width: 100%;
@@ -343,30 +375,6 @@
     @media (max-width: 991px) {
       max-width: 100%;
     }
-    .play-button {
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      background-color: #bcbacd;
-      transition: 0.3s all ease-in-out;
-      display: block;
-      font-size: 32px;
-      &:hover {
-        transform: scale(1.1);
-      }
-      @media (max-width: 991px) {
-        width: 40px;
-        height: 40px;
-        font-size: 12px;
-      }
-    }
-    &.video-started .play-button {
-      display: none;
-    }
-
-    &.video-started:hover .play-button {
-      display: block;
-    }
     .video-img {
       width: 100%;
       height: 100%;
@@ -375,39 +383,6 @@
       border-radius: 16px;
       @media (max-width: 991px) {
         border-radius: 11px 11px 0px 0px;
-      }
-      img,
-      video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        cursor: pointer;
-        object-fit: cover;
-        border-radius: 16px;
-        @media (max-width: 991px) {
-          border-radius: 11px 11px 0px 0px;
-        }
-      }
-      video {
-        display: none;
-      }
-      &::after {
-        position: absolute;
-        content: "";
-        left: 0;
-        bottom: 0;
-        background: linear-gradient(270deg, rgba(16, 16, 16, 0.4785) 8.11%, rgba(26, 6, 4, 0.1155) 62.31%);
-        height: 100%;
-        width: 100%;
-        pointer-events: none;
-        border-radius: 16px;
-        @media (max-width: 991px) {
-          border-radius: 11px 11px 0px 0px;
-        }
       }
     }
   }
@@ -649,10 +624,15 @@
 }
 // contact-section
 .contact-section {
+  .contact-us-main{
+    @media (max-width:400px) {
+      flex-wrap: wrap;
+    }
+  }
   .form-control {
     background-color: #46454a !important;
     border-radius: 6px !important;
-    padding: 16px 24px !important;
+    padding: 10px 16px !important;
     max-width: 416px !important;
     border: none !important;
     font-family: "DMSans";
@@ -685,11 +665,17 @@
     @media (max-width: 991px) {
       width: 60% !important;
     }
+    @media (max-width:400px) {
+      width: 100% !important;
+    }
   }
   .contact-images {
     max-width: 641px;
     @media (max-width: 991px) {
       width: 40% !important;
+    }
+    @media (max-width:400px) {
+      width: 100% !important;
     }
     .contact-bg-2 {
       max-width: calc(100% - 55%);

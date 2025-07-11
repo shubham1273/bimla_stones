@@ -7,6 +7,8 @@ use App\Exports\GetInTouchExport;
 
 use App\Models\GetInTouch;
 use Illuminate\Http\Request;
+use App\Mail\GetInTouchMail;
+use Illuminate\Support\Facades\Mail;
 
 class GetInTouchController extends Controller
 {
@@ -17,11 +19,12 @@ class GetInTouchController extends Controller
             'full_name' => 'required|string|max:255',
             'phone' => 'required|string|max:20',
             'company_name' => 'nullable|string|max:255',
-            'looking_for' => 'required|string|max:255',
+            'looking_for' => 'required|array',
+            'looking_for.*' => 'string',
             'email' => 'required|email|max:255',
             'location' => 'nullable|string|max:255',
             'details' => 'nullable|string',
-            'reference_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120' // max 5MB
+            'reference_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120'
         ]);
 
         $imageName = null;
@@ -31,18 +34,21 @@ class GetInTouchController extends Controller
             $file->move(public_path('uploads/get_in_touch'), $imageName);
         }
 
-        GetInTouch::create([
+        $getInTouch = GetInTouch::create([
             'name' => $request->full_name,
             'phone_number' => $request->phone,
             'company_name' => $request->company_name,
-            'looking_for' => $request->looking_for,
+            'looking_for' => implode(', ', $request->looking_for),
             'email' => $request->email,
             'location' => $request->location,
             'specific_detail' => $request->details,
             'reference_image' => $imageName,
         ]);
 
-        return back()->with('success', 'Your enquiry has been submitted successfully.');
+        // Send Email
+        Mail::to(config('mail.from.address'))->send(new GetInTouchMail($getInTouch));
+
+        return response()->json(['success' => true, 'message' => 'Enquiry submitted successfully.']);
     }
 
     // Admin listing

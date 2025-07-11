@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\HomePage;
 use App\Models\Blog;
+use App\Models\Client;
 use App\Models\Product;
 use App\Models\Process;
 use App\Models\career;
@@ -24,7 +25,11 @@ class WebsiteController extends Controller
         $section3 = HomePage::where('page_key', 'section_3')->first();
         $section4 = HomePage::where('page_key', 'section_4')->first();
         $section6 = HomePage::where('page_key', 'section_6')->get(); //foreach loop
-        return view('website.welcome', compact('section1', 'section2', 'section3', 'section4', 'section6'));
+        $section7 = HomePage::where('page_key', 'section_7')->first();
+        $section8 = HomePage::where('page_key', 'section_8')->get(); //foreach loop
+        $section9 = HomePage::where('page_key', 'section_9')->first();
+        $clients = Client::orderBy('created_at', 'desc')->get();
+        return view('website.welcome', compact('section1', 'section2', 'section3', 'section4', 'section6', 'section7', 'section8', 'section9', 'clients'));
     }
 
     public function products(){
