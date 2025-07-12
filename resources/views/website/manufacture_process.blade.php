@@ -36,7 +36,7 @@
                       </div>
                       <div class="categories-content">
                           <h3 class="fs-24 fw-bold text-white mb-2 mb-md-3">{{$item->title}}</h3>
-                          <p class="fs-16 fw-normal text-gray-600 mb-0">{{$item->description}}</p>
+        <p class="fs-16 fw-normal text-gray-600 mb-0">{!! $item->description !!}</p>
                       </div>
                       <div class="categories-slider-img h-100 w-100">
                           <img src="{{ asset('uploads/process/'. $item->media) }}" alt="images"
@@ -88,11 +88,11 @@
           <div class="row row-gap-3 align-items-center">
             <div class="col-lg-6 col-7">
               <h2 class="fs-24 fw-bold text-white mb-2 mb-lg-3  text-start">{{$section4->title}}</h2>
-              <a href="#" class="btn btn-primary-bg border-0 text-white w-100 fs-16">Speak to an Expert</a>
+              <a href="{{ route('contact_us') }}" class="btn btn-primary-bg border-0 text-white w-100 fs-16">Speak to an Expert</a>
             </div>
             <div class="col-lg-6 col-5">
               <div class="story-hero-img h-100 w-100">
-                <img src="{{ asset('assets/images/story-img.png') }}" alt="images" class="h-100 w-100 object-fit-cover" />
+                <img src="{{ asset('uploads/process/' . $section4->media) }}" alt="images" class="h-100 w-100 object-fit-cover" />
               </div>
             </div>
           </div>

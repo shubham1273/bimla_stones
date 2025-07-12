@@ -15,33 +15,20 @@ class ProcessController extends Controller
     {
         $section = Process::findOrFail($id);
 
-        // Validate inputs
+        // Validate inputs (removed media)
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'media' => 'nullable|mimes:mp4,webm,ogg|max:512000',
         ]);
 
-        // Upload Video 1
-        if ($request->hasFile('media')) {
-            $file = $request->file('media');
-            $fileName = time() . '_1_' . uniqid() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('uploads/process'), $fileName);
-
-            if ($section->media && file_exists(public_path('uploads/process/' . $section->media))) {
-                unlink(public_path('uploads/process/' . $section->media));
-            }
-
-            $section->media = $fileName;
-        }
-
-        // Save title & description
+        // Save title & description only
         $section->title = $validated['title'];
         $section->description = $validated['description'];
         $section->save();
 
         return redirect()->back()->with('success', 'Section 1 updated successfully.');
     }
+
 
     public function section2(){
         $data = Process::where('page_key', 'section_2')->get();
