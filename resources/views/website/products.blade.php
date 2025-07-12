@@ -5,6 +5,10 @@
     <section class="pt-60 types-offer-section">
         <div class="container">
             <div class="px-12px">
+                <div class="mb-60">
+                    <h3 class="fs-40 text-white fw-bold mb-3 text-center">Our Product Range</h3>
+                    <p class="fs-18 text-gray-600 mb-0 fw-normal text-center">From custom-finished monuments to countertops, every product at Bimla Stone begins with precision and ends in perfection. Our stones aren’t just raw materials, they’re the result of thoughtful sourcing, advanced cutting, and hand-inspected craftsmanship. Whether you’re building bold commercial spaces or refined interiors, we offer tailored solutions in black granite that deliver durability, class, and timeless appeal.</p>
+                </div>
                 <div class="section-heading w-100 mx-auto">
                     <h3 class="fs-40 fw-bold text-center text-white mb-3">Types of Stones We Offer</h3>
                     <p class="text-start text-sm-center text-gray-600 fw-normal mb-0 fs-18">We primarily work with black
