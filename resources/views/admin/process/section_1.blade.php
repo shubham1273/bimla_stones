@@ -54,24 +54,7 @@
                             </div>
 
                             {{-- Video 1 --}}
-                            <div class="col-md-9">
-                                <div class="form-group">
-                                    <label for="media">Video File 1</label>
-                                    <input type="file" name="media" class="form-control" accept="video/mp4,video/webm,video/ogg">
-                                    @error('media')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                    @if($data->media)
-                                        <div class="mt-3">
-                                            <label>Current Video 1:</label><br>
-                                            <video width="320" height="240" controls>
-                                                <source src="{{ asset('uploads/process/' . $data->media) }}" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
+
 
                         </div>
 

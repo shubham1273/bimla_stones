@@ -40,7 +40,7 @@
           </div>
           <div class="col-lg-6">
             <div class="story-hero-img h-100 w-100">
-              <img src="{{ asset('uploads/gallery/'. $section1->media) }}" alt="images" class="h-100 w-100 object-fit-cover" />
+              <img src="{{ asset('uploads/gallery/'. $section2->media) }}" alt="images" class="h-100 w-100 object-fit-cover" />
             </div>
           </div>
         </div>
