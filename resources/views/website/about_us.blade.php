@@ -47,7 +47,7 @@
           <div class="px-4">
             <h2 class="fs-40 text-white fw-bold mb-3 mb-lg-4">{{$section2->title}}</h2>
             <p class="fs-18 fw-normal text-gray-600 mb-3 mb-lg-4">
-                {{$section2->description}}
+                {!! $section2->description !!}
             </p>
           </div>
         </div>
@@ -301,7 +301,7 @@
       <div class="container">
         <div class="text-center">
           <h2 class="fs-40 fw-bold text-white mb-3 mb-lg-4">Join Our Team</h2>
-          <p class="fs-18 fw-normal text-gray-600 mb-3 mb-lg-4">Interested in joining our team?  <br>
+          <p class="fs-18 fw-normal text-gray-600 mb-3 mb-lg-4">Interested in joining our team? <br>
             We’re always open to skilled professionals who share our passion for granite, design, and excellent service.
             Whether you’re an experienced architect, a craftsperson, or someone who genuinely loves the art of natural
             stones, we’d love to hear from you.</p>

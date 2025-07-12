@@ -4,28 +4,35 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use App\Models\GetInTouch;
 
 class GetInTouchMail extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $data;
+    public $attachmentPath;
+    public $attachmentName;
+    public $attachmentMime;
 
-    public function __construct(GetInTouch $data)
+    public function __construct($data, $attachmentPath = null, $attachmentName = null, $attachmentMime = null)
     {
         $this->data = $data;
+        $this->attachmentPath = $attachmentPath;
+        $this->attachmentName = $attachmentName;
+        $this->attachmentMime = $attachmentMime;
     }
 
     public function build()
     {
-        $mail = $this->subject('New Get In Touch Enquiry')
-                    ->view('emails.get_in_touch');
+        $email = $this->view('emails.get_in_touch')->with('data', $this->data);
 
-        if ($this->data->reference_image && file_exists(public_path('uploads/get_in_touch/' . $this->data->reference_image))) {
-            $mail->attach(public_path('uploads/get_in_touch/' . $this->data->reference_image));
+        if ($this->attachmentPath) {
+            $email->attach($this->attachmentPath, [
+                'as' => $this->attachmentName,
+                'mime' => $this->attachmentMime,
+            ]);
         }
 
-        return $mail;
+        return $email->subject('New Get In Touch Submission');
     }
 }

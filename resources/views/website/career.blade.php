@@ -1,6 +1,19 @@
 @extends('layouts.website')
 @section('title', 'Bimla Stones - Products')
 @section('content')
+<div class="hero-section-home">
+    <!-- hero-section-main -->
+    <div class="hero-section-main pt-60 position-relative z-1">
+      <div class="px-12px">
+        <div class="container">
+          <div class="section-heading w-100">
+            <h1 class="fs-40 text-white fw-bold mb-3">{{$section1->title}}</h1>
+            <p class="fs-18 text-gray-600 fw-normal mb-0">{{$section1->description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <section class="stands-section pt-80">
     <div class="px-12px">
       <div class="container">
@@ -157,7 +170,7 @@
       <div class="container">
         <div class="text-center">
           <h2 class="fs-40 fw-bold text-white mb-3 mb-lg-4">Join Our Team</h2>
-          <p class="fs-18 fw-normal text-gray-600 mb-3 mb-lg-4">Interested in joining our team?  <br>
+          <p class="fs-18 fw-normal text-gray-600 mb-3 mb-lg-4">Interested in joining our team? <br>
             We’re always open to skilled professionals who share our passion for granite, design, and excellent service.
             Whether you’re an experienced architect, a craftsperson, or someone who genuinely loves the art of natural
             stones, we’d love to hear from you.</p>

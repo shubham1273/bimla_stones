@@ -410,3 +410,52 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+
+
+<!-- Ajax Script -->
+<script>
+$(document).ready(function () {
+  $('#getInTouchForm').on('submit', function (e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+
+    $.ajax({
+      url: "{{ route('get_in_touch.store') }}",
+      method: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      beforeSend: function () {
+        $('#getInTouchAlert').html('');
+      },
+      success: function (response) {
+        $('#getInTouchAlert').html(`
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            ${response.message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        `);
+        form.reset();
+      },
+      error: function (xhr) {
+        let errors = xhr.responseJSON?.errors;
+        let messages = '';
+        if (errors) {
+          messages = Object.values(errors).map(e => `<li>${e}</li>`).join('');
+        } else {
+          messages = '<li>Something went wrong. Please try again.</li>';
+        }
+
+        $('#getInTouchAlert').html(`
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <ul class="mb-0">${messages}</ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        `);
+      }
+    });
+  });
+});
+</script>

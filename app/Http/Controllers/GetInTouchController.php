@@ -15,41 +15,92 @@ class GetInTouchController extends Controller
     // Store form submission
     public function store(Request $request)
     {
-            $request->validate([
-                'full_name' => 'required|string|max:255',
-                'phone' => 'required|string|max:20',
-                'company_name' => 'nullable|string|max:255',
-                'looking_for' => 'required|array',
-                'looking_for.*' => 'string',
-                'email' => 'required|email|max:255',
-                'location' => 'nullable|string|max:255',
-                'details' => 'nullable|string',
-                'reference_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120'
-            ]);
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone_number' => 'required|string',
+            'product_type' => 'required|array',
+            'location' => 'required|string',
+            'message' => 'nullable|string',
+            'reference_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-            $imageName = null;
-            if ($request->hasFile('reference_image')) {
-                $file = $request->file('reference_image');
-                $imageName = time() . '_' . $file->getClientOriginalName();
-                $file->move(public_path('uploads/get_in_touch'), $imageName);
-            }
+        $imagePath = null;
+        $imageName = null;
+        $mimeType = null;
 
-            $getInTouch = GetInTouch::create([
-                'name' => $request->full_name,
-                'phone_number' => $request->phone,
-                'company_name' => $request->company_name,
-                'looking_for' => implode(', ', $request->looking_for),
-                'email' => $request->email,
-                'location' => $request->location,
-                'specific_detail' => $request->details,
-                'reference_image' => $imageName,
-            ]);
+        if ($request->hasFile('reference_image')) {
+            $image = $request->file('reference_image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $imagePath = $image->storeAs('uploads/get_in_touch', $imageName, 'public');
+            $mimeType = $image->getMimeType();
+        }
 
-            Mail::to(config('mail.from.address'))->send(new GetInTouchMail($getInTouch));
+        $getInTouch = GetInTouch::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'company' => $request->company,
+            'location' => $request->location,
+            'looking_for' => '',
+            'product_type' => implode(', ', $request->product_type),
+            'message' => $request->message,
+            'reference_image' => $imagePath,
+        ]);
 
-            return back()->with('success', 'Enquiry submitted successfully.')->withInput();
+        $data = $getInTouch->toArray();
+        $data['company'] = $getInTouch->company ?? '-';
 
+        Mail::to('shubham.feb.1995@gmail.com')->send(
+            new GetInTouchMail(
+                $data,
+                $imagePath ? public_path("storage/{$imagePath}") : null,
+                $imageName,
+                $mimeType
+            )
+        );
+
+        return response()->json(['message' => 'Thank you! We will get back to you soon.']);
     }
+
+
+    // public function store(Request $request)
+    // {
+    //         $request->validate([
+    //             'full_name' => 'required|string|max:255',
+    //             'phone' => 'required|string|max:20',
+    //             'company_name' => 'nullable|string|max:255',
+    //             'looking_for' => 'required|array',
+    //             'looking_for.*' => 'string',
+    //             'email' => 'required|email|max:255',
+    //             'location' => 'nullable|string|max:255',
+    //             'details' => 'nullable|string',
+    //             'reference_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120'
+    //         ]);
+
+    //         $imageName = null;
+    //         if ($request->hasFile('reference_image')) {
+    //             $file = $request->file('reference_image');
+    //             $imageName = time() . '_' . $file->getClientOriginalName();
+    //             $file->move(public_path('uploads/get_in_touch'), $imageName);
+    //         }
+
+    //         $getInTouch = GetInTouch::create([
+    //             'name' => $request->full_name,
+    //             'phone_number' => $request->phone,
+    //             'company_name' => $request->company_name,
+    //             'looking_for' => implode(', ', $request->looking_for),
+    //             'email' => $request->email,
+    //             'location' => $request->location,
+    //             'specific_detail' => $request->details,
+    //             'reference_image' => $imageName,
+    //         ]);
+
+    //         Mail::to(config('mail.from.address'))->send(new GetInTouchMail($getInTouch));
+
+    //         return back()->with('success', 'Enquiry submitted successfully.')->withInput();
+
+    // }
 
     // Admin listing
     public function index()

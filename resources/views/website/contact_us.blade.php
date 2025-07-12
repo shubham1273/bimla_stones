@@ -25,9 +25,9 @@
         <div class="row row-gap-4">
           <div class="col-lg-6">
             <div class="map-iframe w-100 h-100">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d249763.5119471339!2d76.8181749!3d12.0052719!3m2!1i1024!2i768!4f13.1!2m1!1sAddress%20SY%20NO%20100-1%20101-1%20Badanguppe%20Village%20Kasba%20Hobli%20chamarajanagar%20Mysore%20Taluk%20%26%20District%20Karnataka%20571313%20India!5e0!3m2!1sen!2sin!4v1751885793583!5m2!1sen!2sin"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.5494657792497!2d76.86159169999999!3d11.9987509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf39d5b6c34ac3%3A0xe876ef0171287f23!2sBimla%20Stone%20LLP!5e1!3m2!1sen!2sin!4v1752313547098!5m2!1sen!2sin" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>

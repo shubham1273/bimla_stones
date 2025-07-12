@@ -18,14 +18,19 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ asset('assets/scss/common.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/scss/about-us.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/scss/blog.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/scss/career.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/scss/contact-us.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/scss/gallery.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/scss/home.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/scss/process.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/scss/product.css') }}" />
+   @if(Route::currentRouteName() === 'home')
+      <link rel="stylesheet" href="{{ asset('assets/scss/home.css') }}" />
+  @elseif(Route::currentRouteName() === 'contact_us')
+      <link rel="stylesheet" href="{{ asset('assets/scss/contact-us.css') }}" />
+  @elseif(Route::currentRouteName() === 'career_page')
+      <link rel="stylesheet" href="{{ asset('assets/scss/career.css') }}" />
+  @else
+      <link rel="stylesheet" href="{{ asset('assets/scss/about-us.css') }}" />
+      <link rel="stylesheet" href="{{ asset('assets/scss/blog.css') }}" />
+      <link rel="stylesheet" href="{{ asset('assets/scss/gallery.css') }}" />
+      <link rel="stylesheet" href="{{ asset('assets/scss/process.css') }}" />
+      <link rel="stylesheet" href="{{ asset('assets/scss/product.css') }}" />
+  @endif
   <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
