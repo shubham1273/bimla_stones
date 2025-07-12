@@ -239,7 +239,7 @@ class HomePageController extends Controller
 
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'media' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'media' => 'nullable|image|mimes:jpg,jpeg,png',
         ]);
 
         if ($request->hasFile('media')) {

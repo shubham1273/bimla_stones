@@ -41,12 +41,22 @@
                     <div class="collapse" id="homeSections">
                         <ul class="nav nav-collapse">
                             <li><a href="{{ route('homepage') }}"><span class="sub-item">INDIA FINEST</span></a></li>
-                            <li><a href="{{ route('vidoes') }}"><span class="sub-item">SINGLE VIDEO</span></a></li>
-                            <li><a href="{{ route('process') }}"><span class="sub-item">OUR PRPCESS</span></a></li>
+
                             <li><a href="{{ route('whoWeare') }}"><span class="sub-item">WHO WE ARE</span></a></li>
+
+                            <li><a href="{{ route('vidoes') }}"><span class="sub-item">SINGLE VIDEO</span></a></li>
+
                             <li><a href="{{ route('specialization') }}"><span class="sub-item">SPECIALIZATION</span></a></li>
-                            <li><a href="{{ route('offer') }}"><span class="sub-item">WHO WE ARE</span></a></li>
+
+                             <li><a href="{{ route('offer') }}"><span class="sub-item">WHAT WE OFFER</span></a></li>
+
+
+                            <li><a href="{{ route('process') }}"><span class="sub-item">OUR PROCESS</span></a></li>
+
+
+
                             <li><a href="{{ route('choose') }}"><span class="sub-item">WHY CHOSE</span></a></li>
+
                             <li><a href="{{ route('work') }}"><span class="sub-item">CLIENT WE WORK</span></a></li>
                             <li><a href="{{ route('homepage9') }}"><span class="sub-item">LOGISCTICS</span></a></li>
                             <li><a href="{{ route('clients.index') }}"><span class="sub-item">Clients</span></a></li>

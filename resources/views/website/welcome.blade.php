@@ -9,9 +9,10 @@
           <div class="row">
             <div class="col-md-7 col-lg-6 col-xxl-7 pe-0">
               <div class="hero-content">
-                <h1 class="text-white fw-bold hero-text mb-4">India’s Finest Black Granite Processor</h1>
+                <h1 class="text-white fw-bold hero-text mb-4">{{ $section1->title }}</h1>
                 <div class="d-flex gap-3 align-items-start justify-content-between home-mobile-hero-section">
                   <div>
+                    <p class="text-gray-600 fs-24 fw-normal mb-4 text-uppercase hero-text-content"> {{ $section1->description }}</p>
                     @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                       {{ session('success') }}
@@ -244,7 +245,7 @@
                         <input type="text" class="form-control mb-3 fs-16" placeholder="Your Location" required />
                       </div>
                     </div>
-  
+
                     <textarea class="form-control mb-3 fs-16" placeholder="Any specific details, sizes, or queries?"
                       rows="4"></textarea>
                     <h3 class="fs-18 fw-normal text-gray-600 mb-3">Upload a reference image (if any)</h3>
@@ -519,7 +520,7 @@
               shortly.</p>
 
             @include('website_partials.contact_us')
-          
+
           </div>
           <div class="position-relative contact-images w-100">
             <div class="contact-bg-1 position-absolute w-100 h-100">
