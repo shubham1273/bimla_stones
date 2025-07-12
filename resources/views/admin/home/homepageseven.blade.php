@@ -8,29 +8,17 @@
         <h4 class="page-title">Home Page</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
-                <a href="#">
-                    <i class="icon-home"></i>
-                </a>
+                <a href="#"><i class="icon-home"></i></a>
             </li>
-            <li class="separator">
-                <i class="icon-arrow-right"></i>
-            </li>
-            <li class="nav-item">
-                <a href="#">Pages</a>
-            </li>
-            <li class="separator">
-                <i class="icon-arrow-right"></i>
-            </li>
-            <li class="nav-item">
-                <a href="#">Starter Page</a>
-            </li>
+            <li class="separator"><i class="icon-arrow-right"></i></li>
+            <li class="nav-item"><a href="#">Pages</a></li>
+            <li class="separator"><i class="icon-arrow-right"></i></li>
+            <li class="nav-item"><a href="#">Starter Page</a></li>
         </ul>
     </div>
 
     <div class="page-category">
-
         {{-- home area starts --}}
-
         <div class="row">
             <div class="card">
                 <div class="card-header">
@@ -48,32 +36,27 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="inlineinput">Title</label>
-                                            <input type="text" name="title" class="form-control" value="{{ old('title', $section->title) }}" placeholder="Enter Title" required>
-                                            @error('title')
-                                                <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="description">Description</label>
-                                            <textarea name="description" class="form-control summernote" id="description" rows="5" required>{{ old('description', $section->description ?? '') }}</textarea>
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" name="title" class="form-control" value="{{ old('title', $section->title) }}" placeholder="Enter Title" required>
+                                    @error('title')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
 
-                                            @error('description')
-                                                <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea name="description" class="form-control summernote" rows="5" required>{{ old('description', $section->description ?? '') }}</textarea>
+                                    @error('description')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="media">Input File</label>
-                                    <input type="file" name="media" class="form-control" accept="image/png, image/jpeg">
+                                    <label>Upload Image</label>
+                                    <input type="file" name="media" class="form-control" accept="image/png,image/jpeg,image/webp">
                                     @error('media')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -92,15 +75,12 @@
                             <button type="submit" class="btn btn-success">Update</button>
                             <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
                         </div>
-
                     </form>
 
                 </div>
             </div>
         </div>
-
         {{-- home area ends --}}
-
     </div>
 </div>
 @endsection
@@ -110,7 +90,7 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
 <script>
     $(document).ready(function() {
-        setTimeout(function() {  // Important: Delay ensures the textarea is fully rendered
+        setTimeout(function() {
             $('.summernote').summernote({
                 height: 300,
                 toolbar: [
@@ -120,13 +100,12 @@
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
                     ['height', ['height']],
-                    ['insert', ['link', 'picture', 'video']],
+                    ['insert', ['link', 'picture']], // ✅ Removed 'video'
                     ['view', ['fullscreen', 'codeview', 'help']],
                     ['misc', ['undo', 'redo']]
                 ]
             });
-        }, 100); // Delay is sometimes needed to fix rendering issue in Laravel Blade
+        }, 100);
     });
 </script>
 @endsection
-

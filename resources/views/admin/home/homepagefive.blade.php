@@ -6,12 +6,10 @@
   <div class="page-inner">
     <div class="page-header">
       <h4 class="page-title">Home Page</h4>
-
     </div>
     <div class="page-category">
 
         {{-- home area starts --}}
-
         <div class="row">
             <div class="card">
                 <div class="card-header">
@@ -47,19 +45,16 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="media">Upload Video File</label>
-                                    <input type="file" name="media" class="form-control" accept="video/mp4,video/webm,video/ogg">
+                                    <label for="media">Upload Image</label>
+                                    <input type="file" name="media" class="form-control" accept="image/*">
                                     @error('media')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
 
                                     @if($section->media)
                                         <div class="mt-3">
-                                            <label>Current Video:</label><br>
-                                            <video width="320" height="240" controls>
-                                                <source src="{{ asset('uploads/home/' . $section->media) }}" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
+                                            <label>Current Image:</label><br>
+                                            <img src="{{ asset('uploads/home/' . $section->media) }}" width="320" class="img-thumbnail">
                                         </div>
                                     @endif
                                 </div>
@@ -75,14 +70,8 @@
                 </div>
             </div>
         </div>
-
         {{-- home area ends --}}
-
-
 
     </div>
   </div>
-
 @endsection
-
-

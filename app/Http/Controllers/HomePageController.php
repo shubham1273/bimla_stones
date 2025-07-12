@@ -56,7 +56,7 @@ class HomePageController extends Controller
 
         // Validate video file
         $validated = $request->validate([
-            'media' => 'required|mimes:mp4,webm,ogg|max:512000', // 500MB max size
+            'media' => 'required|mimes:mp4,webm,ogg00', // 500MB max size
         ]);
 
         // Handle video upload
@@ -93,9 +93,9 @@ class HomePageController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'media' => 'nullable|mimes:mp4,webm,ogg|max:512000',
-            'media_2' => 'nullable|mimes:mp4,webm,ogg|max:512000',
-            'media_3' => 'nullable|mimes:mp4,webm,ogg|max:512000',
+            'media' => 'nullable|mimes:mp4,webm,ogg00',
+            'media_2' => 'nullable|mimes:mp4,webm,ogg00',
+            'media_3' => 'nullable|mimes:mp4,webm,ogg00',
         ]);
 
         // Upload Video 1
@@ -190,24 +190,24 @@ class HomePageController extends Controller
 
     public function updateSection5(Request $request, $id)
     {
-        // Validate the request
+        // ✅ Validate the request for image
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'media' => 'nullable|mimes:mp4,webm,ogg|max:512000' // 500MB max
+            'media' => 'nullable|image|mimes:jpg,jpeg,png,webp' // 5MB max
         ]);
 
         $section = HomePage::findOrFail($id);
         $section->title = $request->title;
         $section->description = $request->description;
 
-        // If file uploaded, handle upload
+        // ✅ Handle image upload
         if ($request->hasFile('media')) {
             $file = $request->file('media');
-            $filename = time() . '_' . $file->getClientOriginalName();
+            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('uploads/home'), $filename);
 
-            // Optional: Delete old file
+            // Optional: Delete old image
             if ($section->media && file_exists(public_path('uploads/home/' . $section->media))) {
                 unlink(public_path('uploads/home/' . $section->media));
             }
@@ -219,6 +219,7 @@ class HomePageController extends Controller
 
         return redirect()->back()->with('success', 'Section 5 updated successfully.');
     }
+
 
 
     public function offer(Request $request)
@@ -269,34 +270,35 @@ class HomePageController extends Controller
 
 
     public function updateSection7(Request $request, $id)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required',
-            'media' => 'nullable|mimes:mp4,webm,ogg|max:512000' // 500 MB
-        ]);
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required',
+        'media' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120' // ✅ 5 MB image
+    ]);
 
-        $section = HomePage::findOrFail($id);
-        $section->title = $request->title;
-        $section->description = $request->description;
+    $section = HomePage::findOrFail($id);
+    $section->title = $request->title;
+    $section->description = $request->description;
 
-        if ($request->hasFile('media')) {
-            $file = $request->file('media');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/home'), $filename);
+    if ($request->hasFile('media')) {
+        $file = $request->file('media');
+        $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('uploads/home'), $filename);
 
-            // Optionally delete old video
-            if ($section->media && file_exists(public_path('uploads/home/' . $section->media))) {
-                unlink(public_path('uploads/home/' . $section->media));
-            }
-
-            $section->media = $filename;
+        // ✅ Optionally delete old image
+        if ($section->media && file_exists(public_path('uploads/home/' . $section->media))) {
+            unlink(public_path('uploads/home/' . $section->media));
         }
 
-        $section->save();
-
-        return redirect()->back()->with('success', 'Section updated successfully.');
+        $section->media = $filename;
     }
+
+    $section->save();
+
+    return redirect()->back()->with('success', 'Section updated successfully.');
+}
+
 
 
 

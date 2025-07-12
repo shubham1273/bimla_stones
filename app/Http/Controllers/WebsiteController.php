@@ -24,12 +24,13 @@ class WebsiteController extends Controller
         $section2 = HomePage::where('page_key', 'section_2')->first();
         $section3 = HomePage::where('page_key', 'section_3')->first();
         $section4 = HomePage::where('page_key', 'section_4')->first();
+        $section5 = HomePage::where('page_key', 'section_5')->first();
         $section6 = HomePage::where('page_key', 'section_6')->get(); //foreach loop
         $section7 = HomePage::where('page_key', 'section_7')->first();
         $section8 = HomePage::where('page_key', 'section_8')->get(); //foreach loop
         $section9 = HomePage::where('page_key', 'section_9')->first();
         $clients = Client::orderBy('created_at', 'desc')->get();
-        return view('website.welcome', compact('section1', 'section2', 'section3', 'section4', 'section6', 'section7', 'section8', 'section9', 'clients'));
+        return view('website.welcome', compact('section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7', 'section8', 'section9', 'clients'));
     }
 
     public function products(){

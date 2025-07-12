@@ -281,13 +281,13 @@
           </div>
           <div class="video-container d-flex justify-content-center align-items-center position-relative">
             <div class="video-img position-relative w-100 h-100">
-              <img src="{{ ('assets/images/our-specialization-bg-video.png') }}" alt="Video Thumbnail" class="w-100 h-100 object-fit-cover">
+              <img src="{{ asset('uploads/home/' . $section5->media) }}" alt="Video Thumbnail" class="w-100 h-100 object-fit-cover">
             </div>
           </div>
           <div>
             <div class="specialization-content h-100 d-flex flex-column justify-content-center">
-              <h4 class="fs-26 fw-bold text-white">Exclusively Focused on Black Granite</h4>
-              <p class="fs-16 fw-normal text-gray-600 mb-0">From Ultimate Black to Nova Black, we process only the best black granite. Each block and stone is precision-cut, quality-checked, and delivered with care. Whether it's for a luxury project or a large-scale supply, our stones deliver unmatched quality</p>
+              <h4 class="fs-26 fw-bold text-white">{{ $section5->title }}</h4>
+              <p class="fs-16 fw-normal text-gray-600 mb-0">F{{ $section5->description }}</p>
             </div>
           </div>
         </div>
