@@ -12,7 +12,7 @@
               class="fs-40 fw-bold text-white text-decoration-none mb-3 mb-lg-4 d-block d-block">Bimla Stones</a>
             <p class="fs-20 text-gray fw-normal mb-3 mb-lg-4">Trusted suppliers of premium black granite and custom
               stone solutions.</p>
-            <a href="https://maps.app.goo.gl/x1VJZQvFC5erm1TX9" class="btn btn-primary-bg border-0 text-white w-100 fs-16 get-location">Get Location</a>
+            <a href="https://maps.app.goo.gl/cNVomenpET45vFEu6" class="btn btn-primary-bg border-0 text-white w-100 fs-16 get-location">Get Location</a>
           </div>
           <div class="footer-details-width">
             <div class="d-flex gap-3 align-items-center social-icon mb-3">
@@ -21,7 +21,7 @@
                   d="M19.4561 15.178L16.6651 12.3869C15.6683 11.3901 13.9737 11.7889 13.575 13.0847C13.2759 13.9819 12.2791 14.4803 11.382 14.2809C9.38839 13.7825 6.69701 11.1908 6.1986 9.09746C5.89956 8.2003 6.49765 7.20349 7.39477 6.90448C8.69062 6.50576 9.08934 4.81119 8.09254 3.81438L5.30148 1.02332C4.50403 0.325559 3.30786 0.325559 2.6101 1.02332L0.716166 2.91726C-1.17777 4.91087 0.915528 10.1939 5.60052 14.8789C10.2855 19.5639 15.5686 21.7569 17.5622 19.7633L19.4561 17.8694C20.1539 17.0719 20.1539 15.8757 19.4561 15.178Z"
                   fill="Currentcolor" />
               </svg>
-              <a href="tel:+91 98765 43210" class="text-decoration-none fs-20 fw-normal break-all">+91 98765 43210</a>
+              <a href="tel:+91 9972651397" class="text-decoration-none fs-20 fw-normal break-all">+91 9972651397</a>
             </div>
             <div class="d-flex gap-3 align-items-center social-icon mb-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="Currentcolor">
@@ -32,8 +32,8 @@
                   d="M0.783203 6.31414L8.97863 11.778C9.28887 11.9848 9.64441 12.0882 9.99996 12.0882C10.3555 12.0882 10.7111 11.9848 11.0214 11.778L19.2168 6.31414C19.7072 5.98738 20 5.44051 20 4.85027C20 3.83539 19.1743 3.00977 18.1595 3.00977H1.84051C0.825664 3.0098 0 3.83543 0 4.85125C0 5.44051 0.292812 5.98738 0.783203 6.31414Z"
                   fill="Currentcolor" />
               </svg>
-              <a href="mailto:info@companyname.com"
-                class="text-decoration-none fs-20 fw-normal break-all">info@companyname.com</a>
+              <a href="mailto:info@bimlastone.com"
+                class="text-decoration-none fs-20 fw-normal break-all">info@bimlastone.com</a>
             </div>
             <div class="d-flex gap-3 align-items-start social-icon mb-0">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="Currentcolor">
@@ -48,9 +48,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <a href="#" class="text-decoration-none fs-20 fw-normal">SY NO 100/1, 101/1, Badanguppe Village,
-                Kasba Hobli, Chamarajanagar Taluk & District,
-                Karnataka – 571313, India</a>
+              <a href="https://maps.app.goo.gl/cNVomenpET45vFEu6" class="text-decoration-none fs-20 fw-normal">"Chamarajanagar" check the spelling, and Chamarajanagar itself is a district then why mysore is included. And same in bottom most section also</a>
             </div>
           </div>
         </div>

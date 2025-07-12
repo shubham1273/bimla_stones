@@ -65,7 +65,7 @@
               </div>
             </div>
           @endforeach
-          
+
         </div>
       </div>
     </div>
@@ -115,11 +115,7 @@
               <div class="py-4 pe-0 pe-lg-3">
                 <p class="fs-18 text-gray-600 fw-normal mb-3 mb-lg-4">
                 </p>
-                <p class="fs-18 text-gray-600 fw-normal mb-3 mb-lg-4">We proudly partner with dealers nationwide,
-                  offering them consistent stone quality and flexible fulfillment options.</p>
-                <p class="fs-18 text-gray-600 fw-normal mb-3 mb-lg-4">Our team brings hands-on experience working with
-                  clients across the globe. We’ve partnered with some of the most prominent quarries to source premium
-                  raw materials, all processed at our expansive and advanced manufacturing plant.</p>
+                <p class="fs-18 text-gray-600 fw-normal mb-3 mb-lg-4">{!! $section6->description !!}</p>
               </div>
             </div>
           </div>
