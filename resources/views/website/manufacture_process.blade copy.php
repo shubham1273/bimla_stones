@@ -7,26 +7,27 @@
       <div class="px-12px">
         <div class="section-heading w-100 mx-auto mb-60">
           <h3 class="fs-40 fw-bold text-center text-white mb-3">{{$section1->title}}</h3>
-          <p class="text-start text-sm-center text-gray-600 fw-normal mb-0 fs-18">{{$section1->description}}</p>
+          <p class="text-start text-sm-center text-gray-600 fw-normal mb-0 fs-18">From <span
+              class="fw-bold">{{$section1->description}}</p>
         </div>
         <div class="process-video-slider">
-          @foreach ($section5 as $item)
-            <div>
-              <div class="proces-img">
-                <img src="{{ asset('uploads/process/'. $item->media) }}" alt="Video Thumbnail" class="w-100 h-100 object-fit-cover">
-              </div>
+             @foreach ($section5 as $item)
+          <div>
+            <div class="proces-img">
+              <img src="{{ asset('uploads/process/'. $item->media) }}" alt="Video Thumbnail" class="w-100 h-100 object-fit-cover">
             </div>
+          </div>
           @endforeach
+
         </div>
       </div>
     </div>
   </section>
-
   <section class="pt-80">
     <div class="px-12px">
       <div class="container">
         <div class="categories-slider-section mb-40">
-          <div class="categories-slider-2">
+          <div class="categories-slider">
 
           @foreach ($section2 as $item)
               <div>

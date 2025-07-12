@@ -216,7 +216,7 @@
                 },
             },],
     });
-    $(".categories-slider").slick({
+    $(".categories-slider-2").slick({
         arrows: true,
         prevArrow: $('.prev'),
         nextArrow: $('.next'),
@@ -359,6 +359,14 @@
       dots: false,
       slidesToShow: 1,
       slidesToScroll: 1,
+    });
+    $(".process-video-slider").slick({
+      arrows: false,
+      infinite: true,
+      dots: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay:true,
     });
   </script>
 
